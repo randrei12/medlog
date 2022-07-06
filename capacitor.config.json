@@ -1,0 +1,6 @@
+{
+  "appId": "com.medlog.app",
+  "appName": "Medlog",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
