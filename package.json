@@ -20,9 +20,11 @@
   "dependencies": {
     "@capacitor/android": "^3.6.0",
     "@capacitor/core": "^3.6.0",
-    "@capacitor/ios": "3.6.0"
+    "@capacitor/ios": "3.6.0",
+    "@capacitor/splash-screen": "^1.2.2"
   },
   "devDependencies": {
-    "@capacitor/cli": "^3.6.0"
+    "@capacitor/cli": "^3.6.0",
+    "cordova-res": "0.15.4"
   }
 }
