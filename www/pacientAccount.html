@@ -9,27 +9,38 @@
 </head>
 <body>
     <div class="accountBackground">
-        <div class="accountDocCard">
+        <div class="accountCard">
             <div class="profileCircle">
                 <div class="profileImgDiv">
                     <img src="assets/account.png" class="profileImg">
                 </div>
             </div>
 
-            <div class="personalDocData">
-                <div class="docName">
+            <div class="personalData">
+                <div class="name">
                     <p class="data">Name</p>
                     <form>
                         <textarea>Nume Prenume</textarea>
                     </form>
                 </div>
-                <div class="docName">
-                    <p class="data">Specialization</p>
-                    <form>
-                        <textarea>Specialization</textarea>
-                    </form>
+                <div class="name">
+                    <div class="genderBirth">
+                        <div class="gender">
+                            <p class="data">Gender</p>
+                            <form>
+                                <select class="selectGender">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                </select>
+                            </form>
+                        </div>
+                        <div class="birthday">
+                            <p class="data">Birthday</p>
+                            <input type="date" class="date">
+                        </div>
+                    </div>
                 </div>
-                <div class="docName">
+                <div class="name">
                     <p class="data">City&Country</p>
                     <form>
                         <select class="city">
@@ -38,19 +49,15 @@
                         </select>
                     </form>
                 </div>
-                <div class="docName">
-                    <p class="data">Hospital</p>
+                <div class="name">
+                    <p class="data">Family Doctor</p>
                     <form>
-                        <textarea>Hospital</textarea>
+                        <textarea>Nume Prenume</textarea>
                     </form>
-                </div>
-                <div class="docName">
-                    <p class="data">Schedule</p>
-                    <input type="date" class="docDate">
                 </div>
             </div>
         </div>
-        <div class="editButtonDocDiv">
+        <div class="editButtonDiv">
             <button class="baseButton">Edit Profile</button>
         </div>
     </div>
