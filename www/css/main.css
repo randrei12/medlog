@@ -42,10 +42,11 @@ body {
     height: 3rem;
     background: linear-gradient(96.4deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 94.02%);
     border-radius: 25px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     font-style: normal;
     font-weight: 500;
-    font-size: 30px;
+    font-size: 25px;
     line-height: 36px;
     border: none;
     color: #FFFFFF;
@@ -60,12 +61,185 @@ body {
     height: 25%;
     background: linear-gradient(110.43deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 100%);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 45px 45px 90px 0px;
+    border-radius: 0px 0px 90px 0px;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.accountBackground {
+    width: 100%;
+    height: 45%;
+    background: linear-gradient(110.43deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px 50px 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accountCard {
+    width: 80%;
+    height: 70%;
+    background: #FDFDFD;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    position: absolute;
+    top: 15%;
+    bottom: 10%;
+    right: 10%;
+    left: 10%;
+}
+
+.profileCircle {
+    width: 115px;
+    height: 115px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: relative;
+    top: -10%;
+    left: 30%;
+    right: 30%;
+}
+
+.profileImgDiv {
+    width: 107px;
+    height: 107px;
+    position: relative;
+    top: 4%;
+    left: 4%;
+    right: 4%;
+}
+
+.profileImg {
+    width: 107px;
+    height: 107px;
+}
+
+.accountInput {
+    outline: none;
+    width: calc(100% - 25px);
+    max-width: 313px;
+    height: 2.5rem;
+    padding: 15px;
+    border: 2px solid rgba(93, 120, 247, 0.15);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 15px;
+}
+
+.editButton {
+    width: 2%;
+    height: 60%;
+    outline: none;
+    background: linear-gradient(110.43deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25%;
+}
+
+.editButtonDiv {
+    width: 173%;
+    height: 3rem;
+    position: fixed;
+    top: 89%; 
+    bottom: 10%;
+    left: 28%; 
+    right: 28%;
+}
+
+.personalData {
+    width: 100%;
+    position: fixed;
+    top: 27%;
+    left: 15%;
+}
+
+.name {
+    width: 100%;
+    margin: 1rem 0rem;
+}
+
+.data {
+    margin: 2%;
+    color: #000000;
+    opacity: 55%;
+}
+
+textarea {
+    outline: none;
+    width: 70%;
+    height: 2.5rem;
+    padding: 0.5rem;
+    border: 2px solid rgba(93, 120, 247, 0.15);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 20px;
+    font-style: normal;
+    font-size: 1.3rem;
+    color: #000000;
+    opacity: 60%;
+}
+
+.genderBirth {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-bottom: 1.5rem;
+}
+
+.gender {
+    width: 50%;
+    height: 2.5rem;
+    margin-right: -4rem;
+}
+
+.selectGender {
+    outline: none;
+    width: 50%;
+    height: 2.5rem;
+    padding: 5px;
+    border: 2px solid rgba(93, 120, 247, 0.15);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 20px;
+    background-color: #FDFDFD;
+    font-style: normal;
+    font-size: 1rem;
+    color: #000000;
+    opacity: 60%;
+}
+
+.date {
+    outline: none;
+    width: 100%;
+    height: 2.5rem;
+    padding: 5px;
+    border: 2px solid rgba(93, 120, 247, 0.15);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 20px;
+    background-color: #FDFDFD;
+    font-style: normal;
+    font-size: 1rem;
+    color: #000000;
+    opacity: 60%;
+}
+
+.city {
+    outline: none;
+    width: 70%;
+    height: 2.5rem;
+    padding: 5px;
+    border: 2px solid rgba(93, 120, 247, 0.15);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 20px;
+    background-color: #FDFDFD;
+    font-style: normal;
+    font-size: 1rem;
+    color: #000000;
+    opacity: 60%;
+}
+
 
 .logoContainer img {
     width: 70%;

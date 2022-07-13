@@ -8,13 +8,58 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="logoContainer">
-        <img src="assets/banner.png" alt="MedLog">
-    </div>
-    <div class="mainDiv">
-        <h1>Test</h1>
-        <input type="text" class="baseInput">
-        <button class="baseButton">Salut</button>
+    <div class="accountBackground">
+        <div class="accountCard">
+            <div class="profileCircle">
+                <div class="profileImgDiv">
+                    <img src="assets/account.png" class="profileImg">
+                </div>
+            </div>
+
+            <div class="personalData">
+                <div class="name">
+                    <p class="data">Name</p>
+                    <form>
+                        <textarea>Nume Prenume</textarea>
+                    </form>
+                </div>
+                <div class="name">
+                    <div class="genderBirth">
+                        <div class="gender">
+                            <p class="data">Gender</p>
+                            <form>
+                                <select class="selectGender">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                </select>
+                            </form>
+                        </div>
+                        <div class="birthday">
+                            <p class="data">Birthday</p>
+                            <input type="date" class="date">
+                        </div>
+                    </div>
+                </div>
+                <div class="name">
+                    <p class="data">City&Country</p>
+                    <form>
+                        <select class="city">
+                            <option>Cluj-Napoca, Cluj</option>
+                            <option>Oradea, Bihor</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="name">
+                    <p class="data">Family Doctor</p>
+                    <form>
+                        <textarea>Nume Prenume</textarea>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="editButtonDiv">
+            <button class="baseButton">Edit Profile</button>
+        </div>
     </div>
 </body>
 </html>
