@@ -1,4 +1,5 @@
 .main {
+    margin-top: 20px;
     width: 100%;
     height: 100%;
     background-color: #FDFDFD;
@@ -24,27 +25,28 @@
 }
 
 .nameBox {
+    height: 50px;
     margin-left: 3%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
 }
 
 .name2 {
-    margin-bottom: -5%;
     color: #000000;
-    font-size: 1rem;
+    font-size: 15px;
     opacity: 80%;
 }
 
 .help {
     color: #000000;
-    font-size: 0.8rem;
+    font-size: 10px;
     opacity: 80%;
 }
 
 .searchBarDiv {
-    margin-top: 8%;
+    margin-top: 7%;
     margin-left: 7%;
 }
 
@@ -63,11 +65,11 @@
 }
 
 .calendar {
-    margin-top: 8%;
+    margin-top: 7%;
     margin-left: 7%;
     outline: none;
-    width: 330px;
-    height: 160px;
+    width: 85%;
+    height: 25%;
     padding: 0.5rem;
     border: 2px solid rgba(93, 120, 247, 0.15);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -107,6 +109,7 @@
 .buttonIcon {
     width: 40px;
     height: 40px;
+    margin-bottom: 5px;
 }
 
 .buttonText {
@@ -125,14 +128,16 @@
 .scroll {
     max-height: 200px;
     margin-left: 7%;
+    margin-top: 5%;
     margin-bottom: 5px;
     display: flex;
     overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .scroll .card {
-    min-width: 260px;
-    height: 132px;
+    min-width: 280px;
+    height: 150px;
     margin-right: 15px;
     text-align: center;
     background: linear-gradient(110.43deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 100%);
