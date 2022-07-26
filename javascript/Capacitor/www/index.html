@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="logoContainer">
+        <img src="assets/banner.png" alt="MedLog">
+    </div>
+    <form id="login-form" class="mainDiv">
+        <h1>Welcome!</h1>
+        <div class="AuthContainer">
+            <p class="AuthLabel">Name</p>
+            <input name="email" type="text" class="baseInput">
+        </div>
+        <div class="AuthContainer">
+            <p class="AuthLabel">Password</p>
+            <input name="password" type="password" class="baseInput">
+        </div>
+        <button type="submit" class="baseButton">Log In</button>
+        <div class="swapAuth">
+            <p>You don't have an account?</p>
+            <a href="patSignUp.html">Sign Up</a>
+        </div>
+    </form>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+
+    <script src="db/login-db.js"></script>
+</body>
+
+</html>
