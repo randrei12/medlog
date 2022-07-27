@@ -4,3 +4,5 @@ android/
 ios/
 resources/ios/**/*
 resources/android/**/*
+capacitor.config.json
+README.md

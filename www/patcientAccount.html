@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="css/pacientAccount.css">
     <title>Document</title>
 </head>
+
 <body>
     <div class="accountBackground">
         <div class="accountCard">
@@ -18,43 +20,44 @@
             </div>
 
             <div class="personalData">
-                <div class="name">
-                    <p class="data">Name</p>
-                    <form>
-                        <textarea>Nume Prenume</textarea>
-                    </form>
+                <div class="nameDiv">
+                    <span class="inputLabel">Name</span>
+                    <input class="nameInput">Nume Prenume</input>
                 </div>
-                <div class="name">
-                    <div class="genderBirth">
-                        <div class="gender">
-                            <p class="data">Gender</p>
-                            <form>
-                                <select class="selectGender">
-                                    <option>Male</option>
-                                    <option>Female</option>
-                                </select>
-                            </form>
-                        </div>
-                        <div class="birthday">
-                            <p class="data">Birthday</p>
-                            <input type="date" class="date">
-                        </div>
+                <div class="dualDiv">
+                    <div class="nameDiv">
+                        <span class="inputLabel">Gender</span>
+                        <select class="baseSelect">
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+                    <div class="nameDiv">
+                        <span class="inputLabel">Birthday</span>
+                        <input type="date" class="date">
                     </div>
                 </div>
-                <div class="name">
-                    <p class="data">City&Country</p>
-                    <form>
-                        <select class="city">
-                            <option>Cluj-Napoca, Cluj</option>
-                            <option>Oradea, Bihor</option>
+                <div class="dualDiv">
+                    <div class="nameDiv">
+                        <span class="inputLabel">City</span>
+                        <select class="baseSelect">
+                            <option value="">Cluj Napoca</option>
+                            <option value="">Dej</option>
+                            <option value="">Cuca Macaii</option>
                         </select>
-                    </form>
+                    </div>
+                    <div class="nameDiv">
+                        <span class="inputLabel">County</span>
+                        <select class="baseSelect">
+                            <option value="">Cluj</option>
+                            <option value="">Brasov</option>
+                            <option value="">Bucuresti</option>
+                        </select>                    
+                    </div>
                 </div>
-                <div class="name">
-                    <p class="data">Family Doctor</p>
-                    <form>
-                        <textarea>Nume Prenume</textarea>
-                    </form>
+                <div class="nameDiv">
+                    <span class="inputLabel">Family Doctor</span>
+                    <input class="familyInput" />
                 </div>
             </div>
         </div>
@@ -63,4 +66,5 @@
         </div>
     </div>
 </body>
+
 </html>
