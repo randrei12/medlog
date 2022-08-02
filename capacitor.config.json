@@ -1,6 +1,6 @@
 {
-  "appId": "com.example.app",
-  "appName": "ok",
+  "appId": "com.medlog.app",
+  "appName": "MedLog",
   "webDir": "www",
-  "bundledWebRuntime": false
+  "bundledWebRuntime": true
 }
