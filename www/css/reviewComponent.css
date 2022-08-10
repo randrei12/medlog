@@ -53,6 +53,10 @@ button {
     color: #FFFFFF;
 }
 
+.popUpCloseButton {
+    box-shadow: unset;
+}
+
 button:focus {
     outline: auto;
 }
@@ -139,4 +143,24 @@ h1, p, a {
 .border-radius-25
 {
     border-radius: 25px !important;
+}
+
+.baseButton {
+    width: 300px;
+    height: 50px;
+    background: linear-gradient(96.4deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 94.02%);
+    border-radius: 25px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 36px;
+    border: none;
+    color: #FFFFFF;
+    margin: 10px;
+}
+
+.swal2-popup .swal2-styled:focus {
+    box-shadow: none !important;
 }
