@@ -31,6 +31,13 @@ function Login(event) {
         .then((userCredential) => {
             // Signed in
             var user = userCredential.user;
+            const type = event.target["type"].value;
+            if(type == "patient") {
+                window.location = "patcientHome.html";
+            }
+            if(type == "doctor") {
+                window.location = "docHome.html";
+            }
             // ...
             console.log(user);
         
