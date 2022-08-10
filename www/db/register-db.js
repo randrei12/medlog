@@ -51,6 +51,7 @@ function RegisterPatient(event) {
                 type: "patient"
             })
             .then(() => {
+                window.location = "patcientHome.html";
                 alert("account created");
             });
 
@@ -93,6 +94,7 @@ function RegisterDoctor(event) {
                 type: "doctor"
             })
             .then(() => {
+                window.location = "docHome.html";
                 alert("account created");
             });
 
