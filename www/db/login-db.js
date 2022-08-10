@@ -17,9 +17,19 @@ firebase.analytics();
 
 const database = firebase.database();
 const auth = firebase.auth();
-
+const db = firebase.firestore();
 const loginForm = document.getElementById("login-form");
 
+function GetUserDetails(uid){
+    try {
+        database.ref('users/' + uid).get()
+        .then(result => {
+            console.log(result);
+        });
+    } catch (error) {
+        throw error;
+    }
+}
 
 function Login(event) {
     event.preventDefault();
@@ -31,15 +41,20 @@ function Login(event) {
         .then((userCredential) => {
             // Signed in
             var user = userCredential.user;
-            const type = event.target["type"].value;
-            if(type == "patient") {
-                window.location = "patcientHome.html";
-            }
-            if(type == "doctor") {
-                window.location = "docHome.html";
-            }
+       
+            db.collection('users').doc(user.uid).get()
+        .then(result => {
+            console.log(result.data());
+        });
+            // if(type == "patient") {
+            //     window.location = "patcientHome.html";
+            // }
+            // if(type == "doctor") {
+            //     window.location = "docHome.html";
+            // }
+            // console.log(type);
             // ...
-            console.log(user);
+        
         
             
         })
