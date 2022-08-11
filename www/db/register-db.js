@@ -15,8 +15,8 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
-const database = firebase.database();
 const auth = firebase.auth();
+const db = firebase.firestore();
 
 const registerForm = document.getElementById("register-form");
 
@@ -32,7 +32,7 @@ function RegisterPatient(event) {
     const country = event.target["country"].value;
 
     if(password != confirmPassword) {
-        alert("Password do no match");
+        alert("Passwords do not match");
         return;
     }
 
@@ -41,7 +41,7 @@ function RegisterPatient(event) {
             // Signed in
             var user = userCredential.user;
             
-            database.ref('users/' + user.uid).set({
+            db.collection('users').doc(user.uid).set({
                 username: name,
                 email: email,
                 password: password, 
@@ -51,7 +51,7 @@ function RegisterPatient(event) {
                 type: "patient"
             })
             .then(() => {
-                window.location = "patcientHome.html";
+                window.location = "patientHome.html";
                 alert("account created");
             });
 
@@ -75,7 +75,7 @@ function RegisterDoctor(event) {
     const country = event.target["country"].value;
 
     if(password != confirmPassword) {
-        alert("Password do no match");
+        alert("Passwords do not match");
         return;
     }
 
@@ -83,8 +83,8 @@ function RegisterDoctor(event) {
         .then((userCredential) => {
             // Signed in
             var user = userCredential.user;
-            
-            database.ref('users/' + user.uid).set({
+
+            db.collection('users').doc(user.uid).set({
                 username: name,
                 email: email,
                 password: password, 
