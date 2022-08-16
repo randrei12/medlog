@@ -18,11 +18,12 @@
   },
   "homepage": "https://github.com/randrei12/medlog-frontend#readme",
   "dependencies": {
-    "@capacitor/android": "^3.6.0",
-    "@capacitor/core": "^3.6.0",
+    "@capacitor/android": "^4.0.0",
+    "@capacitor/keyboard": "^4.0.0",
     "firebase": "^9.9.2"
   },
   "devDependencies": {
-    "@capacitor/cli": "^3.6.0"
+    "@capacitor/core": "4.0.0",
+    "@capacitor/cli": "^4.0.0"
   }
 }
