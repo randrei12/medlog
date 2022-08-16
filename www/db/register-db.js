@@ -1,25 +1,4 @@
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-    apiKey: "AIzaSyCC1TTaWpCU4bxhBD2l7ueviKKP1eskrpM",
-    authDomain: "medlog-9650b.firebaseapp.com",
-    databaseURL: "https://medlog-9650b-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "medlog-9650b",
-    storageBucket: "medlog-9650b.appspot.com",
-    messagingSenderId: "955776050336",
-    appId: "1:955776050336:web:7b7e3a9cb38de68d3695c5",
-    measurementId: "G-424MJM444P"
-};
-
-
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
-
-const auth = firebase.auth();
-const db = firebase.firestore();
-
 const registerForm = document.getElementById("register-form");
-
 
 function RegisterPatient(event) {
     event.preventDefault();
@@ -31,17 +10,17 @@ function RegisterPatient(event) {
     const cnp = event.target["cnp"].value;
     const country = event.target["country"].value;
 
-    if(password != confirmPassword) {
+    if (password !== confirmPassword) {
         alert("Passwords do not match");
         return;
     }
 
-    auth.createUserWithEmailAndPassword(email, password)
+    firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
             // Signed in
             var user = userCredential.user;
             
-            db.collection('users').doc(user.uid).set({
+            firebase.firestore().collection('users').doc(user.uid).set({
                 username: name,
                 email: email,
                 password: password, 
@@ -78,12 +57,12 @@ function RegisterDoctor(event) {
         return;
     }
 
-    auth.createUserWithEmailAndPassword(email, password)
+    firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
             // Signed in
             var user = userCredential.user;
 
-            db.collection('users').doc(user.uid).set({
+            firebase.firestore().collection('users').doc(user.uid).set({
                 username: name,
                 email: email,
                 password: password, 
@@ -104,13 +83,15 @@ function RegisterDoctor(event) {
         });
 }
 
-if(location.href.includes("doc")) {
-    registerForm.onsubmit = (event) => {
-        RegisterDoctor(event);
-    }
-}
-else {
-    registerForm.onsubmit = (event) => {
-        RegisterPatient(event);
-    }
-}
+registerForm.onsubmit = location.href.includes("doc") ? RegisterDoctor : RegisterPatient;
+
+// if(location.href.includes("doc")) {
+//     registerForm.onsubmit = (event) => {
+//         RegisterDoctor(event);
+//     }
+// }
+// else {
+//     registerForm.onsubmit = (event) => {
+//         RegisterPatient(event);
+//     }
+// }        

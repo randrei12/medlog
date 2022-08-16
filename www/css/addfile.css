@@ -14,20 +14,6 @@ body {
     background: white;
 }
 
-.container {
-    position: absolute;
-    width: 90%;
-    height: 40px;
-    margin-left: 5%;
-    margin-right: 10%;
-    margin-top: 10%;
-    top: 25px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .leftArrow, .homeButton {
     aspect-ratio: 1;
     width: 40px;
