@@ -16,6 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
 
 .mainDiv {
@@ -57,21 +58,24 @@ body {
     outline: auto;
 }
 
-.logoContainer {
-    width: 100%;
-    height: 25%;
-    background: linear-gradient(110.43deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 100%);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 0px 0px 90px 0px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+textarea {
+    outline: none;
+    width: 276px;
+    height: 40px;
+    padding: 0.5rem;
+    border: 2px solid rgba(93, 120, 247, 0.15);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 15px;
+    font-style: normal;
+    font-size: 1.3rem;
+    color: #000000;
+    margin: 20px;
 }
 
-.accountBackground {
+.container {
+    position: relative;
     width: 100%;
-    height: 45%;
+    height: 50%;
     background: linear-gradient(110.43deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 100%);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 0px 0px 50px 50px;
@@ -81,215 +85,77 @@ body {
     align-items: center;
 }
 
+.homeButton {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 30px;
+    top: 51px;
+
+}
+
+.buttons {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0px;
+    bottom: 0;
+    width: 100%;
+}
+
 .accountCard {
-    width: 80%;
-    height: 75%;
-    background: #FDFDFD;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 25px;
     position: absolute;
-    top: 15%;
-    bottom: 10%;
-    right: 10%;
-    left: 10%;
-}
-
-.accountDocCard {
-    width: 80%;
-    height: 71%;
-    background: #FDFDFD;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 25px;
-    position: absolute;
-    top: 15%;
-    bottom: 10%;
-    right: 10%;
-    left: 10%;
-}
-
-.profileCircle {
-    width: 115px;
-    height: 115px;
+    width: 330px;
+    height: 618px;
+    top: 163px;
     background: #FFFFFF;
-    border-radius: 50%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    position: relative;
-    top: -10%;
-    left: 30%;
-    right: 30%;
+    border-radius: 25px;
+    align-items: center;
+}
+
+.mainText {
+    width: 155px;
+    height: 26px;
+    margin-left: 5%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 33px;
+
+    color: rgba(0, 0, 0, 0.55);
+}
+
+.info {
+   position: fixed;
+   height: 50%;
 }
 
 .profileImgDiv {
+    margin-top: -15%;
+    margin-left: 100px;
     width: 107px;
     height: 107px;
     position: relative;
-    top: 4%;
-    left: 4%;
-    right: 4%;
 }
 
 .profileImg {
+    position: absolute;
     width: 107px;
     height: 107px;
 }
 
-.accountInput {
-    outline: none;
-    width: calc(100% - 25px);
-    max-width: 313px;
-    height: 2.5rem;
-    padding: 15px;
-    border: 2px solid rgba(93, 120, 247, 0.15);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 15px;
-}
-
-.editButton {
-    width: 2%;
-    height: 60%;
-    outline: none;
-    background: linear-gradient(110.43deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 100%);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 25%;
-}
-
-.editButtonDiv {
-    width: 173%;
-    height: 3rem;
-    position: fixed;
-    top: 89%; 
-    bottom: 10%;
-    left: 28%; 
-    right: 28%;
-}
-
-.editButtonDocDiv {
-    width: 173%;
-    height: 3rem;
-    position: fixed;
-    top: 89%; 
-    bottom: 9%;
-    left: 28%; 
-    right: 28%;
-}
-
-.personalData {
-    width: 100%;
-    position: fixed;
-    top: 27%;
-    left: 15%;
-}
-
-.personalDocData {
-    width: 100%;
-    position: fixed;
-    top: 25%;
-    left: 15%;
-}
-
 .name {
-    width: 100%;
-    margin: 1rem 0rem;
-}
-
-.docName {
-    width: 100%;
-    margin: 0.5rem 0rem;
-}
-
-.data {
-    margin: 2%;
-    color: #000000;
-    opacity: 55%;
-}
-
-textarea {
-    outline: none;
-    width: 70%;
-    height: 2.5rem;
-    padding: 0.5rem;
-    border: 2px solid rgba(93, 120, 247, 0.15);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 20px;
+    width: 139px;
+    height: 34px;
     font-style: normal;
-    font-size: 1.3rem;
-    color: #000000;
-    opacity: 60%;
-}
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 58px;
 
-.genderBirth {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    margin-bottom: 1.5rem;
+    color: #FFFFFF;
 }
-
-.gender {
-    width: 50%;
-    height: 2.5rem;
-    margin-right: -4rem;
-}
-
-.selectGender {
-    outline: none;
-    width: 50%;
-    height: 2.5rem;
-    padding: 5px;
-    border: 2px solid rgba(93, 120, 247, 0.15);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 20px;
-    background-color: #FDFDFD;
-    font-style: normal;
-    font-size: 1rem;
-    color: #000000;
-    opacity: 60%;
-}
-
-.date {
-    outline: none;
-    height: 2.5rem;
-    padding: 5px;
-    border: 2px solid rgba(93, 120, 247, 0.15);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 20px;
-    background-color: #FDFDFD;
-    font-style: normal;
-    font-size: 1rem;
-    color: #000000;
-    opacity: 60%;
-}
-
-.docDate {
-    outline: none;
-    width: 70%;
-    height: 2.5rem;
-    padding: 5px;
-    border: 2px solid rgba(93, 120, 247, 0.15);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 20px;
-    background-color: #FDFDFD;
-    font-style: normal;
-    font-size: 1rem;
-    color: #000000;
-    opacity: 60%;
-}
-
-.city {
-    outline: none;
-    width: 70%;
-    height: 2.5rem;
-    padding: 5px;
-    border: 2px solid rgba(93, 120, 247, 0.15);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 20px;
-    background-color: #FDFDFD;
-    font-style: normal;
-    font-size: 1rem;
-    color: #000000;
-    opacity: 60%;
-}
-
 
 .logoContainer img {
     width: 70%;
@@ -332,16 +198,17 @@ h1, p, a {
 }
 .leftArrow {
     position: absolute;
-    left: 15px;
-    top: 20px;
-    
+    width: 31px;
+    height: 31px;
+    left: 30px;
+    top: 51px;
 }
 .patientName {
     position: absolute;
     width: 139px;
     height: 34px;
-    left: 150px;
-    top: 10px;
+    left: 125px;
+    top: 51px;
     font-style: normal;
     font-weight: 500;
     font-size: 35px;
@@ -349,3 +216,4 @@ h1, p, a {
 
     color: #FFFFFF;
 }
+
