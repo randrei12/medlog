@@ -26,7 +26,8 @@ body {
     height: 75%;
 }
 
-select, input {
+select,
+input {
     width: 100%;
     outline: none;
     width: calc(100% - 10px);
@@ -125,12 +126,15 @@ h1 {
     font-size: 3rem;
 }
 
-p, a {
+p,
+a {
     font-weight: bold;
 }
 
-h1, p, a {
-    margin-block: 0px;    
+h1,
+p,
+a {
+    margin-block: 0px;
     color: #5D78F7;
 }
 
@@ -140,8 +144,7 @@ h1, p, a {
     align-items: center;
 }
 
-.border-radius-25
-{
+.border-radius-25 {
     border-radius: 25px !important;
 }
 
@@ -163,4 +166,18 @@ h1, p, a {
 
 .swal2-popup .swal2-styled:focus {
     box-shadow: none !important;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+}
+
+.checked {
+    color: orange;
+  }
+
+.rating__star {
+    cursor: pointer;
+    color: #dabd18b2;
 }
