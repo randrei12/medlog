@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+    font-family: 'Roboto';
+}
+
+body {
+    background: white;
+    position: relative;
+}
+
+.container {
+    position: absolute;
+    width: 90%;
+    height: 40px;
+    margin-left: 5%;
+    margin-right: 10%;
+    margin-top: 10%;
+    top: 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leftArrow, .homeButton {
+    aspect-ratio: 1;
+    width: 40px;
+    height: 40px;
+}
+
+.Title {
+    color: grey;
+    font-size: 150%;
+}
+
+.treatment-container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 90px);
+    grid-template-rows: repeat(10, 90px);
+    place-items: center;
+    position: absolute;
+    top: 15%;
+    width: 90%;
+    height: 70%;
+    margin-left: 5%;
+    margin-top: 5%;
+    overflow-x: hidden;
+    overflow-y: scroll; 
+    background: red;
+}
+
+.add-pill-button {
+    width: 90px;
+    height: 90px;
+    background: white;
+    border-radius: 25px;
+    border-style: dashed;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.plus {
+    position: absolute;
+    margin: auto;
+}
+
+.add-pill-text {
+    position: absolute;
+    color: grey;
+    bottom: 10%;
+}
+    
