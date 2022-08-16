@@ -14,15 +14,25 @@ body {
     background: white;
 }
 
-.leftArrow, .homeButton {
-    aspect-ratio: 1;
-    width: 40px;
-    height: 40px;
+.leftArrow {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 30px;
+    top: 51px;
 }
 
+.homeButton {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 30px;
+    top: 51px;
+}
 .Title {
     color: grey;
     font-size: 150%;
+    margin-top: 50px;
 }
 
 .file-container {
@@ -36,6 +46,11 @@ body {
     margin-top: 5%;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .add-file-button {
     width: 100px;
     height: 100px;
