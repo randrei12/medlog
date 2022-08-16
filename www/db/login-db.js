@@ -51,9 +51,9 @@ function Login(event) {
         .then((result) => {
           console.log(result.data());
           if (result.data().type == USER_TYPES.PATIENT) {
-            window.location.replace("patientHome.html");
+            location = "patientHome.html";
           } else {
-            window.location.replace("docHome.html");
+            location = "docHome.html";
           }
         });
     })
