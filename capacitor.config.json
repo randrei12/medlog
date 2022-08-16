@@ -2,5 +2,10 @@
   "appId": "com.medlog.app",
   "appName": "MedLog",
   "webDir": "www",
-  "bundledWebRuntime": true
+  "bundledWebRuntime": true,
+  "plugins": {
+    "Keyboard": {
+        "resize": "none"
+    }
+  }
 }
