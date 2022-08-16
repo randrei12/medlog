@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+    font-family: 'Roboto';
+}
+
+body {
+    background: white;
+}
+
+.container {
+    position: relative;
+    width: 90%;
+    height: 10%;
+    margin: 5%;
+    display: flex;
+    align-items: center;
+
+}
+
+.leftArrow {
+    aspect-ratio: 1;
+    width: 40px;
+    height: 40px;
+}
+
+.title {
+    position: absolute;
+    font-size: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav {
+    position: relative;
+    width: 90%;
+    height: 5%;
+    margin: 20px;
+    margin-left: 5%;
+    background: white;
+    display: flex;
+}
+
+.nav input[type=text] {
+    width: 85%;
+    height: 100%;
+    border-radius: 15px 0 0 15px;
+    font-size: 17px;
+    border: none;
+    background-color: lightgray;
+    &:hover {
+        cursor: pointer;  
+        background: none;
+        color: transparent;  
+        &:focus {
+            cursor: text;
+        }
+    }
+}
+
+.nav input[type=submit] {
+    width: 15%;
+    height: 100%;
+    border-radius: 0 15px 15px 0;
+    border: none;
+    &:hover {
+        border: auto;
+    }
+}
+
+.patientsList-container {
+    position: relative;
+    background: white;
+    width: 90%;
+    min-height: 70%;
+    max-height: none;
+    left: 5%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.patient-button {
+    width: 100%;
+    min-height: 75px;
+    max-height: 75px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+}
+
+.account-image {
+    aspect-ratio: 1;
+    width: 50px;
+    height: 50px;
+}
+
+.account-name {
+    
+    font-size: 25px;
+}
+
+.add-patient {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+}
