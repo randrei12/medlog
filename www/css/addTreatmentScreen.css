@@ -16,7 +16,7 @@ body {
 }
 
 .container {
-    position: absolute;
+    position: fixed;
     width: 90%;
     height: 40px;
     margin-left: 5%;
@@ -42,19 +42,18 @@ body {
 
 .treatment-container {
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 20px;
     grid-template-columns: repeat(3, 90px);
-    grid-template-rows: repeat(10, 90px);
-    place-items: center;
-    position: absolute;
-    top: 15%;
-    width: 90%;
-    height: 70%;
-    margin-left: 5%;
-    margin-top: 5%;
+    grid-template-rows: repeat(6, 90px) ;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    height: auto;
     overflow-x: hidden;
-    overflow-y: scroll; 
-    background: red;
+    overflow-y: scroll;
+    background: white;
 }
 
 .add-pill-button {
