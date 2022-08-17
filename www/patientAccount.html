@@ -25,8 +25,8 @@
                     <img src="assets/account.png" class="profileImg">
                 </div>
             </div>
-
-            <div class="personalData">
+            
+            <form id="update-profile" class="personalData">
                 <div class="nameDiv">
                     <span class="inputLabel">Name</span>
                     <input class="nameInput">
@@ -34,44 +34,60 @@
                 <div class="dualDiv">
                     <div class="nameDiv">
                         <span class="inputLabel">Gender</span>
-                        <select class="baseSelect">
+                        <select name="gender" class="baseSelect">
                             <option>Male</option>
                             <option>Female</option>
                         </select>
                     </div>
                     <div class="nameDiv">
                         <span class="inputLabel">Birthday</span>
-                        <input type="date" class="date">
+                        <input name="birthdate" type="date" class="date">
                     </div>
                 </div>
                 <div class="dualDiv">
                     <div class="nameDiv">
                         <span class="inputLabel">City</span>
-                        <select class="baseSelect">
-                            <option value="">Cluj Napoca</option>
-                            <option value="">Dej</option>
-                            <option value="">Cuca Macaii</option>
+                        <select name="city" class="baseSelect">
+                            <option value="Cluj-Napoca">Cluj Napoca</option>
+                            <option value="Dej">Dej</option>
+                            <option value="Cuca Macaii">Cuca Macaii</option>
                         </select>
                     </div>
                     <div class="nameDiv">
                         <span class="inputLabel">County</span>
-                        <select class="baseSelect">
-                            <option value="">Cluj</option>
-                            <option value="">Brasov</option>
-                            <option value="">Bucuresti</option>
+                        <select name="county" class="baseSelect">
+                            <option value="Cluj">Cluj</option>
+                            <option value="Brasov">Brasov</option>
+                            <option value="Bucuresti">Bucuresti</option>
                         </select>                    
                     </div>
                 </div>
                 <div class="nameDiv">
                     <span class="inputLabel">Family Doctor</span>
-                    <input class="familyInput" />
+                    <input id="family-doctor" class="familyInput" />
                 </div>
-            </div>
+
+                
+            </form>
         </div>
         <div class="editButtonDiv">
-            <button class="baseButton">Edit Profile</button>
+            <button type="submit" form="update-profile" class="baseButton">Update Profile</button>
         </div>
     </div>
+
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+
+    <script src="db/profile-db.js"></script>
 </body>
 
 </html>

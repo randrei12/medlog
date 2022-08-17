@@ -64,10 +64,10 @@ function RegisterDoctor(event) {
 
             firebase.firestore().collection('users').doc(user.uid).set({
                 username: name,
-                email: email,
-                password: password, 
-                specialization: specialization, 
-                country: country,
+                email,
+                password, 
+                specialization, 
+                country,
                 uid: user.uid,
                 type: "doctor"
             })
