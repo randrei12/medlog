@@ -54,14 +54,6 @@ body {
     font-size: 17px;
     border: none;
     background-color: lightgray;
-    &:hover {
-        cursor: pointer;  
-        background: none;
-        color: transparent;  
-        &:focus {
-            cursor: text;
-        }
-    }
 }
 
 .nav input[type=submit] {
@@ -69,9 +61,6 @@ body {
     height: 100%;
     border-radius: 0 15px 15px 0;
     border: none;
-    &:hover {
-        border: auto;
-    }
 }
 
 .patientsList-container {
