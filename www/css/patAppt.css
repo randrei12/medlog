@@ -77,6 +77,9 @@ button:focus {
     top: 189px;
     background: #FDFDFD;
     border-radius: 50px 50px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .helloText {
@@ -135,7 +138,13 @@ p, a {
 
 h1, p, a {
     margin-block: 0px;    
-    color: #FFFFFF;
+    font-style: bold;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+
+    color: #000000;
 }
 
 .swapAuth {
