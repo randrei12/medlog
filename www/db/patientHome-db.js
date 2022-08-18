@@ -1,4 +1,4 @@
-import Loading from "../js/loading";
+import Loading from "../js/loading.js";
 
 const cardsContainter = document.getElementById("cards-container");
 
