@@ -139,7 +139,16 @@
     min-width: 280px;
     height: 150px;
     margin-right: 15px;
-    text-align: center;
+    color: white;
     background: linear-gradient(110.43deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 100%);
     border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
 }
+.scroll .card p{
+    color: white I !important;
+}
+
+.checked {
+    color: orange;
+  }
