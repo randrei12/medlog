@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
 * {
     box-sizing: border-box;
@@ -6,6 +6,7 @@
 
 :root {
     font-family: 'Roboto';
+    font-weight: 300;
 }
 
 body {
@@ -16,7 +17,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
 }
 
 .mainDiv {
@@ -27,7 +27,8 @@ body {
     height: 75%;
 }
 
-.baseInput {
+select, input {
+    width: 100%;
     outline: none;
     width: calc(100% - 10px);
     max-width: 313px;
@@ -38,38 +39,22 @@ body {
     border-radius: 20px;
 }
 
-.baseButton {
-    width: 276px;
+button {
+    width: 173px;
     height: 3rem;
     background: linear-gradient(96.4deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 94.02%);
     border-radius: 25px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     font-style: normal;
-    font-weight: 500;
     font-size: 25px;
     line-height: 36px;
     border: none;
     color: #FFFFFF;
-    margin: 10px;
 }
 
-.baseButton:focus {
+button:focus {
     outline: auto;
-}
-
-input {
-    outline: none;
-    width: 276px;
-    height: 40px;
-    padding: 0.5rem;
-    border: 2px solid rgba(93, 120, 247, 0.15);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 15px;
-    font-style: normal;
-    font-size: 1.3rem;
-    color: #000000;
-    margin: 5% 20px;  
 }
 
 .container {
@@ -79,86 +64,51 @@ input {
     background: linear-gradient(110.43deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 100%);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 0px 0px 50px 50px;
-    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.accountCard {
+    position: absolute;
+    width: 100%;
+    height: 672px;
+    left: 0px;
+    top: 189px;
+    background: #FDFDFD;
+    border-radius: 50px 50px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.helloText {
+    position: absolute;
+    top: 90px;
+    left: 156px;
+}
+.profileImg {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 39px;
+    top: 71px;
 }
 
 .homeButton {
     position: absolute;
     width: 25px;
     height: 25px;
-    right: 30px;
-    top: 51px;
-
+    right: 31px;
+    top: 31px;
 }
 
-.buttons {
+.leftArrow {
     position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 0px;
-    bottom: 0;
-    width: 100%;
-}
-
-.accountCard {
-    position: absolute;
-    width: 330px;
-    height: 618px;
-    top: 163px;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 25px;
-    align-items: center;
-}
-
-.mainText {
-    width: 155px;
-    height: 26px;
-    margin-left: 5%;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 33px;
-
-    color: rgba(0, 0, 0, 0.55);
-}
-
-.info {
-   position: fixed;
-   height: 50%;
-}
-
-.profileImgDiv {
-    margin-top: -15%;
-    margin-left: 100px;
-    width: 107px;
-    height: 107px;
-    position: relative;
-}
-
-.profileImg {
-    position: absolute;
-    width: 107px;
-    height: 107px;
-}
-
-.name {
-    width: 139px;
-    height: 34px;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 35px;
-    line-height: 58px;
-
-    color: #FFFFFF;
-}
-
-.logoContainer img {
-    width: 70%;
+    width: 31px;
+    height: 31px;
+    left: 20px;
+    top: 31px;
 }
 
 .AuthLabel {
@@ -188,7 +138,13 @@ p, a {
 
 h1, p, a {
     margin-block: 0px;    
-    color: #5D78F7;
+    font-style: bold;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+
+    color: #000000;
 }
 
 .swapAuth {
@@ -196,24 +152,18 @@ h1, p, a {
     flex-direction: column;
     align-items: center;
 }
-.leftArrow {
-    position: absolute;
-    width: 31px;
-    height: 31px;
-    left: 30px;
-    top: 51px;
-}
-.patientName {
-    position: absolute;
-    width: 139px;
-    height: 34px;
-    left: 125px;
-    top: 51px;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 35px;
-    line-height: 58px;
 
-    color: #FFFFFF;
+.pick {
+    height: 100px;
+    top: 800px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
+.checkbox {
+    width: 20px;
+    height: 20px;
+}
+.book {
+    top:0px;
+}

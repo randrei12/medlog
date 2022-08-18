@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="db/config.js" type="module"></script>
+    <link rel="stylesheet" href="css/patientAccount.css">
+    <script src="js/patient/account.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="accountBackground">
+        <div class="topNavContainer">
+            <img class="leftArrow" src="assets/left-arrow-gri.png">
+            <span class="Title">Add Treatment</span>
+            <img class="homeButton" src="assets/home-gri.png">
+        </div>
+        <div class="accountCard">
+            <div class="profileCircle">
+                <div class="profileImgDiv">
+                    <img src="assets/account.png" class="profileImg">
+                </div>
+            </div>
+            
+            <form id="update-profile" class="personalData">
+                <div class="nameDiv">
+                    <span class="inputLabel">Name</span>
+                    <input class="nameInput">
+                </div>
+                <div class="dualDiv">
+                    <div class="nameDiv">
+                        <span class="inputLabel">Gender</span>
+                        <select name="gender" class="baseSelect">
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+                    <div class="nameDiv">
+                        <span class="inputLabel">Birthday</span>
+                        <input name="birthdate" type="date" class="date">
+                    </div>
+                </div>
+                <div class="dualDiv">
+                    <div class="nameDiv">
+                        <span class="inputLabel">City</span>
+                        <select name="city" class="baseSelect">
+                            <option value="Cluj-Napoca">Cluj Napoca</option>
+                            <option value="Dej">Dej</option>
+                            <option value="Cuca Macaii">Cuca Macaii</option>
+                        </select>
+                    </div>
+                    <div class="nameDiv">
+                        <span class="inputLabel">County</span>
+                        <select name="county" class="baseSelect">
+                            <option value="Cluj">Cluj</option>
+                            <option value="Brasov">Brasov</option>
+                            <option value="Bucuresti">Bucuresti</option>
+                        </select>                    
+                    </div>
+                </div>
+                <div class="nameDiv">
+                    <span class="inputLabel">Family Doctor</span>
+                    <input id="family-doctor" class="familyInput" />
+                </div>
+
+                
+            </form>
+        </div>
+        <div class="editButtonDiv">
+            <button type="submit" form="update-profile" class="baseButton">Update Profile</button>
+        </div>
+    </div>
+
+    <script src="db/profile-db.js" type="module"></script>
+</body>
+
+</html>

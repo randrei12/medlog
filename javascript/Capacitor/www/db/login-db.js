@@ -1,47 +1,38 @@
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-    apiKey: "AIzaSyCC1TTaWpCU4bxhBD2l7ueviKKP1eskrpM",
-    authDomain: "medlog-9650b.firebaseapp.com",
-    databaseURL: "https://medlog-9650b-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "medlog-9650b",
-    storageBucket: "medlog-9650b.appspot.com",
-    messagingSenderId: "955776050336",
-    appId: "1:955776050336:web:7b7e3a9cb38de68d3695c5",
-    measurementId: "G-424MJM444P"
-};
+async function selectRoleScreen(user) {
+  if (!user) {
+    return;
+  }
 
+  try {
+    let usersCollection = firebase.firestore().collection("users");
+    let result = await usersCollection.doc(user.uid).get();
+    console.log(result.data());
+    location = (result.data().type == USER_TYPES.PATIENT)
+      ? "patientHome.html"
+      : "docHome.html";
+  }
+  catch (error) {
+    alert(error.message);
+  }
+}
 
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
+async function login(event) {
+  event.preventDefault();
 
-const database = firebase.database();
-const auth = firebase.auth();
+  const email = event.target["email"].value;
+  const password = event.target["password"].value;
+
+  try {
+    let userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
+    // Signed in
+    await selectRoleScreen(userCredential.user);
+  }
+  catch (error) {
+    alert(error.message);
+  }
+}
+
+firebase.auth().onAuthStateChanged(user => selectRoleScreen(user))
 
 const loginForm = document.getElementById("login-form");
-
-
-function Login(event) {
-    event.preventDefault();
-
-    const email = event.target["email"].value;
-    const password = event.target["password"].value;
-
-    auth.signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            // Signed in
-            var user = userCredential.user;
-            // ...
-            console.log(user);
-        
-            
-        })
-        .catch((error) => {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            alert(errorMessage);
-        });
-
-};
-
-loginForm.onsubmit = (event) => { Login(event) }
+loginForm.onsubmit = event => login(event);

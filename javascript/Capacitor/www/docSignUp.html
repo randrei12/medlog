@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
+<script src="db/config.js" type="module"></script>
     <title>Document</title>
 </head>
 
@@ -13,7 +14,7 @@
     <div class="logoContainer">
         <img src="assets/banner.png" alt="MedLog">
     </div>
-    <form id="register-form" class="mainDiv">
+    <form id="register-form" method="post" class="mainDiv">
         <div class="AuthContainer">
             <p class="AuthLabel">Name</p>
             <input name="name" ty pe="text" class="baseInput">
@@ -45,17 +46,8 @@
         </div>
         <button type="submit" class="baseButton">Sign Up</button>
     </form>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
-
-    <script src="db/register-db.js"></script>
+    
+    <script src="db/register-db.js" type="module"></script>
 </body>
 
 </html>
