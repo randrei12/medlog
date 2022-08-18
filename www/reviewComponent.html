@@ -12,6 +12,7 @@
 
 <body>
 
+
     <button class="baseButton">Write a review</button>
 </body>
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
@@ -19,62 +20,6 @@
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script defer type="module">
-    import { params } from "./js/Utils.js";
-    //import { getDoctorReview } from "./db/DoctorService.js";
-
-    const getDoctorReview = async (id) => {
-        const result = await firebase.firestore().collection("ratings")
-            .doc(id)
-            .get();
-        const data = result.data();
-        return {
-            average: data.average,
-            noOfReviews: data.noOfReviews
-        };
-    }
-
-    const button = document.querySelector(".baseButton");
-
-    function fireStar(star, average, noOfReviews) {
-        const newAverage = ((average * noOfReviews) + star) / (noOfReviews + 1);
-    }
-
-
-
-    button.onclick = async () => {
-        const rating = document.querySelector(".rating");
-        const { average, noOfReviews } = await getDoctorReview(params.doctor);
-
-        let html = '<div class="rating">';
-        for (let i = 1; i < 6; i++) {
-            html += `<span class="fa fa-star ${average >= i ? "checked" : ""}" onClick="fireStar(${i},${average},${noOfReviews})"></span>`;
-        }
-        html += '</div>';
-        const { value: text } = await Swal.fire(
-            {
-                title: `${html}
-                <strong>Write a review</strong>`,
-                input: 'textarea',
-                inputLabel: 'Message',
-                inputPlaceholder: 'Type your message here...',
-                inputAttributes:
-                {
-                    'aria-label': 'Type your message here'
-                },
-                showCloseButton: true,
-                customClass:
-                {
-                    popup: 'border-radius-25',
-                    closeButton: 'popUpCloseButton',
-                },
-                confirmButtonText: 'Review',
-                buttonsStyling: false
-            });
-        if (text) {
-            Swal.fire(text)
-        }
-    }
-</script>
+<script defer type="module" src="js/patient/reviewComponent.js"></script>
 
 </html>

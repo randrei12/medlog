@@ -1,43 +1,38 @@
-import Loading from "../js/loading.js";
+async function selectRoleScreen(user) {
+  if (!user) {
+    return;
+  }
 
-firebase.auth().onAuthStateChanged((user) => {
-    if (user) firebase.firestore().collection("users").doc(user.uid).get().then(e => location = e.data().type == USER_TYPES.PATIENT ? "patientHome.html" : "docHome.html")
-})
-
-const loginForm = document.getElementById("login-form");
-
-const loading = new Loading();
-function Login(event) {
-    event.preventDefault();
-    loading.show();
-    const email = event.target["email"].value;
-    const password = event.target["password"].value;
-
-    firebase.auth()
-        .signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            // Signed in
-            var user = userCredential.user;
-
-            firebase.firestore().collection("users")
-                .doc(user.uid)
-                .get()
-                .then((result) => {
-                    console.log(result.data());
-                    loading.hide();
-                    if (result.data().type == USER_TYPES.PATIENT) {
-                        location = "patientHome.html";
-                    } else {
-                        location = "docHome.html";
-                    }
-                });
-        })
-        .catch((error) => {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            loading.hide();
-            alert(errorMessage);
-        });
+  try {
+    let usersCollection = firebase.firestore().collection("users");
+    let result = await usersCollection.doc(user.uid).get();
+    console.log(result.data());
+    location = (result.data().type == USER_TYPES.PATIENT)
+      ? "patientHome.html"
+      : "docHome.html";
+  }
+  catch (error) {
+    alert(error.message);
+  }
 }
 
-loginForm.onsubmit = Login;
+async function login(event) {
+  event.preventDefault();
+
+  const email = event.target["email"].value;
+  const password = event.target["password"].value;
+
+  try {
+    let userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
+    // Signed in
+    await selectRoleScreen(userCredential.user);
+  }
+  catch (error) {
+    alert(error.message);
+  }
+}
+
+firebase.auth().onAuthStateChanged(user => selectRoleScreen(user))
+
+const loginForm = document.getElementById("login-form");
+loginForm.onsubmit = event => login(event);
