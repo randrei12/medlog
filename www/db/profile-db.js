@@ -1,32 +1,13 @@
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-    apiKey: "AIzaSyCC1TTaWpCU4bxhBD2l7ueviKKP1eskrpM",
-    authDomain: "medlog-9650b.firebaseapp.com",
-    databaseURL: "https://medlog-9650b-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "medlog-9650b",
-    storageBucket: "medlog-9650b.appspot.com",
-    messagingSenderId: "955776050336",
-    appId: "1:955776050336:web:7b7e3a9cb38de68d3695c5",
-    measurementId: "G-424MJM444P"
-};
-
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
-
-const database = firebase.firestore();
-const auth = firebase.auth();
+import Loading from "../js/loading.js";
+const loading = new Loading();
 
 const accountCard = document.getElementById("account-card");
 const updateForm = document.getElementById("update-profile")
 
+loading.show();
 auth.onAuthStateChanged((user) => {
-    if (user) {
-        LoadProfile(user.uid);
-    }
-    else {
-        window.location = "./patSignUp.html";
-    }
+    if (user) LoadProfile(user.uid);
+    else location = "./patSignUp.html";
 })
 
 function LoadProfile(uid) {
@@ -92,10 +73,11 @@ function LoadProfile(uid) {
             `
             */
             console.log(document.getElementById("update-profile"));
+            loading.hide();
 
             document.getElementById("update-profile").onsubmit = (event) => {
-               
                 event.preventDefault();
+                loading.show();
 
                 const name = event.target["username"].value;
                 const gender = event.target["gender"].value;
@@ -117,6 +99,7 @@ function LoadProfile(uid) {
                     familyDoctor: familyDoctors
                 })
                 .then(() => {
+                    loading.hide();
                     alert("account updated");
                 });
                 return false;
@@ -126,18 +109,19 @@ function LoadProfile(uid) {
             //accountCard.innerHTML = accountContent;
 
         } else {
+            loading.hide();
             // doc.data() will be undefined in this case
             console.log("No such document!");
         }
     }).catch((error) => {
         console.log("Error getting document:", error);
+        loading.hide();
     });
 }
 
 function UpdateProfile(event, uid) {
     event.preventDefault();
-
-    alert('wokring')
+    loading.show();
     
     const name = event.target["name"].value;
     const gender = event.target["gender"].value
@@ -155,6 +139,9 @@ function UpdateProfile(event, uid) {
         familyDoctor: familyDoctors
     })
     .then(() => {
-        alert("account updated");
+        loading.hide();
+    }).catch((error) => {
+        alert("Error");
+        loading.hide();
     });
 }
