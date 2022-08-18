@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
 * {
     box-sizing: border-box;
@@ -6,28 +6,52 @@
 
 :root {
     font-family: 'Roboto';
+    font-weight: 300;
 }
 
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: 100%;
+    overflow: auto;
     /* temporar */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
+.body {
+    min-height: 100%;
+}
+
+.topNavContainer {
+    position: absolute;
+    width: 80%;
+    height: 40px;
+    left: 10%;
+    top: 10px;
+    top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topNavContainer img {
+    aspect-ratio: 1;
+    width: 25px;
+}
+
 .mainDiv {
+    margin-top: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     height: 75%;
+    gap: 15px;
 }
 
-select,
-input {
+select, input {
     width: 100%;
     outline: none;
     width: calc(100% - 10px);
@@ -47,15 +71,9 @@ button {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     font-style: normal;
-    font-weight: 500;
     font-size: 25px;
-    line-height: 36px;
     border: none;
     color: #FFFFFF;
-}
-
-.popUpCloseButton {
-    box-shadow: unset;
 }
 
 button:focus {
@@ -64,7 +82,7 @@ button:focus {
 
 .logoContainer {
     width: 100%;
-    height: 25%;
+    height: 200px;
     background: linear-gradient(110.43deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 100%);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 0px 0px 90px 0px;
@@ -76,7 +94,7 @@ button:focus {
 
 .accountBackground {
     width: 100%;
-    height: 45%;
+    height: 45vh;
     background: linear-gradient(110.43deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 100%);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 0px 0px 50px 50px;
@@ -126,15 +144,12 @@ h1 {
     font-size: 3rem;
 }
 
-p,
-a {
+p, a {
     font-weight: bold;
 }
 
-h1,
-p,
-a {
-    margin-block: 0px;
+h1, p, a {
+    margin-block: 0px;    
     color: #5D78F7;
 }
 
@@ -144,48 +159,34 @@ a {
     align-items: center;
 }
 
-.border-radius-25 {
-    border-radius: 25px !important;
+.docOrPatientButton {
+    width: 280px;
+    height: 59px;
 }
 
-.baseButton {
-    width: 300px;
-    height: 50px;
-    background: linear-gradient(96.4deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 94.02%);
-    border-radius: 25px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    font-style: normal;
-    font-weight: 500;
-    font-size: 25px;
-    line-height: 36px;
-    border: none;
-    color: #FFFFFF;
-    margin: 10px;
-}
-
-.swal2-popup .swal2-styled:focus {
-    box-shadow: none !important;
-}
-
-.rating {
+.loadingContainer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.5s ease-in-out;
 }
 
-.checked {
-    color: orange;
+.loadingContainer .loadingDiv {
+    width: calc(100% - 10px);
+    aspect-ratio: 16 / 9;
+    background: white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.fa-star:hover {
-    color: orange; 
-}
-
-.fa:hover {
-    color: orange; 
-}
-
-.rating__star {
-    cursor: pointer;
-    color: #dabd18b2;
+.loadingContainer .loadingDiv img {
+    height: 100%;
 }

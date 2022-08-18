@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
 * {
     box-sizing: border-box;
@@ -6,6 +6,7 @@
 
 :root {
     font-family: 'Roboto';
+    font-weight: 300;
 }
 
 body {
@@ -26,8 +27,7 @@ body {
     height: 75%;
 }
 
-select,
-input {
+select, input {
     width: 100%;
     outline: none;
     width: calc(100% - 10px);
@@ -47,62 +47,68 @@ button {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     font-style: normal;
-    font-weight: 500;
     font-size: 25px;
     line-height: 36px;
     border: none;
     color: #FFFFFF;
 }
 
-.popUpCloseButton {
-    box-shadow: unset;
-}
-
 button:focus {
     outline: auto;
 }
 
-.logoContainer {
+.container {
+    position: relative;
     width: 100%;
-    height: 25%;
-    background: linear-gradient(110.43deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 100%);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 0px 0px 90px 0px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.accountBackground {
-    width: 100%;
-    height: 45%;
+    height: 50%;
     background: linear-gradient(110.43deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 100%);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 0px 0px 50px 50px;
-    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.city {
-    outline: none;
-    width: 70%;
-    height: 2.5rem;
-    padding: 5px;
-    border: 2px solid rgba(93, 120, 247, 0.15);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 20px;
-    background-color: #FDFDFD;
-    font-style: normal;
-    font-size: 1rem;
-    color: #000000;
-    opacity: 60%;
+.accountCard {
+    position: absolute;
+    width: 100%;
+    height: 672px;
+    left: 0px;
+    top: 189px;
+    background: #FDFDFD;
+    border-radius: 50px 50px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.logoContainer img {
-    width: 70%;
+.helloText {
+    position: absolute;
+    top: 90px;
+    left: 156px;
+}
+.profileImg {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 39px;
+    top: 71px;
+}
+
+.homeButton {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 31px;
+    top: 31px;
+}
+
+.leftArrow {
+    position: absolute;
+    width: 31px;
+    height: 31px;
+    left: 20px;
+    top: 31px;
 }
 
 .AuthLabel {
@@ -126,16 +132,19 @@ h1 {
     font-size: 3rem;
 }
 
-p,
-a {
+p, a {
     font-weight: bold;
 }
 
-h1,
-p,
-a {
-    margin-block: 0px;
-    color: #5D78F7;
+h1, p, a {
+    margin-block: 0px;    
+    font-style: bold;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+
+    color: #000000;
 }
 
 .swapAuth {
@@ -144,48 +153,17 @@ a {
     align-items: center;
 }
 
-.border-radius-25 {
-    border-radius: 25px !important;
+.pick {
+    height: 100px;
+    top: 800px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
-.baseButton {
-    width: 300px;
-    height: 50px;
-    background: linear-gradient(96.4deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 94.02%);
-    border-radius: 25px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    font-style: normal;
-    font-weight: 500;
-    font-size: 25px;
-    line-height: 36px;
-    border: none;
-    color: #FFFFFF;
-    margin: 10px;
+.checkbox {
+    width: 20px;
+    height: 20px;
 }
-
-.swal2-popup .swal2-styled:focus {
-    box-shadow: none !important;
-}
-
-.rating {
-    display: flex;
-    justify-content: center;
-}
-
-.checked {
-    color: orange;
-}
-
-.fa-star:hover {
-    color: orange; 
-}
-
-.fa:hover {
-    color: orange; 
-}
-
-.rating__star {
-    cursor: pointer;
-    color: #dabd18b2;
+.book {
+    top:0px;
 }

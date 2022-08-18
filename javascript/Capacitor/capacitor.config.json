@@ -1,0 +1,11 @@
+{
+  "appId": "com.medlog.app",
+  "appName": "MedLog",
+  "webDir": "www",
+  "bundledWebRuntime": true,
+  "plugins": {
+    "Keyboard": {
+        "resize": "none"
+    }
+  }
+}

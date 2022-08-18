@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+<script src="db/config.js" type="module"></script>
+    <link rel="stylesheet" href="css/docAccount.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="accountBackground">
+        <div class="accountDocCard">
+            <div class="profileCircle">
+                <div class="profileImgDiv">
+                    <img src="assets/account.png" class="profileImg">
+                </div>
+            </div>
+
+            <div class="personalDocData">
+                <div class="docName">
+                    <p class="data">Name</p>
+                    <form>
+                        <textarea>Nume Prenume</textarea>
+                    </form>
+                </div>
+                <div class="docName">
+                    <p class="data">Specialization</p>
+                    <form>
+                        <textarea>Specialization</textarea>
+                    </form>
+                </div>
+                <div class="docName">
+                    <p class="data">City&Country</p>
+                    <form>
+                        <select class="city">
+                            <option>Cluj-Napoca, Cluj</option>
+                            <option>Oradea, Bihor</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="docName">
+                    <p class="data">Hospital</p>
+                    <form>
+                        <textarea>Hospital</textarea>
+                    </form>
+                </div>
+                <div class="docName">
+                    <p class="data">Schedule</p>
+                    <input type="date" class="docDate">
+                </div>
+            </div>
+        </div>
+        <div class="editButtonDocDiv">
+            <button class="baseButton">Edit Profile</button>
+        </div>
+    </div>
+</body>
+</html>

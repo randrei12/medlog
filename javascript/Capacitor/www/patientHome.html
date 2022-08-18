@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="db/config.js" type="module"></script>
+    <link rel="stylesheet" href="css/patientHome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/patient/home.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div class="account">
+            <img src="assets/account.png" class="accountImg">
+            <div class="nameBox">
+                <p class="name2">Hello, Name!</p>
+                <p class="help">How can we help you today?</p>
+            </div>
+        </div>
+        <div class="searchBarDiv">
+            <input type="text" placeholder="Find the right doctor for you" class="searchBar">
+        </div>
+        <div class="calendar">
+
+        </div>
+        <div class="buttonContainer">
+            <button class="button">
+                <img src="assets/medicine.png" class="buttonIcon">
+                <p class="buttonText">Treatment</p>
+            </button>
+            <button class="button">
+                <img src="assets/prescription.png" class="buttonIcon">
+                <p class="buttonText">Prescription</p>
+            </button>
+            <button class="button">
+                <img src="assets/health-check.png" class="buttonIcon">
+                <p class="buttonText">Medical History</p>
+            </button>
+        </div>
+        <p class="text">Are you looking for a specialist?</p>
+        <div id="cards-container" class="scroll">
+            
+        </div>
+    </div>
+    <button onclick="firebase.auth().signOut()">Random Log Out Button</button>
+    <script src="./db/patientHome-db.js" type="module"></script>
+</body>
+</html>

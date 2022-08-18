@@ -1,0 +1,136 @@
+.accountCard {
+    width: 80%;
+    height: 70%;
+    background: #FDFDFD;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    position: absolute;
+    top: 15%;
+    bottom: 10%;
+    right: 10%;
+    left: 10%;
+}
+
+.profileCircle {
+    width: 115px;
+    height: 115px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.profileImgDiv {
+    width: 107px;
+    height: 107px;
+    position: relative;
+    top: 4%;
+    left: 4%;
+    right: 4%;
+}
+
+.profileImg {
+    width: 107px;
+    height: 107px;
+}
+
+.personalData {
+    margin-top: 50px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.personalData input {
+    width: 100%;
+}
+
+.nameDiv {
+    width: 100%;
+    /* margin: 1rem 0rem; */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.editButton {
+    width: 2%;
+    height: 60%;
+    outline: none;
+    background: linear-gradient(110.43deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25%;
+}
+
+.editButtonDiv {
+    width: 173%;
+    height: 3rem;
+    position: fixed;
+    top: 89%;
+    bottom: 10%;
+    left: 28%;
+    right: 28%;
+}
+
+.dualDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.dualDiv .nameDiv {
+    width: 48%;
+}
+
+.dualDiv .nameDiv select, .dualDiv .nameDiv input {
+    width: 100%;
+}
+
+.gender {
+    width: 50%;
+    height: 2.5rem;
+    margin-right: -4rem;
+}
+
+.baseSelect, .nameInput, .date, .familyInput {
+    outline: none;
+    height: 2.5rem;
+    border: 2px solid rgba(93, 120, 247, 0.15);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    color: #000000;
+    opacity: 60%;
+    border-radius: 20px;
+}
+
+.baseSelect {
+    width: 50%;
+    padding: 5px 15px;
+    background-color: #FDFDFD;
+}
+
+.nameInput {
+    width: 70%;
+    padding: 0.5rem 15px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    font-size: 1.3rem;
+}
+
+.date {
+    padding: 5px 15px;
+    background-color: #FDFDFD;
+}
+
+.familyInput {
+    width: 100%;
+}
+
+.inputLabel {
+    margin: 2%;
+    color: #000000;
+    opacity: 55%;
+}

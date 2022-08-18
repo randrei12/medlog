@@ -16,6 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
 
 .mainDiv {
@@ -26,9 +27,7 @@ body {
     height: 75%;
 }
 
-select,
-input {
-    width: 100%;
+.baseInput {
     outline: none;
     width: calc(100% - 10px);
     max-width: 313px;
@@ -39,8 +38,8 @@ input {
     border-radius: 20px;
 }
 
-button {
-    width: 173px;
+.baseButton {
+    width: 276px;
     height: 3rem;
     background: linear-gradient(96.4deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 94.02%);
     border-radius: 25px;
@@ -52,31 +51,31 @@ button {
     line-height: 36px;
     border: none;
     color: #FFFFFF;
+    margin: 10px;
 }
 
-.popUpCloseButton {
-    box-shadow: unset;
-}
-
-button:focus {
+.baseButton:focus {
     outline: auto;
 }
 
-.logoContainer {
-    width: 100%;
-    height: 25%;
-    background: linear-gradient(110.43deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 100%);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 0px 0px 90px 0px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+input {
+    outline: none;
+    width: 276px;
+    height: 40px;
+    padding: 0.5rem;
+    border: 2px solid rgba(93, 120, 247, 0.15);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 15px;
+    font-style: normal;
+    font-size: 1.3rem;
+    color: #000000;
+    margin: 5% 20px;  
 }
 
-.accountBackground {
+.container {
+    position: relative;
     width: 100%;
-    height: 45%;
+    height: 50%;
     background: linear-gradient(110.43deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 100%);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 0px 0px 50px 50px;
@@ -86,19 +85,76 @@ button:focus {
     align-items: center;
 }
 
-.city {
-    outline: none;
-    width: 70%;
-    height: 2.5rem;
-    padding: 5px;
-    border: 2px solid rgba(93, 120, 247, 0.15);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 20px;
-    background-color: #FDFDFD;
+.homeButton {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 30px;
+    top: 51px;
+
+}
+
+.buttons {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0px;
+    bottom: 0;
+    width: 100%;
+}
+
+.accountCard {
+    position: absolute;
+    width: 330px;
+    height: 618px;
+    top: 163px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    align-items: center;
+}
+
+.mainText {
+    width: 155px;
+    height: 26px;
+    margin-left: 5%;
     font-style: normal;
-    font-size: 1rem;
-    color: #000000;
-    opacity: 60%;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 33px;
+
+    color: rgba(0, 0, 0, 0.55);
+}
+
+.info {
+   position: fixed;
+   height: 50%;
+}
+
+.profileImgDiv {
+    margin-top: -15%;
+    margin-left: 100px;
+    width: 107px;
+    height: 107px;
+    position: relative;
+}
+
+.profileImg {
+    position: absolute;
+    width: 107px;
+    height: 107px;
+}
+
+.name {
+    width: 139px;
+    height: 34px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 58px;
+
+    color: #FFFFFF;
 }
 
 .logoContainer img {
@@ -126,15 +182,12 @@ h1 {
     font-size: 3rem;
 }
 
-p,
-a {
+p, a {
     font-weight: bold;
 }
 
-h1,
-p,
-a {
-    margin-block: 0px;
+h1, p, a {
+    margin-block: 0px;    
     color: #5D78F7;
 }
 
@@ -143,49 +196,24 @@ a {
     flex-direction: column;
     align-items: center;
 }
-
-.border-radius-25 {
-    border-radius: 25px !important;
+.leftArrow {
+    position: absolute;
+    width: 31px;
+    height: 31px;
+    left: 30px;
+    top: 51px;
 }
-
-.baseButton {
-    width: 300px;
-    height: 50px;
-    background: linear-gradient(96.4deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 94.02%);
-    border-radius: 25px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+.patientName {
+    position: absolute;
+    width: 139px;
+    height: 34px;
+    left: 125px;
+    top: 51px;
     font-style: normal;
     font-weight: 500;
-    font-size: 25px;
-    line-height: 36px;
-    border: none;
+    font-size: 35px;
+    line-height: 58px;
+
     color: #FFFFFF;
-    margin: 10px;
 }
 
-.swal2-popup .swal2-styled:focus {
-    box-shadow: none !important;
-}
-
-.rating {
-    display: flex;
-    justify-content: center;
-}
-
-.checked {
-    color: orange;
-}
-
-.fa-star:hover {
-    color: orange; 
-}
-
-.fa:hover {
-    color: orange; 
-}
-
-.rating__star {
-    cursor: pointer;
-    color: #dabd18b2;
-}
