@@ -38,7 +38,7 @@ database.collection('users').get().then(snapshot => {
         userElement.classList = "card";
         
         userElement.onclick = () => {
-            location = `./doctor.html?id=${element.id}`;
+            location = `./reviewComponent.html?doctor=${element.id}`;
         }
 
         if(userData["type"] == "doctor") {

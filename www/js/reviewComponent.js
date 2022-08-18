@@ -1,5 +1,5 @@
-import { params } from "../Utils.js";
-import { getDoctorReview, addStarReview, addCommentReview } from "../../db/DoctorService.js";
+import { params } from "./Utils.js";
+import { getDoctorReview, addStarReview, addCommentReview } from "../db/DoctorService.js";
 
 const button = document.querySelector(".baseButton");
 
