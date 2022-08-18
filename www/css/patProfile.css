@@ -58,7 +58,7 @@ body {
     outline: auto;
 }
 
-textarea {
+input {
     outline: none;
     width: 276px;
     height: 40px;
@@ -69,7 +69,7 @@ textarea {
     font-style: normal;
     font-size: 1.3rem;
     color: #000000;
-    margin: 20px;
+    margin: 5% 20px;  
 }
 
 .container {
