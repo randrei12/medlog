@@ -14,8 +14,17 @@ body {
     background: white;
 }
 
+.hide-board {
+    position: fixed;
+    width: 100%;
+    height: 20%;
+    background: white;
+    border-radius: 0 0 25px 25px;
+    z-index: -1;
+}
+
 .container {
-    position: relative;
+    position: fixed;
     width: 90%;
     height: 10%;
     margin: 5%;
@@ -38,7 +47,8 @@ body {
 }
 
 .nav {
-    position: relative;
+    position: fixed;
+    top: 10%;
     width: 90%;
     height: 5%;
     margin: 20px;
@@ -63,16 +73,19 @@ body {
     border: none;
 }
 
+
+
 .patientsList-container {
-    position: relative;
+    position: absolute;
+    top: 25%;
     background: white;
     width: 90%;
-    min-height: 70%;
-    max-height: none;
+    height: auto;
     left: 5%;
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
+    overflow-y: auto;
+    z-index: -2;
 }
 
 .patient-button {
@@ -87,22 +100,39 @@ body {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
 }
 
+.patient-details {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    background-color: transparent;
+}
+
 .account-image {
     aspect-ratio: 1;
     width: 50px;
     height: 50px;
 }
 
-.account-name {
-    
-    font-size: 25px;
+.nume, .prenume {
+    width: auto;
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 2% ;
 }
 
 .add-patient {
+    position: fixed;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    position: absolute;
+    width: 70px;
+    height: 70px;
     right: 5%;
     bottom: 5%;
+}
+
+.plus {
+    aspect-ratio: 1;
+    width: 70%;
+    height: 70%;
 }
