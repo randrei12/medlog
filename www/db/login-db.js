@@ -40,6 +40,4 @@ function Login(event) {
         });
 }
 
-loginForm.onsubmit = (event) => {
-    Login(event);
-};
+loginForm.onsubmit = Login;

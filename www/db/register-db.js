@@ -1,20 +1,24 @@
+import Loading from "../js/loading";
+
 const registerForm = document.getElementById("register-form");
 
+const loading = new Loading();
 function RegisterPatient(event) {
     event.preventDefault();
-
+    
     const name = event.target["name"].value;
     const email = event.target["email"].value;
     const password = event.target["password"].value;
     const confirmPassword = event.target["confirm-password"].value;
     const cnp = event.target["cnp"].value;
     const country = event.target["country"].value;
-
+    
     if (password !== confirmPassword) {
         alert("Passwords do not match");
         return;
     }
-
+    
+    loading.show();
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
             // Signed in
@@ -30,11 +34,13 @@ function RegisterPatient(event) {
                 type: "patient"
             })
             .then(() => {
+                loading.hide();
                 location = "patientHome.html";
             });
 
         })
         .catch((error) => {
+            loading.hide();
             var errorCode = error.code;
             var errorMessage = error.message;
 
@@ -57,6 +63,7 @@ function RegisterDoctor(event) {
         return;
     }
 
+    loading.show();
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
             // Signed in
@@ -72,11 +79,13 @@ function RegisterDoctor(event) {
                 type: "doctor"
             })
             .then(() => {
+                loading.hide();
                 location = "docHome.html";
             });
 
         })
         .catch((error) => {
+            loading.hide();
             var errorCode = error.code;
             var errorMessage = error.message;
             alert(errorMessage);

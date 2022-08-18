@@ -1,7 +1,9 @@
-
+import Loading from "../js/loading";
 
 const cardsContainter = document.getElementById("cards-container");
 
+const loading = new Loading();
+loading.show();
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
         //blablabla
@@ -10,6 +12,7 @@ firebase.auth().onAuthStateChanged(user => {
 })
 // firebase.firestore().collection('users').where('type', '==', 'doctor').hrt()
 firebase.firestore().collection('users').get().then(snapshot => {
+    location.show();
     snapshot.forEach(element => {
 
         console.log(element.id)
@@ -41,6 +44,7 @@ firebase.firestore().collection('users').get().then(snapshot => {
         }
         
     });
+    loading.hide();
 })
 
 
