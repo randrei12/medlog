@@ -5,14 +5,14 @@ const accountCard = document.getElementById("account-card");
 const updateForm = document.getElementById("update-profile")
 
 loading.show();
-auth.onAuthStateChanged((user) => {
+firebase.auth().onAuthStateChanged((user) => {
     if (user) LoadProfile(user.uid);
     else location = "./patSignUp.html";
 })
 
 function LoadProfile(uid) {
 
-    const userDataRef = database.collection("users").doc(uid);
+    const userDataRef = firebase.firestore().collection("users").doc(uid);
 
     userDataRef.get().then((doc) => {
         if (doc.exists) {
@@ -90,7 +90,7 @@ function LoadProfile(uid) {
                 console.log(name, gender, birthday, city, country, familyDoctors);
 
 
-                database.collection('users').doc(uid).update({
+                firebase.firestore().collection('users').doc(uid).update({
                     username: name,
                     gender,
                     birthday: birthday,
@@ -130,7 +130,7 @@ function UpdateProfile(event, uid) {
     const country = event.target["county"].value;
     const familyDoctors = event.target["family-doctor"].value;
 
-    database.collection('users').doc(uid).update({
+    firebase.firestore().collection('users').doc(uid).update({
         username: name,
         gender,
         birthday: birthday,
