@@ -30,8 +30,8 @@ body {
 
 .leftArrow, .homeButton {
     aspect-ratio: 1;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     border: none;
 }
 
@@ -41,12 +41,10 @@ body {
 }
 
 .treatment-container {
-    position: absolute;
-    top: 15%;
     display: grid;
     gap: 2%;
     width: 90%;
-    height: 70%;
+    height: auto;
     margin-left: 5%;
     margin-top: 5%;
     background: white;
@@ -61,11 +59,19 @@ body {
     font-size: 15px;
     line-height: 36px;
     border: none;
-    background: #FFFFFF !important;
-    margin: 10px;
+    background-size: 40px 40px;
+    margin: 50px 10px;
     color: #5D78F7;
     border: 2px dashed rgba(93, 120, 247, 0.7);
     box-shadow: none;
+    filter: none;
+    background-image: url('../assets/camera.png');
+    background-repeat: no-repeat;
+    background-position: 27px 10px;
+    padding-top: 52px;
+    line-height: 20px;
+    text-align: center;
+    font-weight: 700;
 }
     
 .add-photot-button:hover {
