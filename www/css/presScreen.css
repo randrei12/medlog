@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+    font-family: 'Roboto';
+}
+
+body {
+    background: white;
+}
+
+.hide-board {
+    position: fixed;
+    width: 100%;
+    height: 20%;
+    background: white;
+    border-radius: 0 0 25px 25px;
+    z-index: -1;
+}
+
+.container {
+    position: fixed;
+    width: 90%;
+    height: 10%;
+    margin: 5%;
+    display: flex;
+    align-items: center;
+}
+
+.leftArrow, .homeButton {
+    position: absolute;
+    aspect-ratio: 1;
+    width: 25px;
+    height: 25px;
+}
+
+.title {
+    position: absolute;
+    font-size: 30px;
+    left: 35%;
+    transform: translateX(-50%);
+}
+
+.searchBarDiv {
+    position: fixed;
+    top: 10%;
+    width: 90%;
+    height: 5%;
+    margin: 20px;
+    margin-left: 5%;
+    background: white;
+    display: flex;
+}
+
+.searchBar {
+    outline: none;
+    width: 90%;
+    height: 2.5rem;
+    padding: 0.5rem;
+    border: 2px solid rgba(93, 120, 247, 0.15);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 15px;
+    font-style: normal;
+    font-size: 1rem;
+    color: #000000;
+    opacity: 100%;
+}
+
+.file-container {
+    position: absolute;
+    top: 25%;
+    background: white;
+    width: 90%;
+    height: auto;
+    left: 5%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    z-index: -2;
+    align-items: center;
+}
+
+.button {
+    width: 330px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background-color: white;
+}
+
+.folder-image {
+    aspect-ratio: 1;
+    width: 40px;
+    height: 40px;
+}
+
+.medic, .data {
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.file-details {
+    margin-left: 1px;
+}
