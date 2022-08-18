@@ -19,10 +19,11 @@
   "homepage": "https://github.com/randrei12/medlog-frontend#readme",
   "dependencies": {
     "@capacitor/android": "^4.0.0",
-    "@capacitor/keyboard": "^4.0.0"
+    "@capacitor/keyboard": "^4.0.0",
+    "sweetalert2": "^11.4.28"
   },
   "devDependencies": {
-    "@capacitor/core": "4.0.0",
-    "@capacitor/cli": "^4.0.0"
+    "@capacitor/cli": "^4.0.0",
+    "@capacitor/core": "4.0.0"
   }
 }
