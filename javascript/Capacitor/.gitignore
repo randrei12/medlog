@@ -1,8 +1,0 @@
-node_modules/
-package-lock.json
-android/
-ios/
-resources/ios/**/*
-resources/android/**/*
-capacitor.config.json
-README.md
