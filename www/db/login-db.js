@@ -1,40 +1,38 @@
-firebase.auth().onAuthStateChanged((user) => {
-    if (user) firebase.firestore().collection("users").doc(user.uid).get().then(e => location = e.data().type == USER_TYPES.PATIENT ? "patientHome.html" : "docHome.html")
-})
+async function selectRoleScreen(user) {
+  if (!user) {
+    return;
+  }
 
-const loginForm = document.getElementById("login-form");
+  try {
+    let usersCollection = firebase.firestore().collection("users");
+    let result = await usersCollection.doc(user.uid).get();
+    console.log(result.data());
+    location = (result.data().type == USER_TYPES.PATIENT)
+      ? "patientHome.html"
+      : "docHome.html";
+  }
+  catch (error) {
+    alert(error.message);
+  }
+}
 
-function Login(event) {
+async function login(event) {
   event.preventDefault();
 
   const email = event.target["email"].value;
   const password = event.target["password"].value;
 
-  firebase.auth()
-    .signInWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      // Signed in
-      var user = userCredential.user;
-
-      firebase.firestore().collection("users")
-        .doc(user.uid)
-        .get()
-        .then((result) => {
-          console.log(result.data());
-          if (result.data().type == USER_TYPES.PATIENT) {
-            location = "patientHome.html";
-          } else {
-            location = "docHome.html";
-          }
-        });
-    })
-    .catch((error) => {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      alert(errorMessage);
-    });
+  try {
+    let userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
+    // Signed in
+    await selectRoleScreen(userCredential.user);
+  }
+  catch (error) {
+    alert(error.message);
+  }
 }
 
-loginForm.onsubmit = (event) => {
-  Login(event);
-};
+firebase.auth().onAuthStateChanged(user => selectRoleScreen(user))
+
+const loginForm = document.getElementById("login-form");
+loginForm.onsubmit = event => login(event);

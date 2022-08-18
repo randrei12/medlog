@@ -175,7 +175,15 @@ a {
 
 .checked {
     color: orange;
-  }
+}
+
+.fa-star:hover {
+    color: orange; 
+}
+
+.fa:hover {
+    color: orange; 
+}
 
 .rating__star {
     cursor: pointer;
