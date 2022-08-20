@@ -90,7 +90,7 @@ body {
     height: 100px;
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     border-radius: 15px;
     border: 2px solid rgba(0, 0, 0, 0.2);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -109,8 +109,4 @@ body {
     line-height: 24px;
 
     color: rgba(0, 0, 0, 0.7);
-}
-
-.file-details {
-    margin-left: 1px;
 }
