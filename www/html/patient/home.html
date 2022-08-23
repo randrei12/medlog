@@ -5,19 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="db/config.js" type="module"></script>
-    <link rel="stylesheet" href="css/patientHome.css">
+    <link rel="stylesheet" href="../../css/main.css">
+    <script src="../../db/config.js" type="module"></script>
+    <link rel="stylesheet" href="../../css/patient/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="js/patient/home.js" defer></script>
-    <script src="js/main.js" type="module" defer></script>
+    <script src="../../js/patient/home.js" defer></script>
+    <script src="../../js/main.js" type="module" defer></script>
     <title>Document</title>
 </head>
 
 <body>
     <div class="main">
         <div class="account">
-            <img src="assets/account.png" class="accountImg">
+            <img src="../../assets/account.png" class="accountImg">
             <div class="nameBox">
                 <p class="name2">Hello, Name!</p>
                 <p class="help">How can we help you today?</p>
@@ -30,23 +30,23 @@
 
         </div>
         <div class="buttonContainer">
-            <a href="">
+            <a href="../../html/doctor/addTreatmentScreen.html">
                 <button class="button">
-                    <img src="assets/medicine.png" class="buttonIcon">
+                    <img src="../../assets/medicine.png" class="buttonIcon">
                     <p class="buttonText">Treatment</p>
                 </button>
             </a>
 
-            <a href="prescriptionScreen.html">
+            <a href="../../html/doctor/addPrescriptionScreen.html">
                 <button class="button">
-                    <img src="assets/prescription.png" class="buttonIcon">
+                    <img src="../../assets/prescription.png" class="buttonIcon">
                     <p class="buttonText">Prescription</p>
                 </button>
             </a>
 
-            <a href="medicalHistoryPat.html">
+            <a href="../../html/patient/medicalHistory.html">
                 <button class="button">
-                    <img src="assets/health-check.png" class="buttonIcon">
+                    <img src="../../assets/health-check.png" class="buttonIcon">
                     <p class="buttonText">Medical History</p>
                 </button>
             </a>
@@ -65,7 +65,7 @@
         <button class="profile"></button>
     </div>
     <button onclick="firebase.auth().signOut()">Random Log Out Button</button>
-    <script src="./db/patientHome-db.js" type="module"></script>
+    <script src="../../db/patientHome-db.js" type="module"></script>
 </body>
 
 </html>
