@@ -221,10 +221,18 @@ h1, p, a {
     background: url(https://img.icons8.com/ios/550/home--v1.png);
 }
 
+.treatment {
+    background: url(https://img.icons8.com/small/550/folder-invoices--v1.png);
+}
+
 .search {
     background: url(https://img.icons8.com/ios-glyphs/550/search--v1.png);
 }
 
+.calendarul {
+    background: url(https://img.icons8.com/small/550/calendar.png);
+}   
+
 .profile {
-    background: url(https://img.icons8.com/small/550/folder-invoices--v1.png);
+    background: url(https://img.icons8.com/small/550/name.png);
 }
