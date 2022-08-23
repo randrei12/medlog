@@ -4,27 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/patAppt.css">
+    <script src = "db/config.js"></script>
     <title>Patient appointment screen</title>
-    <script>
-        // the selector will match all input controls of type :checkbox
-        // and attach a click event handler 
-        $("input:checkbox").on('click', function() {
-        // in the handler, 'this' refers to the box clicked on
-        var $box = $(this);
-        if ($box.is(":checked")) {
-            // the name of the box is retrieved using the .attr() method
-            // as it is assumed and expected to be immutable
-            var group = "input:checkbox[name='" + $box.attr("name") + "']";
-            // the checked state of the group/box on the other hand will change
-            // and the current value is retrieved using .prop() method
-            $(group).prop("checked", false);
-            $box.prop("checked", true);
-        } else {
-            $box.prop("checked", false);
-        }
-        });
-    </script>
 </head>
 <body> 
     <div class="container">
@@ -37,19 +20,29 @@
             <p class = "spec" style="color: white;"></p>
         </div>
         <div class="accountCard">
-                <h1 style="margin-top: 10px;">Book an appointment</h1>
-                <h1 style="margin-top: 300px; font-style: normal;">Pick the perfect time</h1>
-                <label>
-                <input type="checkbox" class="radio", value="1">
-                <label>
-                <input type="checkbox" class="radio", value="1">
-                <label>
-                <input type="checkbox" class="radio", value="1">
+            <h1 style="margin-top: 10px;">Book an appointment</h1>
+            <div class = "calendar"></div>
+            <h1>Pick the perfect time</h1>
+            
+            <div class = "pick">
+                <div>
+                    <input type="checkbox" class="checkbox", value="1" name = "1">
+                    <label>
+                </div>
+                <div>
+                    <input type="checkbox" class="checkbox", value="1" name = "1">
+                    <label>
+                </div>
+                <div>
+                    <input type="checkbox" class="checkbox", value="1" name = "1">
+                    <label>
+                </div>
+            </div>
+            <button class = "baseButton" style="width: 300px; white-space:nowrap; margin-bottom: 10px;">Book your Appointment</button>
         </div>
     </div>
     
     
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 </html>
