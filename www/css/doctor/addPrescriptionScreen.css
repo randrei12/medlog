@@ -65,7 +65,7 @@ body {
     border: 2px dashed rgba(93, 120, 247, 0.7);
     box-shadow: none;
     filter: none;
-    background-image: url('../assets/camera.png');
+    background-image: url('../../assets/camera.png');
     background-repeat: no-repeat;
     background-position: 27px 10px;
     padding-top: 52px;

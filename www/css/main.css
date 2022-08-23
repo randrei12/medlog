@@ -190,3 +190,50 @@ h1, p, a {
 .loadingContainer .loadingDiv img {
     height: 100%;
 }
+
+.bottomNav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 13px;
+    background: white;
+    border-top: solid 1px rgb(194, 194, 194);
+}
+
+.bottomNav button {
+    width: unset;
+    height: 100%;
+    aspect-ratio: 1;
+    filter: none;
+    box-shadow: none;
+    border-radius: 0px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.home {
+    background: url(https://img.icons8.com/ios/550/home--v1.png);
+}
+
+.treatment {
+    background: url(https://img.icons8.com/small/550/folder-invoices--v1.png);
+}
+
+.search {
+    background: url(https://img.icons8.com/ios-glyphs/550/search--v1.png);
+}
+
+.calendarul {
+    background: url(https://img.icons8.com/small/550/calendar.png);
+}   
+
+.profile {
+    background: url(https://img.icons8.com/small/550/name.png);
+}
