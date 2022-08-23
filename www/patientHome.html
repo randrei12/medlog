@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +12,7 @@
     <script src="js/patient/home.js" defer></script>
     <title>Document</title>
 </head>
+
 <body>
     <div class="main">
         <div class="account">
@@ -42,10 +44,19 @@
         </div>
         <p class="text">Are you looking for a specialist?</p>
         <div id="cards-container" class="scroll">
-            
+
         </div>
+    </div>
+    <div class="bottomNav">
+        <button class="home"></button>
+        <button class="search"></button>
+        <button class="profile"></button>
+
+        <button class="search"></button>
+        <button class="profile"></button>
     </div>
     <button onclick="firebase.auth().signOut()">Random Log Out Button</button>
     <script src="./db/patientHome-db.js" type="module"></script>
 </body>
+
 </html>
