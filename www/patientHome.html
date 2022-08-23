@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/patientHome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="js/patient/home.js" defer></script>
+    <script src="js/main.js" type="module" defer></script>
     <title>Document</title>
 </head>
 
@@ -33,23 +34,23 @@
                 <button class="button">
                     <img src="assets/medicine.png" class="buttonIcon">
                     <p class="buttonText">Treatment</p>
-                </button> 
+                </button>
             </a>
-            
+
             <a href="prescriptionScreen.html">
                 <button class="button">
                     <img src="assets/prescription.png" class="buttonIcon">
                     <p class="buttonText">Prescription</p>
                 </button>
             </a>
-            
+
             <a href="medicalHistoryPat.html">
                 <button class="button">
                     <img src="assets/health-check.png" class="buttonIcon">
                     <p class="buttonText">Medical History</p>
                 </button>
             </a>
-            
+
         </div>
         <p class="text">Are you looking for a specialist?</p>
         <div id="cards-container" class="scroll">
@@ -58,10 +59,9 @@
     </div>
     <div class="bottomNav">
         <button class="home"></button>
+        <button class="treatment"></button>
         <button class="search"></button>
-        <button class="profile"></button>
-
-        <button class="search"></button>
+        <button class="calendarul"></button>
         <button class="profile"></button>
     </div>
     <button onclick="firebase.auth().signOut()">Random Log Out Button</button>
