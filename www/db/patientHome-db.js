@@ -12,7 +12,7 @@ firebase.auth().onAuthStateChanged(user => {
 })
 // firebase.firestore().collection('users').where('type', '==', 'doctor').hrt()
 firebase.firestore().collection('users').get().then(snapshot => {
-    location.show();
+    loading.show();
     snapshot.forEach(element => {
 
         console.log(element.id)
