@@ -201,6 +201,7 @@ h1, p, a {
     align-items: center;
     justify-content: space-around;
     padding: 13px;
+    background: white;
     border-top: solid 1px rgb(194, 194, 194);
 }
 
