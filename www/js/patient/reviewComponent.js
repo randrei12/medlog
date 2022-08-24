@@ -7,10 +7,6 @@ import {
 
 const button = document.querySelector(".baseButton");
 
-window.fireStar = (star, average, noOfReviews, id) => {
-  const newAverage = (average * noOfReviews + star) / (noOfReviews + 1);
-};
-
 window.addStarReview = addStarReview;
 window.selectedReviewStar = null;
 
