@@ -1,5 +1,7 @@
 import "./capacitor.js";
+const { StatusBar, NavigationBar, App } = Capacitor.Plugins;
 
-Capacitor.Plugins.StatusBar.setStyle({ style: "Light" });
-Capacitor.Plugins.StatusBar.setBackgroundColor({ color: "#ffffff" });
-Capacitor.Plugins.NavigationBar.setColor("white");
+StatusBar.setStyle({ style: "Light" });
+StatusBar.setBackgroundColor({ color: "#ffffff" });
+NavigationBar.setColor("white");
+App.addListener('backButton', e => console.log(e))
