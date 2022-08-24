@@ -74,7 +74,7 @@ body {
 
 .container {
     width: 390px;
-    background: linear-gradient(343.12deg, #5D78F7 11.64%, rgba(93, 120, 247, 0.55) 88.36%);
+    background: linear-gradient(96.4deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 94.02%);
 }
 
 .info-container {
@@ -84,7 +84,6 @@ body {
 }
 
 .infoContainer {
-    width: 100%;
     top: 273px;
     border: 2px solid white;
     bottom: 0px;
@@ -103,14 +102,16 @@ body {
     bottom: 0;
     width: 100%;
 }
+
 .navbar {
     padding-left: 19px;
     padding-top: 32px;
-    position:fixed;
-    top:0;
-    width:100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
-.navbar > ul {
+
+.navbar>ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -141,6 +142,32 @@ body {
     text-decoration: none;
 }
 
+.text1 {
+    font-family: 'Fredoka';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    padding-left: 10px;
+
+    color: #000000;
+}
+
+.text2 {
+    font-family: 'Fredoka';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    margin-bottom: 22px;
+    margin-top: 6px;
+    padding-left: 10px;
+
+    color: rgba(0, 0, 0, 0.7);
+}
+
 .callButton {
     width: 45%;
     height: 35px;
@@ -151,7 +178,7 @@ body {
     line-height: 24px;
     text-decoration: none;
 
-    background: linear-gradient(263.91deg, #5D78F7 0%, rgba(93, 120, 247, 0.5) 98.76%);
+    background: linear-gradient(96.4deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 94.02%);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px 0px;
     padding: 4px;
@@ -216,6 +243,7 @@ body {
     font-size: 30px;
     line-height: 36px;
     padding-left: 10px;
+    margin-top: 24px;
 
     color: #000000;
 }
@@ -232,8 +260,17 @@ body {
     font-size: 20px;
     line-height: 24px;
     padding-left: 10px;
+    margin-top: 11px;
 
     color: #000000;
+}
+
+.reviewStars {
+    top: 431px;
+    margin: 11px;
+    padding: 0;
+    border: none;
+    background: none;
 }
 
 .star {
