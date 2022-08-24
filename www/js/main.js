@@ -1,5 +1,8 @@
-import { Capacitor } from "@capacitor/core";
 import "./capacitor.js";
+
+let viewport = document.querySelector('meta[name="viewport"]');
+viewport.content += `, height=${innerHeight}`
+
 const { StatusBar, NavigationBar, App, SplashScreen } = Capacitor.Plugins;
 
 StatusBar.setStyle({ style: "Light" });
