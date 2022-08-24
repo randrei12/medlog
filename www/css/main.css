@@ -200,7 +200,7 @@ h1, p, a {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    padding: 13px;
+    padding: 12px;
     background: white;
     border-top: solid 1px rgb(194, 194, 194);
 }
@@ -211,6 +211,7 @@ h1, p, a {
     aspect-ratio: 1;
     filter: none;
     box-shadow: none;
+    border: none    ;
     border-radius: 0px;
     background-color: transparent;
     background-repeat: no-repeat;
@@ -218,22 +219,51 @@ h1, p, a {
     background-size: contain;
 }
 
-.home {
-    background: url(https://img.icons8.com/ios/550/home--v1.png);
+.bottomNav a {
+    width: 25px;
+    height: 25px;
 }
 
-.treatment {
-    background: url(https://img.icons8.com/small/550/folder-invoices--v1.png);
+.bottomNav button.active {
+    background-size: contain;
+}
+
+.home {
+    background: url(../assets/bottomNav/home.png);
+}
+
+.home.active {
+    background: url(../assets/bottomNav/home-filled.png);
+}
+
+.chat {
+    background: url(../assets/bottomNav/chat.png);
+}
+
+.chat.active {
+    background: url(../assets/bottomNav/chat-filled.png);
 }
 
 .search {
-    background: url(https://img.icons8.com/ios-glyphs/550/search--v1.png);
+    background: url(../assets/bottomNav/search.png);
+}
+
+.search.active {
+    background: url(../assets/bottomNav/search-filled.png);
 }
 
 .calendarul {
-    background: url(https://img.icons8.com/small/550/calendar.png);
+    background: url(../assets/bottomNav/calendar.png);
 }   
 
+.calendarul.active {
+    background: url(../assets/bottomNav/calendar-filled.png);
+}  
+
 .profile {
-    background: url(https://img.icons8.com/small/550/name.png);
+    background: url(../assets/bottomNav/profile.png);
+}
+
+.profile.active {
+    background: url(../assets/bottomNav/profile-filled.png);
 }
