@@ -27,17 +27,6 @@ body {
     height: 75%;
 }
 
-.baseInput {
-    outline: none;
-    width: calc(100% - 10px);
-    max-width: 313px;
-    height: 3rem;
-    padding: 15px;
-    border: 2px solid rgba(93, 120, 247, 0.15);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 20px;
-}
-
 .baseButton {
     width: 276px;
     height: 3rem;
@@ -118,6 +107,13 @@ body {
     overflow: hidden;
 }
 
+.leftArrow {
+    aspect-ratio: 1;
+    width: 40px;
+    height: 40px;
+    border: none;
+}
+
 .mainText {
     margin-left: 5%;
     font-style: normal;
@@ -129,7 +125,7 @@ body {
 }
 
 .text {
-    font-family: 'Fredoka';
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 25px;
@@ -143,7 +139,7 @@ body {
 }
 
 .text1 {
-    font-family: 'Fredoka';
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 25px;
@@ -156,7 +152,7 @@ body {
 }
 
 .text2 {
-    font-family: 'Fredoka';
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
@@ -171,7 +167,7 @@ body {
 .callButton {
     width: 45%;
     height: 35px;
-    font-family: 'Fredoka';
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -200,14 +196,6 @@ body {
     height: 50%;
 }
 
-.profileImgDiv {
-    margin-top: -15%;
-    margin-left: 100px;
-    width: 107px;
-    height: 107px;
-    position: relative;
-}
-
 .doctor {
     display: flex;
 }
@@ -222,7 +210,7 @@ body {
     left: 195px;
     top: 91px;
 
-    font: 'Fredoka';
+    font: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -237,7 +225,7 @@ body {
     left: 44px;
     top: 356px;
 
-    font-family: 'Fredoka';
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 30px;
@@ -254,7 +242,7 @@ body {
     left: 44px;
     top: 393px;
 
-    font-family: 'Fredoka';
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 300;
     font-size: 20px;
