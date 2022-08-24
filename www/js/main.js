@@ -4,4 +4,9 @@ const { StatusBar, NavigationBar, App } = Capacitor.Plugins;
 StatusBar.setStyle({ style: "Light" });
 StatusBar.setBackgroundColor({ color: "#ffffff" });
 NavigationBar.setColor("white");
-App.addListener('backButton', e => console.log(e))
+
+let canGoBack = !['/', '/home.html'].includes(location.pathname.substring(location.pathname.lastIndexOf('/')))
+App.addListener('backButton', e => {
+    if (canGoBack) history.back();
+    else App.exitApp();
+})
