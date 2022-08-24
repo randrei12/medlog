@@ -1,11 +1,18 @@
 {
-  "appId": "com.medlog.app",
-  "appName": "MedLog",
-  "webDir": "www",
-  "bundledWebRuntime": true,
-  "plugins": {
-    "Keyboard": {
-        "resize": "none"
+    "appId": "com.medlog.app",
+    "appName": "MedLog",
+    "webDir": "www",
+    "bundledWebRuntime": true,
+    "plugins": {
+        "Keyboard": {
+            "resize": "none"
+        },
+        "SplashScreen": {
+            "launchAutoHide": false,
+            "androidScaleType": "CENTER_CROP",
+            "splashFullScreen": true,
+            "splashImmersive": false,
+            "backgroundColor": "#ffffff"
+        }
     }
-  }
 }

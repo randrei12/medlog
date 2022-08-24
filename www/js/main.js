@@ -1,5 +1,6 @@
+import { Capacitor } from "@capacitor/core";
 import "./capacitor.js";
-const { StatusBar, NavigationBar, App } = Capacitor.Plugins;
+const { StatusBar, NavigationBar, App, SplashScreen } = Capacitor.Plugins;
 
 StatusBar.setStyle({ style: "Light" });
 StatusBar.setBackgroundColor({ color: "#ffffff" });
@@ -9,4 +10,4 @@ let canGoBack = !['/', '/home.html'].includes(location.pathname.substring(locati
 App.addListener('backButton', e => {
     if (canGoBack) history.back();
     else App.exitApp();
-})
+});

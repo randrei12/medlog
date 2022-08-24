@@ -21,6 +21,7 @@
     "@capacitor/android": "^4.0.0",
     "@capacitor/app": "^4.0.1",
     "@capacitor/keyboard": "^4.0.0",
+    "@capacitor/splash-screen": "^4.0.1",
     "@capacitor/status-bar": "^4.0.1",
     "@hugotomazi/capacitor-navigation-bar": "^1.1.1",
     "sweetalert2": "^11.4.28"
