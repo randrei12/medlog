@@ -7,13 +7,13 @@ async function selectRoleScreen(user) {
     let usersCollection = firebase.firestore().collection("users");
     let result = await usersCollection.doc(user.uid).get();
     console.log(result.data());
-    loading.hide();
+    Capacitor.Plugins.SplashScreen.hide()
     location =
       result.data().type == USER_TYPES.PATIENT
         ? "html/patient/home.html"
         : "html/doctor/home.html";
   } catch (error) {
-    loading.hide();
+    Capacitor.Plugins.SplashScreen.hide()
     alert(error.message);
   }
 }
@@ -38,9 +38,8 @@ async function login(event) {
   }
 }
 
-loading.show();
 firebase.auth().onAuthStateChanged((user) => {
-  if (!user) loading.hide();
+  if (!user) Capacitor.Plugins.SplashScreen.hide()
   else selectRoleScreen(user);
 });
 
