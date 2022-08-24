@@ -85,7 +85,7 @@ body {
     align-items: center;
 }
 
-.button {
+.pbutton {
     width: 330px;
     height: 100px;
     display: flex;
