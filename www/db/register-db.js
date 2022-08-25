@@ -6,12 +6,14 @@ const loading = new Loading();
 function RegisterPatient(event) {
   event.preventDefault();
 
-  const name = event.target["name"].value;
+  const firstName = event.target["first-name"].value;
+  const lastName = event.target["last-name"].value;
   const email = event.target["email"].value;
   const password = event.target["password"].value;
   const confirmPassword = event.target["confirm-password"].value;
   const cnp = event.target["cnp"].value;
   const country = event.target["country"].value;
+  const phoneNumber = event.target["phone-number"].value;
 
   if (password !== confirmPassword) {
     alert("Passwords do not match");
@@ -31,12 +33,14 @@ function RegisterPatient(event) {
         .collection("users")
         .doc(user.uid)
         .set({
-          username: name,
+          firstName: firstName,
+          lastName: lastName,
           email: email,
           password: password,
           cnp: cnp,
           country: country,
           uid: user.uid,
+          phoneNumber: phoneNumber,
           type: "patient",
         })
         .then(() => {
@@ -56,12 +60,14 @@ function RegisterPatient(event) {
 function RegisterDoctor(event) {
   event.preventDefault();
 
-  const name = event.target["name"].value;
+  const firstName = event.target["first-name"].value;
+  const lastName = event.target["last-name"].value;
   const email = event.target["email"].value;
   const password = event.target["password"].value;
   const confirmPassword = event.target["confirm-password"].value;
   const specialization = event.target["specialization"].value;
   const country = event.target["country"].value;
+  const phoneNumber = event.target["phone-number"].value;
 
   if (password != confirmPassword) {
     alert("Passwords do not match");
@@ -81,12 +87,14 @@ function RegisterDoctor(event) {
         .collection("users")
         .doc(user.uid)
         .set({
-          username: name,
+          firstName,
+          lastName,
           email,
           password,
           specialization,
           country,
           uid: user.uid,
+          phoneNumber, 
           type: "doctor",
         })
         .then(() => {
