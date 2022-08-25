@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+    font-family: 'Roboto';
+}
+
+body {
+    background: white;
+}
+
+.container {
+    position: absolute;
+    width: 90%;
+    height: 40px;
+    margin-left: 5%;
+    margin-right: 10%;
+    margin-top: 10%;
+    top: 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leftArrow, .homeButton {
+    aspect-ratio: 1;
+    width: 40px;
+    height: 40px;
+    border: none;
+}
+
+.Title {
+    color: grey;
+    font-size: 150%;
+}
+
+.treatment-container {
+    display: grid;
+    gap: 2%;
+    width: 90%;
+    height: auto;
+    margin-left: 5%;
+    margin-top: 5%;
+    background: white;
+    box-shadow: none;
+}
+
+.add-photo-button {
+    width: 100px;
+    height: 100px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 36px;
+    border: none;
+    background-size: 40px 40px;
+    margin: 50px 10px;
+    color: #5D78F7;
+    border: 2px dashed rgba(93, 120, 247, 0.7);
+    box-shadow: none;
+    filter: none;
+    background-image: url('../../assets/camera.png');
+    background-repeat: no-repeat;
+    background-position: 27px 10px;
+    padding-top: 52px;
+    line-height: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+    
+.add-photot-button:hover {
+    outline: auto;
+}

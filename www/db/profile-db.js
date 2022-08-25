@@ -1,44 +1,26 @@
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-    apiKey: "AIzaSyCC1TTaWpCU4bxhBD2l7ueviKKP1eskrpM",
-    authDomain: "medlog-9650b.firebaseapp.com",
-    databaseURL: "https://medlog-9650b-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "medlog-9650b",
-    storageBucket: "medlog-9650b.appspot.com",
-    messagingSenderId: "955776050336",
-    appId: "1:955776050336:web:7b7e3a9cb38de68d3695c5",
-    measurementId: "G-424MJM444P"
-};
-
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
-
-const database = firebase.firestore();
-const auth = firebase.auth();
+import Loading from "../js/loading.js";
+const loading = new Loading();
 
 const accountCard = document.getElementById("account-card");
-const updateForm = document.getElementById("update-profile")
+const updateForm = document.getElementById("update-profile");
 
-auth.onAuthStateChanged((user) => {
-    if (user) {
-        LoadProfile(user.uid);
-    }
-    else {
-        window.location = "./patSignUp.html";
-    }
-})
+loading.show();
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) LoadProfile(user.uid);
+  else location = "../html/patient/signUp.html";
+});
 
 function LoadProfile(uid) {
+  const userDataRef = firebase.firestore().collection("users").doc(uid);
 
-    const userDataRef = database.collection("users").doc(uid);
+  userDataRef
+    .get()
+    .then((doc) => {
+      if (doc.exists) {
+        console.log("Document data:", doc.data());
 
-    userDataRef.get().then((doc) => {
-        if (doc.exists) {
-            console.log("Document data:", doc.data());
-
-            const userData = doc.data();
-            /*
+        const userData = doc.data();
+        /*
             var accountContent = `
                 <div class="profileCircle">
                     <div class="profileImgDiv">
@@ -91,70 +73,82 @@ function LoadProfile(uid) {
                 </form>
             `
             */
-            console.log(document.getElementById("update-profile"));
+        console.log(document.getElementById("update-profile"));
+        loading.hide();
 
-            document.getElementById("update-profile").onsubmit = (event) => {
-               
-                event.preventDefault();
+        document.getElementById("update-profile").onsubmit = (event) => {
+          event.preventDefault();
+          loading.show();
 
-                const name = event.target["username"].value;
-                const gender = event.target["gender"].value;
-                const birthday = event.target["birthdate"].value;
-                const city = event.target["city"].value;
-                const country = event.target["county"].value;
-                const familyDoctors = event.target["family-doctor"].value;
+          const name = event.target["username"].value;
+          const gender = event.target["gender"].value;
+          const birthday = event.target["birthdate"].value;
+          const city = event.target["city"].value;
+          const country = event.target["county"].value;
+          const familyDoctors = event.target["family-doctor"].value;
 
-                
-                console.log(name, gender, birthday, city, country, familyDoctors);
+          console.log(name, gender, birthday, city, country, familyDoctors);
 
+          firebase
+            .firestore()
+            .collection("users")
+            .doc(uid)
+            .update({
+              username: name,
+              gender,
+              birthday: birthday,
+              city,
+              county: country,
+              familyDoctor: familyDoctors,
+            })
+            .then(() => {
+              loading.hide();
+              alert("account updated");
+            });
+          return false;
+        };
 
-                database.collection('users').doc(uid).update({
-                    username: name,
-                    gender,
-                    birthday: birthday,
-                    city, 
-                    county: country,
-                    familyDoctor: familyDoctors
-                })
-                .then(() => {
-                    alert("account updated");
-                });
-                return false;
-
-            };
-
-            //accountCard.innerHTML = accountContent;
-
-        } else {
-            // doc.data() will be undefined in this case
-            console.log("No such document!");
-        }
-    }).catch((error) => {
-        console.log("Error getting document:", error);
+        //accountCard.innerHTML = accountContent;
+      } else {
+        loading.hide();
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+      }
+    })
+    .catch((error) => {
+      console.log("Error getting document:", error);
+      loading.hide();
     });
 }
 
 function UpdateProfile(event, uid) {
-    event.preventDefault();
+  event.preventDefault();
+  loading.show();
 
-    alert('wokring')
-    
-    const name = event.target["name"].value;
-    const gender = event.target["gender"].value
-    const birthday = event.target["birthdate"].value;
-    const city = event.target["city"].value;
-    const country = event.target["county"].value;
-    const familyDoctors = event.target["family-doctor"].value;
+  const name = event.target["name"].value;
+  const gender = event.target["gender"].value;
+  const birthday = event.target["birthdate"].value;
+  const city = event.target["city"].value;
+  const country = event.target["county"].value;
+  const familyDoctors = event.target["family-doctor"].value;
 
-    database.collection('users').doc(uid).update({
-        username: name,
-        gender,
-        birthday: birthday,
-        city, 
-        county: country,
-        familyDoctor: familyDoctors
+  firebase
+    .firestore()
+    .collection("users")
+    .doc(uid)
+    .update({
+      username: name,
+      gender,
+      birthday: birthday,
+      city,
+      county: country,
+      familyDoctor: familyDoctors,
     })
     .then(() => {
-        alert("account updated");
+      loading.hide();
+    })
+    .catch((error) => {
+      alert("Error");
+      loading.hide();
     });
 }
