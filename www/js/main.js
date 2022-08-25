@@ -1,7 +1,6 @@
 import "./capacitor.js";
 
-let viewport = document.querySelector('meta[name="viewport"]');
-viewport.content += `, height=${innerHeight}`
+document.body.style.height = innerHeight + 'px';
 
 const { StatusBar, NavigationBar, App, SplashScreen } = Capacitor.Plugins;
 
