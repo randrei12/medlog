@@ -1,10 +1,9 @@
 import "./capacitor.js";
 
-document.body.style.height = innerHeight + 'px';
-
 const { StatusBar, NavigationBar, App, SplashScreen } = Capacitor.Plugins;
 
 StatusBar.setStyle({ style: "Light" });
+Capacitor.Plugins.StatusBar.setOverlaysWebView()
 StatusBar.setBackgroundColor({ color: "#ffffff" });
 NavigationBar.setColor("white");
 

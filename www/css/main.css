@@ -43,7 +43,8 @@ body {
     width: 25px;
 }
 
-select, input {
+select,
+input {
     width: 100%;
     outline: none;
     width: calc(100% - 10px);
@@ -147,12 +148,15 @@ h1 {
     font-size: 3rem;
 }
 
-p, a {
+p,
+a {
     font-weight: bold;
 }
 
-h1, p, a {
-    margin-block: 0px;    
+h1,
+p,
+a {
+    margin-block: 0px;
     color: #5D78F7;
 }
 
@@ -203,70 +207,58 @@ h1, p, a {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    padding: 12px;
+    padding: 7px;
     background: white;
     border-top: solid 1px rgb(194, 194, 194);
 }
 
 .bottomNav button {
-    width: unset;
+    min-height: 100%;
     height: 100%;
-    aspect-ratio: 1;
-    filter: none;
     box-shadow: none;
-    border: none    ;
-    border-radius: 0px;
     background-color: transparent;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-}
-
-.bottomNav a {
-    width: 25px;
-    height: 25px;
-}
-
-.bottomNav button.active {
-    background-size: contain;
+    margin-bottom: 0;
 }
 
 .home {
-    background: url(../assets/bottomNav/home.png);
+    background-image: url(../assets/bottomNav/home.png);
 }
 
 .home.active {
-    background: url(../assets/bottomNav/home-filled.png);
+    background-image: url(../assets/bottomNav/home-filled.png);
 }
 
 .chat {
-    background: url(../assets/bottomNav/chat.png);
+    background-image: url(../assets/bottomNav/chat.png);
 }
 
 .chat.active {
-    background: url(../assets/bottomNav/chat-filled.png);
+    background-image: url(../assets/bottomNav/chat-filled.png);
 }
 
 .search {
-    background: url(../assets/bottomNav/search.png);
+    background-image: url(../assets/bottomNav/search.png);
 }
 
 .search.active {
-    background: url(../assets/bottomNav/search-filled.png);
+    background-image: url(../assets/bottomNav/search-filled.png);
 }
 
 .calendarul {
-    background: url(../assets/bottomNav/calendar.png);
-}   
+    background-image: url(../assets/bottomNav/calendar.png);
+}
 
 .calendarul.active {
-    background: url(../assets/bottomNav/calendar-filled.png);
-}  
+    background-image: url(../assets/bottomNav/calendar-filled.png);
+}
 
 .profile {
-    background: url(../assets/bottomNav/profile.png);
+    background-image: url(../assets/bottomNav/profile.png);
 }
 
 .profile.active {
-    background: url(../assets/bottomNav/profile-filled.png);
+    background-image: url(../assets/bottomNav/profile-filled.png);
 }

@@ -1,6 +1,8 @@
 import Loading from "../js/loading.js";
 const loading = new Loading(false);
 
+document.body.style.height = innerHeight + 'px';
+
 async function selectRoleScreen(user) {
   // loading.show();
   try {
