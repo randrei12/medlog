@@ -203,7 +203,7 @@ h1, p, a {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    padding: 12px;
+    padding: 7px;
     background: white;
     border-top: solid 1px rgb(194, 194, 194);
 }
@@ -214,20 +214,11 @@ h1, p, a {
     aspect-ratio: 1;
     filter: none;
     box-shadow: none;
-    border: none    ;
+    border: none;
     border-radius: 0px;
     background-color: transparent;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
-}
-
-.bottomNav a {
-    width: 25px;
-    height: 25px;
-}
-
-.bottomNav button.active {
     background-size: contain;
 }
 

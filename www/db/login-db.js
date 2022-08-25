@@ -1,6 +1,8 @@
 import Loading from "../js/loading.js";
 const loading = new Loading(false);
 
+document.body.style.height = innerHeight + 'px';
+
 async function selectRoleScreen(user) {
   // loading.show();
   try {
@@ -17,6 +19,8 @@ async function selectRoleScreen(user) {
     alert(error.message);
   }
 }
+
+// (await firebase.firestore().collection('users').doc(firebase.auth().currentUser.uid).get()).data()
 
 async function login(event) {
   event.preventDefault();
