@@ -24,7 +24,7 @@ firebase
       userElement.classList = "card";
 
       userElement.onclick = () => {
-        location = `reviewComponent.html?doctor=${element.id}`;
+        location = `../doctor/profile.html?doctor=${element.id}`;
       };
 
       if (userData["type"] == "doctor") {
