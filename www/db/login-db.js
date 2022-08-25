@@ -20,8 +20,6 @@ async function selectRoleScreen(user) {
   }
 }
 
-// (await firebase.firestore().collection('users').doc(firebase.auth().currentUser.uid).get()).data()
-
 async function login(event) {
   event.preventDefault();
   loading.show();
