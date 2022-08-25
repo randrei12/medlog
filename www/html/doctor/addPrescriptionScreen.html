@@ -5,31 +5,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/doctor/addMedicalFile.css">
+    <link rel="stylesheet" href="/www/css/main.css">
     <script src="../../db/config.js" type="module"></script>
-    <link rel="stylesheet" href="../../css/doctor/addPrescriptionScreen.css">
-    <title>Document</title>
+    <title>Add prescription screen</title>
     <script src='../../js/main.js' type='module' defer></script>
 </head>
 
 <body>
-
-    <body>
-        <div class="topNavContainer">
-            <a onclick="history.back()">
-                <img class="leftArrow" src="../../assets/left-arrow-gri.png">
-            </a>
-            
-            <span class="Title">Add Prescription</span>
-            <img class="homeButton" src="../../assets/home-gri.png">
-        </div>
-
-        <div class="treatment-container">
-            <input type="file" name="file" id="file" style="display: none;" class="inputfile" />
-            <label for="file" class="add-photo-button">Choose a photo</label>
-        </div>
-
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    </body>
+    <div class="container">
+        <a onclick="history.back()">
+            <img type="image" class="leftArrow" src="/www/assets/left-arrow-gri.png" />
+        </a>
+        <span class="Title">Add prescription</span>
+        <img type="image" class="homeButton" src="/www/assets/home-gri.png" />
+    </div>
+    <div class="file-container">
+        <input type="file" name="file" id="file" style="display: none;" class="inputfile" />
+        <label for="file" class="add-file-button">Add a photo</label>
+    </div>
+    <div class="bottomNav">
+        <a href="../patient/home.html">
+            <button class="home"></button>
+        </a>
+        <a href="../patient/chat.html">
+            <button class="chat"></button>
+        </a>
+        <a href="../patient/doctorList.html">
+            <button class="search"></button>
+        </a>
+        <a href="../patient/appoiment.html">
+            <button class="calendarul"></button>
+        </a>
+        <a href="../patient/profile.html">
+            <button class="profile active"></button>
+        </a>
+    </div>
 </body>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</html>
