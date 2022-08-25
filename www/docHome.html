@@ -1,49 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/homedoctor.css">
 
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
+
     <!--Calendar-->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/locales-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/locales-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.js"></script>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.css">
 
-    <!--End Calendar-->
+    <script src="./db/docCalendar-db.js"></script>
 
     <title>Home Doctor</title>
 </head>
+
 <body>
 
-    <img src="assets/account.png" class = "profileImg">
-    <div class = "helloText">
-    <p class = "helloDr">Hello, Dr.</p>
-    <p class = "howCanWeHelp">How can we help you today? </p>
+    <img src="assets/account.png" class="profileImg">
+    <div class="helloText">
+        <p class="helloDr">Hello, Dr.</p>
+        <p class="howCanWeHelp">How can we help you today? </p>
     </div>
-    
-    <div class = "apptCard">
-        <p class = "today">Today</p>
-        <div class="scroll">
-            <button class = "appt"></button>
-            <div class = "space"></div>
-            <button class = "appt"></button>
-            <div class = "space"></div>
-            <button class = "appt"></button>
-            <div class = "space"></div>
-            <button class = "appt"></button>
-            <div class = "space"></div>
-            <button class = "appt"></button>
-        </div>    
+
+    <div id="calendar" class="apptCard">
+
     </div>
-    <div class = "Button">
-        <button class = "baseButton">Patients</button>
+    <div class="Button">
+        <button class="baseButton">Patients</button>
     </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/locales-all.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/locales-all.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.js"></script>
+
+
 </body>
+
 </html>
