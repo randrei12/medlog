@@ -7,15 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable = no">
     <!-- <link rel="stylesheet" href="css/main.css"> -->
     <link rel="stylesheet" href="../../css/prescriptionScreen.css">
+    <link rel="stylesheet" href="../../css/main.css">
     <title>Treatment screen</title>
 </head>
 
 <body>
     <div class="hide-board">
         <div class="container">
+            <a onclick = "history.back()"></a>
             <img class="leftArrow" type="image" src="../../assets/left-arrow-gri.png">
             <span class="title">Treatments</span>
-            <img type="image" class="homeButton" src="../../assets/home-gri.png" style="right: 10px;" />
         </div>
 
         <div class="searchBarDiv">
@@ -24,7 +25,7 @@
         </div>
     </div>
     <div class="file-container">
-        <button class="pbutton">
+        <button class="pScreenButton">
             <img class="folder-image" src="../../assets/folder-icon.png" alt="" style="margin-left: 20px;">
             <div>
                 <h2 class="medic" style="font-size:20px; margin-left: 15px;">Medic</h2>
@@ -32,6 +33,23 @@
             </div>
         </button>
 
+    </div>
+    <div class="bottomNav">
+        <a href="../patient/home.html">
+            <button class="home active"></button>
+        </a>
+        <a href="../patient/chat.html">
+            <button class="chat"></button>
+        </a>
+        <a href="../patient/doctorList.html">
+            <button class="search"></button>
+        </a>
+        <a href="../patient/appoiment.html">
+            <button class="calendarul"></button>
+        </a>
+        <a href="../patient/profile.html">
+            <button class="profile"></button>
+        </a>
     </div>
 </body>
 
