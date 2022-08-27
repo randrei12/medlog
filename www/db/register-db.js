@@ -8,6 +8,7 @@ function RegisterPatient(event) {
 
   const firstName = event.target["first-name"].value;
   const lastName = event.target["last-name"].value;
+  const gender = event.target["gender"].value;
   const email = event.target["email"].value;
   const password = event.target["password"].value;
   const confirmPassword = event.target["confirm-password"].value;
@@ -17,6 +18,10 @@ function RegisterPatient(event) {
 
   if (password !== confirmPassword) {
     alert("Passwords do not match");
+    return;
+  }
+  if(!gender) {
+    alert("You must specify a gender");
     return;
   }
 
@@ -35,6 +40,7 @@ function RegisterPatient(event) {
         .set({
           firstName: firstName,
           lastName: lastName,
+          gender: gender,
           email: email,
           password: password,
           cnp: cnp,
