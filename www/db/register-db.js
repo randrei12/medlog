@@ -8,15 +8,21 @@ function RegisterPatient(event) {
 
   const firstName = event.target["first-name"].value;
   const lastName = event.target["last-name"].value;
+  const gender = event.target["gender"].value;
   const email = event.target["email"].value;
   const password = event.target["password"].value;
   const confirmPassword = event.target["confirm-password"].value;
   const cnp = event.target["cnp"].value;
-  const country = event.target["country"].value;
+  const county = event.target["county"].value;
+  const city = event.target["city"].value;
   const phoneNumber = event.target["phone-number"].value;
 
   if (password !== confirmPassword) {
     alert("Passwords do not match");
+    return;
+  }
+  if(!gender) {
+    alert("You must specify a gender");
     return;
   }
 
@@ -35,11 +41,13 @@ function RegisterPatient(event) {
         .set({
           firstName: firstName,
           lastName: lastName,
+          gender: gender,
           email: email,
           password: password,
           cnp: cnp,
-          country: country,
+          county: county,
           uid: user.uid,
+          city: city,
           phoneNumber: phoneNumber,
           type: "patient",
         })
@@ -66,7 +74,8 @@ function RegisterDoctor(event) {
   const password = event.target["password"].value;
   const confirmPassword = event.target["confirm-password"].value;
   const specialization = event.target["specialization"].value;
-  const country = event.target["country"].value;
+  const county = event.target["county"].value;
+  const city = event.target["city"].value;
   const phoneNumber = event.target["phone-number"].value;
 
   if (password != confirmPassword) {
@@ -92,7 +101,8 @@ function RegisterDoctor(event) {
           email,
           password,
           specialization,
-          country,
+          county,
+          city,
           uid: user.uid,
           phoneNumber, 
           type: "doctor",
