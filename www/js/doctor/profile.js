@@ -2,6 +2,8 @@ import '../../db/config.js';
 import { params, roundTo } from "../Utils.js";
 import { getDoctorReview } from '../../db/DoctorService.js';
 import Loading from '../loading.js';
+const firstNameLabel = document.querySelector('.doctorFirstName');
+const lastNameLabel = document.querySelector('.doctorLastName');
 const nameLabel = document.querySelector('.doctorName');
 const averageLabel = document.querySelector('.average');
 const specializationLabel = document.querySelector('.specialization');
@@ -19,13 +21,13 @@ userDataRef
             const ratings = await getDoctorReview(uid);
             console.log(ratings);
             const userData = doc.data();
-            nameLabel.innerText = 'Dr. ' + userData.username;
+            nameLabel.innerText = `Dr. ${userData.firstName} ${userData.lastName}`;
             averageLabel.innerText = `${roundTo(ratings.average)} rating`;
             phoneLabel.href = `tel:${userData.phone}`;
             emailLabel.href = `mailto:${userData.email}`;
-            console.log(specializationLabel);
+
             specializationLabel.innerText = userData.specialization;
-            doctorReviewURL.href = `../../html/patient/reviewComponent.html?doctor=${uid}`
+            // doctorReviewURL.href = `../../html/patient/reviewComponent.html?doctor=${uid}`
             loading.hide()
         } else {
             loading.hide();
