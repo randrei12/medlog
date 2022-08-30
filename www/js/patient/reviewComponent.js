@@ -5,7 +5,7 @@ import {
   addCommentReview,
 } from "../../db/DoctorService.js";
 
-const button = document.querySelector(".baseButton");
+const button = document.querySelector(".reviewStars");
 
 window.addStarReview = addStarReview;
 window.selectedReviewStar = null;

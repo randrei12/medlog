@@ -8,9 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/doctor/profile.css">
     <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/patient/reviewComponent.css">
     <title>Doctor profile screen</title>
     <script src='../../js/main.js' type='module' defer></script>
     <script src="../../js/doctor/profile.js" type='module' defer></script>
+    <script src="../../js/patient/reviewComponent.js" type='module' defer></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -58,15 +61,15 @@
                     <div class="specialization"></div>
                     <div class="location">Regina Maria, Cluj-Napoca</div>
                     <div>
-                        <a href="../../html/patient/reviewComponent.html" id="doctor">
-                            <button class="reviewStars">
+                        <!-- <a href="../../html/patient/reviewComponent.html" id="doctor"> -->
+                            <span class="reviewStars">
                                 <img src="../../assets/star-grey.png" />
                                 <img src="../../assets/star-grey.png" />
                                 <img src="../../assets/star-grey.png" />
                                 <img src="../../assets/star-grey.png" />
                                 <img src="../../assets/star-grey.png" />
-                            </button>
-                        </a>
+                            </span>
+                        <!-- </a> -->
                     </div>
                     <div class="about">
                         <div class="text1">About</div>
@@ -85,22 +88,12 @@
 
     </div>
     <div class="bottomNav">
-        <a href="../patient/home.html">
-            <button class="home active"></button>
-        </a>
-        <a href="../patient/chat.html">
-            <button class="chat"></button>
-        </a>
-        <a href="../patient/doctorList.html">
-            <button class="search"></button>
-        </a>
-        <a href="../patient/appointment.html">
-            <button class="calendarul"></button>
-        </a>
-        <a href="../patient/profile.html">
-            <button class="profile"></button>
-        </a>
+        <button onclick="location = '../patient/home.html'" class="home"></button>
+        <button onclick="location = '../patient/chat.html'" class="chat"></button>
+        <button onclick="location = '../patient/doctorList.html'" class="search"></button>
+        <button onclick="location = '../patient/appoiment.html'" class="calendarul"></button>
+        <button onclick="location = '../patient/profile.html'" class="profile active"></button>
     </div>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </body>
