@@ -69,27 +69,28 @@ function RegisterDoctor(event) {
 
     loading.show();
     firebase.auth().createUserWithEmailAndPassword(email, password).then((userCredential) => {
-            // Signed in
-    var user = userCredential.user;
-    firebase.firestore().collection("users").doc(user.uid).set({
-        firstName,
-        lastName,
-        email,
-        password,
-        specialization,
-        county,
-        city,
-        uid: user.uid,
-        phoneNumber, 
-        type: "doctor",
-    }).then(() => {
-        loading.hide();
-        location = "home.html";
-    }).catch((error) => {
-        loading.hide();
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        alert(errorMessage);
+        // Signed in
+        var user = userCredential.user;
+        firebase.firestore().collection("users").doc(user.uid).set({
+            firstName,
+            lastName,
+            email,
+            password,
+            specialization,
+            county,
+            city,
+            uid: user.uid,
+            phoneNumber, 
+            type: "doctor",
+        }).then(() => {
+            loading.hide();
+            location = "home.html";
+        }).catch((error) => {
+            loading.hide();
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            alert(errorMessage);
+        });
     });
 }
 
