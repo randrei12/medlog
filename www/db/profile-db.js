@@ -7,7 +7,7 @@ const updateForm = document.getElementById("update-profile");
 loading.show();
 firebase.auth().onAuthStateChanged((user) => {
   if (user) LoadProfile(user.uid);
-  else location = "../html/patient/signUp.html";
+  else location = "../patient/signUp.html";
 });
 
 function LoadProfile(uid) {
