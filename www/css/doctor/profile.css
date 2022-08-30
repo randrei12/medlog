@@ -19,23 +19,186 @@ body {
     align-items: center;
 }
 
-.mainDiv {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 75%;
+.navbar {
+    padding-left: 19px;
+    padding-top: 32px;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
-.baseInput {
-    outline: none;
-    width: calc(100% - 10px);
-    max-width: 313px;
-    height: 3rem;
-    padding: 15px;
-    border: 2px solid rgba(93, 120, 247, 0.15);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 20px;
+.navbar>ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.container {
+    width: 390px;
+    background: linear-gradient(96.4deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 94.02%);
+}
+
+.doctor {
+    display: flex;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: -8px;
+}
+
+.doctorName {
+    width: 169px;
+    left: 195px;
+    top: 91px;
+
+    font: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #FFFFFF;
+}
+
+.starBox {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #4F6CF4;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+.text {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 33px;
+    background: none;
+    border-color: white;
+    box-shadow: none;
+    padding-left: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.infoContainer {
+    top: 273px;
+    border: 2px solid white;
+    bottom: 0px;
+    position: absolute;
+    background: white;
+    border-radius: 36px 36px 0px 0px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.contact {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 24px;
+}
+
+.callButton, .emailButton {
+    width: 46%;
+    height: 38px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-decoration: none;
+
+    background: linear-gradient(96.4deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 94.02%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px 0px;
+    padding: 4px;
+    padding-left: 14px;
+}
+
+.callAsset {
+    width: 20px;
+    height: 20px;
+}
+
+.specialization {
+    width: 180px;
+    height: 26px;
+    left: 44px;
+    top: 356px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    padding-left: 10px;
+    margin-top: 24px;
+
+    color: #000000;
+}
+
+.location {
+    width: 245px;
+    height: 27px;
+    left: 44px;
+    top: 393px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+    padding-left: 10px;
+    margin-top: 11px;
+
+    color: #000000;
+}
+
+.reviewStars {
+    top: 431px;
+    margin: 11px;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.text1 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    padding-left: 10px;
+
+    color: #000000;
+}
+
+.text2 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    margin-bottom: 22px;
+    margin-top: 6px;
+    padding-left: 10px;
+
+    color: rgba(0, 0, 0, 0.7);
 }
 
 .baseButton {
@@ -58,201 +221,11 @@ body {
     outline: auto;
 }
 
-.textarea {
-    outline: none;
-    width: 276px;
-    height: 40px;
-    padding: 0.5rem;
-    border: 2px solid rgba(93, 120, 247, 0.15);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 15px;
-    font-style: normal;
-    font-size: 1.3rem;
-    color: #000000;
-    margin: 20px;
-}
-
-.container {
-    width: 390px;
-    background: linear-gradient(343.12deg, #5D78F7 11.64%, rgba(93, 120, 247, 0.55) 88.36%);
-}
-
-.info-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.infoContainer {
-    width: 100%;
-    top: 273px;
-    border: 2px solid white;
-    bottom: 0px;
-    position: absolute;
-    background: white;
-    border-radius: 36px 36px 0px 0px;
-    padding-left: 24px;
-    padding-right: 24px;
-}
-
-.buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 0px;
-    bottom: 0;
-    width: 100%;
-}
-.navbar {
-    padding-left: 19px;
-    padding-top: 32px;
-    position:fixed;
-    top:0;
-    width:100%;
-}
-.navbar > ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-.mainText {
-    margin-left: 5%;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 33px;
-
-    color: rgba(0, 0, 0, 0.55);
-}
-
-.text {
-    font-family: 'Fredoka';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 25px;
-    line-height: 33px;
-    background: none;
-    border-color: white;
-    box-shadow: none;
-    padding-left: 10px;
-    color: white;
-    text-decoration: none;
-}
-
-.callButton {
-    width: 45%;
-    height: 35px;
-    font-family: 'Fredoka';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-    text-decoration: none;
-
-    background: linear-gradient(263.91deg, #5D78F7 0%, rgba(93, 120, 247, 0.5) 98.76%);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px 0px;
-    padding: 4px;
-}
-
-.callAsset {
-    width: 20px;
-    height: 20px;
-}
-
-.contact {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 24px;
-}
-
-.info {
-    position: fixed;
-    height: 50%;
-}
-
-.profileImgDiv {
-    margin-top: -15%;
-    margin-left: 100px;
-    width: 107px;
-    height: 107px;
-    position: relative;
-}
-
-.doctor {
-    display: flex;
-}
-
-.image-container {
-    display: flex;
-    flex-direction: column-reverse;
-}
-
-.doctorName {
-    width: 169px;
-    left: 195px;
-    top: 91px;
-
-    font: 'Fredoka';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-
-    color: #FFFFFF;
-}
-
-.specialisation {
-    width: 180px;
-    height: 26px;
-    left: 44px;
-    top: 356px;
-
-    font-family: 'Fredoka';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 30px;
-    line-height: 36px;
-    padding-left: 10px;
-
-    color: #000000;
-}
-
-.location {
-    width: 245px;
-    height: 27px;
-    left: 44px;
-    top: 393px;
-
-    font-family: 'Fredoka';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 24px;
-    padding-left: 10px;
-
-    color: #000000;
-}
-
-.star {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    left: 205px;
-    top: 95px;
-}
-
-.starBox {
+.leftArrow {
+    aspect-ratio: 1;
     width: 30px;
     height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #4F6CF4;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
+    border: none;
 }
 
 h1 {
