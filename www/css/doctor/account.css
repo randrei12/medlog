@@ -10,8 +10,14 @@
     right: 10%;
     left: 10%;
     padding: 10px;
-    padding-top: 60px;
     overflow-y: scroll;
+    display: flex;
+}
+
+.accountDocCard form {
+    margin-top: 60px;
+    overflow-y: scroll;
+    max-height: 100%;
 }
 
 .accountDocCard::-webkit-scrollbar {
@@ -98,13 +104,13 @@
     color: #000000;
     opacity: 60%;
     border-radius: 20px;
-
+    background: white;
     padding: 10px;
+    margin-left: 3px;
 }
 
 .nameDiv {
     width: 100%;
-    margin: 1rem 0rem;
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
@@ -117,6 +123,9 @@
     justify-content: space-between;
     margin-bottom: 0px;
     margin-top: 10px;
+}
+.dualDiv span {
+    margin-left: 4%;
 }
 
 .aboutDoc {
