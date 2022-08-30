@@ -7,6 +7,7 @@ const averageLabel = document.querySelector('.average');
 const specializationLabel = document.querySelector('.specialization');
 const phoneLabel = document.querySelector('.callButton');
 const emailLabel = document.querySelector('.emailButton');
+const descriptionLabel = document.querySelector('.description');
 const doctorReviewURL = document.querySelector('#doctor')
 const loading = new Loading();
 loading.show()
@@ -21,6 +22,7 @@ firebase.firestore().collection("users").doc(uid).get().then(async (doc) => {
         averageLabel.innerText = `${roundTo(ratings.average)} rating`;
         phoneLabel.href = `tel:${userData.phone}`;
         emailLabel.href = `mailto:${userData.email}`;
+        descriptionLabel.innerText = `${userData.description}`;
 
         specializationLabel.innerText = userData.specialization;
         // doctorReviewURL.href = `../../html/patient/reviewComponent.html?doctor=${uid}`
