@@ -31,7 +31,8 @@ firebase
         userElement.innerHTML = `
                 <img style="width: 50%;" src="https://cdn.discordapp.com/attachments/708033159538802819/1009409429210419290/unknown.png" alt=""> 
                 <div style="width: 50%;">
-                    <h3>${userData["username"]}</h3>
+                    <h3>${userData["firstName"]}</h3>
+                    <h3>${userData["lastName"]}</h3>
                     <p>${userData["specialization"]}</p>
                     <br>   
                     <span class="fa fa-star checked"></span>
