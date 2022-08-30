@@ -9,6 +9,17 @@ const button = document.querySelector(".reviewStars");
 
 window.addStarReview = addStarReview;
 window.selectedReviewStar = null;
+const generateHtmlReview = (average, noOfReviews, doctorId) => {
+  let html = '<div class="rating">';
+  for (let i = 1; i < 6; i++) {
+    html += `<span class="fa fa-star ${
+      average >= i ? "checked" : ""
+    }" onClick="addStarReview(${i},${average},${noOfReviews},'${doctorId}')"></span>`;
+  }
+  html += "</div>";
+
+  return html;
+}
 
 //fara initializare baza de date => await getDoctorReview o sa crape
 button.onclick = async () => {
@@ -17,13 +28,7 @@ button.onclick = async () => {
     const doctorId = params.doctor.toString();
     const { average, noOfReviews } = await getDoctorReview(doctorId);
 
-    let html = '<div class="rating">';
-    for (let i = 1; i < 6; i++) {
-      html += `<span class="fa fa-star ${
-        average >= i ? "checked" : ""
-      }" onClick="addStarReview(${i},${average},${noOfReviews},'${doctorId}')"></span>`;
-    }
-    html += "</div>";
+    const html = generateHtmlReview(average, noOfReviews, doctorId);
     const { value: text } = await Swal.fire({
       title: `${html}
                 <strong>Write a review</strong>`,
