@@ -14,8 +14,9 @@
 <body>
     <div class="hide-board">
         <div class="container">
-            <a onclick = "history.back()"></a>
-            <img class="leftArrow" type="image" src="../../assets/left-arrow-gri.png">
+            <a onclick="history.back()">
+                <img class="leftArrow" type="image" src="../../assets/left-arrow-gri.png">
+            </a>
             <span class="title">Treatments</span>
         </div>
 
@@ -35,21 +36,11 @@
 
     </div>
     <div class="bottomNav">
-        <a href="../patient/home.html">
-            <button class="home active"></button>
-        </a>
-        <a href="../patient/chat.html">
-            <button class="chat"></button>
-        </a>
-        <a href="../patient/doctorList.html">
-            <button class="search"></button>
-        </a>
-        <a href="../patient/appoiment.html">
-            <button class="calendarul"></button>
-        </a>
-        <a href="../patient/account.html">
-            <button class="profile"></button>
-        </a>
+        <button onclick="location = '../patient/home.html'" class="home active"></button>
+        <button onclick="location = '../patient/chat.html'" class="chat"></button>
+        <button onclick="location = '../patient/doctorList.html'" class="search"></button>
+        <button onclick="location = '../patient/appoiment.html'" class="calendarul"></button>
+        <button onclick="location = '../patient/profile.html'" class="profile"></button>
     </div>
 </body>
 
