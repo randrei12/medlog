@@ -83,6 +83,7 @@ function RegisterDoctor(event) {
             uid: user.uid,
             phoneNumber, 
             type: "doctor",
+            description: ''
         }).then().catch((error) => {
             loading.hide();
             var errorCode = error.code;
