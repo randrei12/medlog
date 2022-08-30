@@ -1,4 +1,5 @@
 import Loading from "../js/loading.js";
+import firebase from "./config.js";
 
 const registerForm = document.getElementById("register-form");
 
@@ -82,15 +83,26 @@ function RegisterDoctor(event) {
             uid: user.uid,
             phoneNumber, 
             type: "doctor",
-        }).then(() => {
-            loading.hide();
-            location = "home.html";
-        }).catch((error) => {
+        }).then().catch((error) => {
             loading.hide();
             var errorCode = error.code;
             var errorMessage = error.message;
             alert(errorMessage);
         });
+
+        firebase.firestore().collection('ratings').doc(user.id).set({
+            average: 0,
+            noOfReviews: 0,
+            reviews: []
+        }).then(() => {
+            loading.hide();
+            location = "home.html";
+        }).catch(e => {
+            loading.hide();
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            alert(errorMessage);
+        })
     });
 }
 
