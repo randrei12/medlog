@@ -15,46 +15,61 @@
 <body>
     <div class="accountBackground">
         <div class="accountDocCard">
-            <div class="profileCircle">
-                <div class="profileImgDiv">
-                    <img src="../../assets/account.png" class="profileImg">
+            <form id="update-profile" class="personalData">
+                <div class="nameDiv">
+                    <div class="docName">
+                        <span class="inputLabel">Name</span>
+                        <input class="nameInput">
+                    </div>
                 </div>
-            </div>
-
-            <div class="personalDocData">
-                <div class="docName">
-                    <p class="data">Name</p>
-                    <form>
-                        <textarea>Nume Prenume</textarea>
-                    </form>
+                <div class="specialisation">
+                    <span class="inputLabel">Specialisation</span>
+                    <input class="nameInput">
                 </div>
-                <div class="docName">
-                    <p class="data">Specialization</p>
-                    <form>
-                        <textarea>Specialization</textarea>
-                    </form>
-                </div>
-                <div class="docName">
-                    <p class="data">City&Country</p>
-                    <form>
-                        <select class="city">
-                            <option>Cluj-Napoca, Cluj</option>
-                            <option>Oradea, Bihor</option>
+                <div class="dualDiv">
+                    <div class="nameDiv">
+                        <span class="inputLabel">City</span>
+                        <select name="city" class="baseSelect">
+                            <option value="Cluj-Napoca">Cluj-Napoca</option>
+                            <option value="Dej">Dej</option>
+                            <option value="Cuca Macaii">Cuca Macaii</option>
                         </select>
-                    </form>
+                    </div>
+                    <div class="nameDiv">
+                        <span class="inputLabel">County</span>
+                        <select name="county" class="baseSelect">
+                            <option value="Cluj">Cluj</option>
+                            <option value="Brasov">Brasov</option>
+                            <option value="Bucuresti">Bucuresti</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="docName">
-                    <p class="data">Hospital</p>
-                    <form>
-                        <textarea>Hospital</textarea>
-                    </form>
+                <div class="hospital">
+                    <span class="inputLabel">Hospital</span>
+                    <input class="nameInput">
                 </div>
-                <div class="docName">
-                    <p class="data">Schedule</p>
+                <div class="nameDiv">
+                    <span class="inputLabel">Schedule</span>
                     <input type="date" class="docDate">
                 </div>
+                <div class="nameDiv">
+                    <div class="docName">
+                        <span class="inputLabel">About Yourself</span>
+                        <textarea class="aboutDoc">
+
+                        </textarea>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+        <div class="profileCircle">
+            <div class="profileImgDiv">
+                <img src="../../assets/account.png" class="profileImg">
             </div>
         </div>
+
         <div class="editButtonDocDiv">
             <button class="baseButton">Edit Profile</button>
         </div>
