@@ -13,7 +13,8 @@ function RegisterPatient(event) {
   const password = event.target["password"].value;
   const confirmPassword = event.target["confirm-password"].value;
   const cnp = event.target["cnp"].value;
-  const country = event.target["country"].value;
+  const county = event.target["county"].value;
+  const city = event.target["city"].value;
   const phoneNumber = event.target["phone-number"].value;
 
   if (password !== confirmPassword) {
@@ -44,8 +45,9 @@ function RegisterPatient(event) {
           email: email,
           password: password,
           cnp: cnp,
-          country: country,
+          county: county,
           uid: user.uid,
+          city: city,
           phoneNumber: phoneNumber,
           type: "patient",
         })
@@ -72,7 +74,8 @@ function RegisterDoctor(event) {
   const password = event.target["password"].value;
   const confirmPassword = event.target["confirm-password"].value;
   const specialization = event.target["specialization"].value;
-  const country = event.target["country"].value;
+  const county = event.target["county"].value;
+  const city = event.target["city"].value;
   const phoneNumber = event.target["phone-number"].value;
 
   if (password != confirmPassword) {
@@ -98,7 +101,8 @@ function RegisterDoctor(event) {
           email,
           password,
           specialization,
-          country,
+          county,
+          city,
           uid: user.uid,
           phoneNumber, 
           type: "doctor",
