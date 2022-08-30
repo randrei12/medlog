@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="../../css/patient/home.css">
     <script src="../../db/config.js" type="module"></script>
     <script src="../../js/main.js" type="module" defer></script>
-    <script src="../../js/patient/home.js" defer></script>
-    <script src="../../db/patientHome-db.js" type="module" defer></script>
+    <script src="../../js/patient/home.js" type="module" defer></script>
+    <link rel="stylesheet" href="../../css/patient/home.css">
     <title>Document</title>
 </head>
 
@@ -19,7 +19,7 @@
         <div class="account">
             <img src="../../assets/account.png" class="accountImg">
             <div class="nameBox">
-                <p class="name2">Hello, Name!</p>
+                <p class="name2">Hello, <span class="nameLabel"></span>!</p>
                 <p class="help">How can we help you today?</p>
             </div>
         </div>
@@ -53,7 +53,7 @@
 
         </div>
         <p class="text">Are you looking for a specialist?</p>
-        <div id="cards-container" class="scroll">
+        <div id="cardsContainer" class="scroll">
 
         </div>
     </div>
@@ -64,7 +64,6 @@
         <button onclick="location = '../patient/appointment.html'" class="calendarul"></button>
         <button onclick="location = '../patient/profile.html'" class="profile"></button>
     </div>
-    <script src="../../db/patientHome-db.js" type="module"></script>
 </body>
 
 </html>

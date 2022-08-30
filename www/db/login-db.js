@@ -1,4 +1,5 @@
 import Loading from "../js/loading.js";
+import { USER_TYPES } from "./constants.js";
 const loading = new Loading(false);
 
 document.body.style.height = innerHeight + 'px';

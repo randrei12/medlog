@@ -4,133 +4,93 @@ const registerForm = document.getElementById("register-form");
 
 const loading = new Loading();
 function RegisterPatient(event) {
-  event.preventDefault();
+    event.preventDefault();
+    const firstName = event.target["first-name"].value;
+    const lastName = event.target["last-name"].value;
+    const gender = event.target["gender"].value;
+    const email = event.target["email"].value;
+    const password = event.target["password"].value;
+    const confirmPassword = event.target["confirm-password"].value;
+    const cnp = event.target["cnp"].value;
+    const county = event.target["county"].value;
+    const city = event.target["city"].value;
+    const phoneNumber = event.target["phone-number"].value;
 
-  const firstName = event.target["first-name"].value;
-  const lastName = event.target["last-name"].value;
-  const gender = event.target["gender"].value;
-  const email = event.target["email"].value;
-  const password = event.target["password"].value;
-  const confirmPassword = event.target["confirm-password"].value;
-  const cnp = event.target["cnp"].value;
-  const county = event.target["county"].value;
-  const city = event.target["city"].value;
-  const phoneNumber = event.target["phone-number"].value;
+    if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return;
+    }
 
-  if (password !== confirmPassword) {
-    alert("Passwords do not match");
-    return;
-  }
-  if(!gender) {
-    alert("You must specify a gender");
-    return;
-  }
-
-  loading.show();
-  firebase
-    .auth()
-    .createUserWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      // Signed in
-      var user = userCredential.user;
-
-      firebase
-        .firestore()
-        .collection("users")
-        .doc(user.uid)
-        .set({
-          firstName: firstName,
-          lastName: lastName,
-          gender: gender,
-          email: email,
-          password: password,
-          cnp: cnp,
-          county: county,
-          uid: user.uid,
-          city: city,
-          phoneNumber: phoneNumber,
-          type: "patient",
-        })
-        .then(() => {
-          loading.hide();
-          location = "home.html";
+    loading.show();
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(userCredential => {
+        // Signed in
+        let user = userCredential.user;
+        firebase.firestore().collection("users").doc(user.uid).set({
+            firstName: firstName,
+            lastName: lastName,
+            gender: gender,
+            email: email,
+            password: password,
+            cnp: cnp,
+            county: county,
+            uid: user.uid,
+            city: city,
+            phoneNumber: phoneNumber,
+            type: "patient",
+        }).then(() => {
+            loading.hide();
+            location = "home.html";
         });
-    })
-    .catch((error) => {
+   }).catch(error => {
       loading.hide();
       var errorCode = error.code;
       var errorMessage = error.message;
-
       alert(errorMessage);
-    });
+   });
 }
 
 function RegisterDoctor(event) {
-  event.preventDefault();
+    event.preventDefault();
 
-  const firstName = event.target["first-name"].value;
-  const lastName = event.target["last-name"].value;
-  const email = event.target["email"].value;
-  const password = event.target["password"].value;
-  const confirmPassword = event.target["confirm-password"].value;
-  const specialization = event.target["specialization"].value;
-  const county = event.target["county"].value;
-  const city = event.target["city"].value;
-  const phoneNumber = event.target["phone-number"].value;
+    const firstName = event.target["first-name"].value;
+    const lastName = event.target["last-name"].value;
+    const email = event.target["email"].value;
+    const password = event.target["password"].value;
+    const confirmPassword = event.target["confirm-password"].value;
+    const specialization = event.target["specialization"].value;
+    const county = event.target["county"].value;
+    const city = event.target["city"].value;
+    const phoneNumber = event.target["phone-number"].value;
 
-  if (password != confirmPassword) {
-    alert("Passwords do not match");
-    return;
-  }
+    if (password != confirmPassword) {
+        alert("Passwords do not match");
+        return;
+    }
 
-  loading.show();
-  firebase
-    .auth()
-    .createUserWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      // Signed in
-      var user = userCredential.user;
-
-      firebase
-        .firestore()
-        .collection("users")
-        .doc(user.uid)
-        .set({
-          firstName,
-          lastName,
-          email,
-          password,
-          specialization,
-          county,
-          city,
-          uid: user.uid,
-          phoneNumber, 
-          type: "doctor",
-        })
-        .then(() => {
-          loading.hide();
-          location = "home.html";
-        });
-    })
-    .catch((error) => {
-      loading.hide();
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      alert(errorMessage);
+    loading.show();
+    firebase.auth().createUserWithEmailAndPassword(email, password).then((userCredential) => {
+            // Signed in
+    var user = userCredential.user;
+    firebase.firestore().collection("users").doc(user.uid).set({
+        firstName,
+        lastName,
+        email,
+        password,
+        specialization,
+        county,
+        city,
+        uid: user.uid,
+        phoneNumber, 
+        type: "doctor",
+    }).then(() => {
+        loading.hide();
+        location = "home.html";
+    }).catch((error) => {
+        loading.hide();
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        alert(errorMessage);
     });
 }
 
-registerForm.onsubmit = location.href.includes("doc")
-  ? RegisterDoctor
-  : RegisterPatient;
-
-// if(location.href.includes("doc")) {
-//     registerForm.onsubmit = (event) => {
-//         RegisterDoctor(event);
-//     }
-// }
-// else {
-//     registerForm.onsubmit = (event) => {
-//         RegisterPatient(event);
-//     }
-// }
+registerForm.onsubmit = location.href.includes("doc") ? RegisterDoctor : RegisterPatient;
