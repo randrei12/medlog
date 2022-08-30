@@ -6,7 +6,7 @@ const cardsContainter = document.querySelector("#cardsContainer");
 const loading = new Loading();
 if (!sessionStorage.getItem('user')) loading.show();
 else {
-    let data = JSON.parse('user')
+    let data = JSON.parse(sessionStorage.getItem('user'))
     nameLabel.innerText = data.firstName + ' ' + data.lastName;
 }
 
