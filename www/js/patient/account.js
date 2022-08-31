@@ -20,12 +20,13 @@ firebase.auth().onAuthStateChanged(user => {
     firebase.firestore().collection("users").doc(user.uid).get().then(doc => {
         loading.hide();
         let data = doc.data();
-        inputs[0].value = data.username;
-        // inputs[1].value = data.gender;
-        // inputs[2].value = data.birthday;
-        // inputs[3].value = data.city;
-        inputs[4].value = data.country;
-        inputs[5].value = data.familyDoctor;
+        inputs[0].value = data.firstName;
+        inputs[1].value = data.lastName;
+        inputs[2].value = data.gender;
+        inputs[3].value = data.bday;
+        inputs[4].value = data.county;
+        inputs[5].value = data.city;
+        inputs[6].value = data.familyDoctor;
     }).catch(() => {
         location = "../../index.html"
     });
