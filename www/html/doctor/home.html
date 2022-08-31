@@ -25,26 +25,39 @@
 
 <body>
 
-    <img src="../../assets/account.png" class="profileImg">
-    <div class="helloText">
-        <p class="helloDr">Hello, Dr. <span class="nameLabel"></span></p>
-        <p class="howCanWeHelp">How can we help you today? </p>
-    </div>
+    <div class="main">
+        <div class="account">
+            <img src="../../assets/account.png" class="profileImg">
+            <div class="helloText">
+                <p class="helloDr">Hello, Dr. <span class="nameLabel"></span></p>
+                <p class="howCanWeHelp">How can we help you today? </p>
+            </div>
+        </div>
+    
+        <div class="apptCard">
+            <div class="todayPlan">
+                <p class="today">Today</p>
+                <div class="scroll">
+                    <button class="appt"></button>
+                    <div class="space"></div>
+                    <button class="appt"></button>
+                    <div class="space"></div>
+                    <button class="appt"></button>
+                    <div class="space"></div>
+                    <button class="appt"></button>
+                    <div class="space"></div>
+                    <button class="appt"></button>
+                </div>
+            </div>
+            
+        </div>
 
-    <div class="apptCard">
-        <p class="today">Today</p>
-        <div class="scroll">
-            <button class="appt"></button>
-            <div class="space"></div>
-            <button class="appt"></button>
-            <div class="space"></div>
-            <button class="appt"></button>
-            <div class="space"></div>
-            <button class="appt"></button>
-            <div class="space"></div>
-            <button class="appt"></button>
+        <div class="patientsButtonDiv">
+            <button onclick="location = '../doctor/patientsScreen.html'" class="patientsButton">Patients</button>
         </div>
     </div>
+
+    
 
     <div class="bottomNav">
         <button onclick="location = '../doctor/home.html'" class="home active"></button>
