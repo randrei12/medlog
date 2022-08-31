@@ -1,13 +1,10 @@
 import Loading from "../js/loading.js";
 const loading = new Loading();
 
-const accountCard = document.getElementById("account-card");
-const updateForm = document.getElementById("update-profile");
-
 loading.show();
 firebase.auth().onAuthStateChanged((user) => {
   if (user) LoadProfile(user.uid);
-  else location = "../patient/signUp.html";
+  else location = "../../index.html";
 });
 
 function LoadProfile(uid) {
