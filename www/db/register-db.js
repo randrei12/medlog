@@ -16,6 +16,7 @@ function RegisterPatient(event) {
     const county = event.target["county"].value;
     const city = event.target["city"].value;
     const phoneNumber = event.target["phone-number"].value;
+    const bday = event.target["bday"].value;
 
     if (password !== confirmPassword) {
         alert("Passwords do not match");
@@ -37,6 +38,7 @@ function RegisterPatient(event) {
             uid: user.uid,
             city: city,
             phoneNumber: phoneNumber,
+            bday: bday,
             type: "patient",
         }).then(() => {
             loading.hide();
