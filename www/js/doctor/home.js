@@ -1,5 +1,6 @@
 import Loading from "../loading.js";
 
+const nameLabel = document.querySelector('.nameLabel');
 const loading = new Loading();
 if (!sessionStorage.getItem('user')) loading.show();
 else {
