@@ -271,6 +271,11 @@
     outline: none !important;
     transition: background 0.2s ease;
   }
+
+  .fc-button {
+    width: 50px !important;
+  }
+
   .message-box .message-submit:hover {
     background: #1D7745;
   }
