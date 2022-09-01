@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable = no">
     <link rel="stylesheet" href="../../css/main.css">
     <!-- <link rel="stylesheet" href="css/main.css"> -->
-    <link rel="stylesheet" href="../../css/doctor/patientsScreen.css">
+    <link rel="stylesheet" href="../../css/searchList.css">
     <title>Patients Screen</title>
     <script src='../../js/main.js' type='module' defer></script>
     <script src="../../js/doctor/search.js" type="module" defer></script>
@@ -15,26 +15,24 @@
 
 <body>
     <div class="topContainer">
-        <img onclick="location = '../doctor/home.html'" class="leftArrow" type="image" src="../../assets/left-arrow-gri.png">
+        <img onclick="history.back()" class="leftArrow" type="image" src="../../assets/left-arrow-gri.png">
         <span class="title">Patients</span>
-        <a></a>
+        <a style='user-select: none'>⠀</a>
     </div>
 
     <div class="baseSearch">
         <img src="../../assets/search-icon.png">
-        <input type="text" placeholder="Search a patient...">
+        <input type="text" placeholder="Search a doctor...">
     </div>
-
-    <div class="patientsList">
-        <button class="patient-button">
-            <img class="account-image" src="../../assets/account.png" alt="Acount Image">
-            <p class="name"><span>Nume</span> <span>Prenume</span></p>
-        </button>
+    <div class="baseSearchFilters">
+        <span>Search by</span>
+        <select>
+            <option value="name">Name</option>
+            <option value="cnp">CNP</option>
+        </select>
     </div>
+    <div class="patientsList"></div>
 
-    <button class="add-patient" onclick="">
-        <img class="plus" src="../../assets/plus.png" alt="plus button">
-    </button>
     <div class="bottomNav">
         <button onclick="location = '../doctor/home.html'" class="home"></button>
         <button onclick="location = '../doctor/chat.html'" class="chat"></button>

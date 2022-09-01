@@ -142,3 +142,35 @@ body {
     width: 70%;
     height: 70%;
 }
+
+.baseSearchFilters {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.baseSearchFilters > span {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.baseSearchFilters > select {
+    background: white;
+    flex-grow: 1;
+    outline: none;
+    width: 50%;
+    height: 50px;
+    max-width: unset;
+    padding: 35px;
+    text-align: center;
+    border: none;
+    filter: none;
+    /* border-radius: 0; */
+    padding: 0px;
+    font-size: 20px;
+    border: 2px solid rgba(93, 120, 247, 0.15);
+}
