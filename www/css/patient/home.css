@@ -20,8 +20,8 @@
 }
 
 .accountImg {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
 }
 
 .nameBox {
@@ -33,16 +33,60 @@
     justify-content: center;
 }
 
+.nav {
+    position: fixed;
+    top: 12%;
+    width: 90%;
+    height: 5%;
+    margin: 20px;
+    margin-left: 5%;
+    background: white;
+    display: flex;
+}
+
+.nav input[type=text] {
+    width: 85%;
+    height: 100%;
+    border-radius: 15px 0 0 15px;
+    font-size: 17px;
+    border: none;
+    background-color: #fff;
+}
+
+.submitButton{
+    width: 50px !important;
+    height: 100% !important;
+    background-color: white !important;
+    border-radius: 0 15px 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.searcIcon {
+    width: 25px;
+    height: 25px;
+    opacity: 50%;
+}
+
+
 .name2 {
     color: #000000;
     font-size: 15px;
-    opacity: 80%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 21px;
 }
 
 .help {
+    display: inline-block;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
     color: #000000;
-    font-size: 10px;
-    opacity: 80%;
 }
 
 .searchBarDiv {
@@ -70,7 +114,7 @@
 }
 
 .calendar {
-    margin-top: 7%;
+    margin-top: 20%;
     margin-left: 7%;
     outline: none;
     width: 85%;

@@ -59,7 +59,7 @@ input {
 
 button {
     width: 173px;
-    min-height: 2em;
+    height: 2em;
     margin-bottom: 15px;
     background: linear-gradient(96.4deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 94.02%);
     border-radius: 25px;
