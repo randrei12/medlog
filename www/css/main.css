@@ -300,3 +300,19 @@ a {
     aspect-ratio: 1;
     padding: 10px;
 }
+
+.fc-button {
+    width: 75px !important;
+}
+
+.fc-media-screen {
+    height: 100% !important;
+}
+
+.fc-dayGridMonth-button, .fc-timeGridWeek-button, .fc-timeGridDay-button, .fc-today-button, .fc-daygrid-week-number {
+    display: none !important;
+}
+
+.fc-toolbar-title {
+    font-size: 20px !important;
+}
