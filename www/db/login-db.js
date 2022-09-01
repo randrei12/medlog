@@ -7,9 +7,8 @@ document.body.style.height = innerHeight + 'px';
 async function selectRoleScreen(user) {
   // loading.show();
   try {
-    let usersCollection = firebase.firestore().collection("users");
-    let result = await usersCollection.doc(user.uid).get();
-    console.log(result.data());
+    let result = await firebase.firestore().collection("users").doc(user.uid).get();
+    console.log(result);
     try {
       Capacitor.Plugins.SplashScreen.hide()
     } catch {}
