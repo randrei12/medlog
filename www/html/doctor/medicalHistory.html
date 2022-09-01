@@ -6,45 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable = no">
     <!-- <link rel="stylesheet" href="css/main.css"> -->
-    <link rel="stylesheet" href="/www/css/prescriptionScreen.css">
+    <link rel="stylesheet" href="/www/css/doctor/medicalHistory.css">
     <link rel="stylesheet" href="/www/css/main.css">
     <title>Medical History</title>
     <script src='../../js/main.js' type='module' defer></script>
 </head>
 
 <body>
-    <div class="hide-board">
-        <div class="container">
-            <a onclick="history.back()">
-                <img class="leftArrow" type="image" src="../../assets/left-arrow-gri.png">
-            </a>
-            <span class="title" style="margin-left: 10px;">Medical History</span>
-        </div>
-        <div class="searchBarDiv">
-            <input type="image" src="../../assets/search-icon.png">
-            <input type="text" placeholder="" class="searchBar">
-        </div>
+    <div class="topContainer">
+        <img onclick="location = '../doctor/home.html'" class="leftArrow" type="image"
+            src="../../assets/left-arrow-gri.png">
+        <span class="title">Medical History</span>
+        <a></a>
     </div>
-    <div class="file-container">
-        <button class="pScreenButton" style="background-color: white;">
+
+    <div class="baseSearch">
+        <img src="../../assets/search-icon.png">
+        <input type="text" placeholder="Search...">
+    </div>
+
+    <div class="historyList">
+        <button class="history-button">
             <img class="folder-image" src="../../assets/folder-icon.png" alt="" style="margin-left: 20px;">
-            <div>
-                <h2 class="medic" style="font-size:20px; margin-left: 15px;">Medical File</h2>
-                <h2 class="data" style="font-size: 15px;">Data</h2>
-            </div>
-        </button>
-        <button class="pScreenButton">
-            <img class="folder-image" src="../../assets/prescription-icon.png" alt="" style="margin-left: 20px;">
-            <div>
-                <h2 class="medic" style="font-size:20px; margin-left: 15px;">Prescription</h2>
-                <h2 class="data" style="font-size: 15px;">Data</h2>
+            <div >
+                <h2 class="medic">Cauza vizitei/medicul <br></h2>
+                <h2 class="data" style="font-size: 15px">Data</h2>
             </div>
         </button>
     </div>
+
     <div class="bottomNav">
         <button onclick="location = '../doctor/home.html'" class="home"></button>
         <button onclick="location = '../doctor/chat.html'" class="chat"></button>
-        <button onclick="location = '../doctor/search.html'" class="search active"></button>
+        <button onclick="location = '../doctor/search.html'" class="search"></button>
         <button onclick="location = '../patient/appointment.html'" class="calendarul"></button>
         <button onclick="location = '../doctor/account.html'" class="profile"></button>
     </div>
