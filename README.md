@@ -1,4 +1,4 @@
-# medlog-frontend
+# MedLog
 Instalare package-uri
 ```
 npm install
