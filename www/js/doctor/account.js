@@ -3,8 +3,8 @@ let data = JSON.parse(sessionStorage.getItem('user'));
 
 const [ backButton, signOutButton ] = document.querySelectorAll('.topNavContainer img')
 
-backButton.onclick = history.back;
-signOutButton.onclick = () => {
+topNavChilds[0].onclick = () => history.back();
+topNavChilds[1].onclick = () => {
     firebase.auth().signOut();
     sessionStorage.clear();
 }
@@ -12,6 +12,8 @@ signOutButton.onclick = () => {
 const [ firstName, lastName] = document.querySelectorAll('.docName input');
 const specialization = document.querySelector('.specialisation input');
 const [ CountySelect, CitySelect ] = document.querySelectorAll('.nameDiv > select');
+const phoneNumber = document.querySelector('.phoneNumber input');
+const email = document.querySelector('.email input');
 const hospital = document.querySelector('.hospital input');
 const aboutDoc = document.querySelector('.aboutDoc');
 
@@ -22,6 +24,8 @@ firebase.firestore().collection('users').doc(data.uid).get().then(res => {
     specialization.value = user.specialization;
     CountySelect.value = user.county;
     CitySelect.value = user.city;
+    phoneNumber.value = user.phoneNumber;
+    email.value = user.email;
     hospital.value = user.hospital;
     aboutDoc.value = user.description;
 });
@@ -34,6 +38,8 @@ editButton.onclick = () => {
         specialization: specialization.value,
         county: CountySelect.value,
         city: CitySelect.value,
+        phoneNumber: phoneNumber.value,
+        email: email.value,
         hospital: hospital.value,
         description: aboutDoc.value
     }).then(() => {

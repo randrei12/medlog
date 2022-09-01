@@ -93,7 +93,7 @@ function RegisterDoctor(event) {
             alert(errorMessage);
         });
 
-        firebase.firestore().collection('ratings').doc(user.id).set({
+        firebase.firestore().collection('ratings').doc(user.uid).set({
             average: 0,
             noOfReviews: 0,
             reviews: []
