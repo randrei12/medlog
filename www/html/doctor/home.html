@@ -7,14 +7,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/doctor/home.css">
-    
+
     <!--Calendar-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.css">
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/locales-all.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/locales-all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.js"></script>
+    <script>
+        window.onload = () => {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+
+                selectable: true,
+                selectMirror: true,
+                select: function (arg) {
+                    var title = prompt('Event Title:');
+                    if (title) {
+                        calendar.addEvent({
+                            title: title,
+                            start: arg.start,
+                            end: arg.end,
+                            allDay: arg.allDay
+                        })
+                    }
+                    calendar.unselect()
+                },
+
+                editable: true,
+                droppable: true, // this allows things to be dropped onto the calendar
+                drop: function (arg) {
+                    // is the "remove after drop" checkbox checked?
+                    if (document.getElementById('drop-remove').checked) {
+                        // if so, remove the element from the "Draggable Events" list
+                        arg.draggedEl.parentNode.removeChild(arg.draggedEl);
+                    }
+                },
+                initialDate: '2022-08-01',
+                weekNumbers: true,
+                navLinks: true, // can click day/week names to navigate views
+                editable: false,
+                selectable: true,
+                nowIndicator: true,
+                events: [
+                    {
+                        "title": "Hello",
+                        "start": "2022-09-01",
+                        "end": "2022-09-01"
+                    }
+                ]
+            });
+            calendar.render();
+        }
+
+    </script>
     <!--End Calendar-->
 
     <title>Home Doctor</title>
@@ -33,23 +83,12 @@
                 <p class="howCanWeHelp">How can we help you today? </p>
             </div>
         </div>
-    
+
         <div class="apptCard">
-            <div class="todayPlan">
-                <p class="today">Today</p>
-                <div class="scroll">
-                    <button class="appt"></button>
-                    <div class="space"></div>
-                    <button class="appt"></button>
-                    <div class="space"></div>
-                    <button class="appt"></button>
-                    <div class="space"></div>
-                    <button class="appt"></button>
-                    <div class="space"></div>
-                    <button class="appt"></button>
-                </div>
+            <div id="calendar">
+
+
             </div>
-            
         </div>
 
         <div class="patientsButtonDiv">
@@ -57,12 +96,12 @@
         </div>
     </div>
 
-    
+
 
     <div class="bottomNav">
         <button onclick="location = '../doctor/home.html'" class="home active"></button>
         <button onclick="location = '../doctor/chat.html'" class="chat"></button>
-        <button onclick="location = '../doctor/patientsScreen.html'" class="search"></button>
+        <button onclick="location = '../doctor/search.html'" class="search"></button>
         <button onclick="location = '../patient/appointment.html'" class="calendarul"></button>
         <button onclick="location = '../doctor/account.html'" class="profile"></button>
     </div>

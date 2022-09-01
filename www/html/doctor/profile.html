@@ -72,12 +72,13 @@
                 
                     <div class="calendar">
                         <div class="text1">Schedule</div>
+                        <a id="appointment-button">
+                            <button class="baseButton">Book an Appointment</button>
+                        </a>
                         
                     </div>
-                    <a href="../patient/appointment.html" class="appointmentButton">
-                        <button class="baseButton">Book an Appointment</button>
-                    </a>
-                </div>  
+                </div>
+
             </div>
         </div>
     </div>
@@ -89,5 +90,20 @@
         <button onclick="location = '../doctor/account.html'" class="profile"></button>
     </div>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
 
+        
+        const bookAppointmentButton = document.getElementById("appointment-button")
+            
+        function bookAppointment() {
+            var url_string = window.location.href;
+            var url = new URL(url_string);
+            var usernameParam = url.searchParams.get("doctor");
+            location = `../patient/appointment.html?doctor=${usernameParam}`
+        }
+
+        bookAppointmentButton.onclick = () => {
+            bookAppointment();
+        }
+    </script>
 </body>
