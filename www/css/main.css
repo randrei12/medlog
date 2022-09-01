@@ -267,9 +267,44 @@ a {
     background-image: url(../assets/bottomNav/profile-filled.png);
 }
 
+.baseSearch {
+    outline: none;
+    height: 50px;
+    border: 2px solid rgba(93, 120, 247, 0.15);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    margin: 0 10px;
+    width: calc(100% - 20px);
+    margin-top: 10px;
+}
+
+.baseSearch > input {
+    flex-grow: 1;
+    outline: none;
+    width: calc(100% - 10px);
+    max-width: unset;
+    height: 100%;
+    padding: 15px;
+    border: none;
+    filter: none;
+    border-radius: 0;
+    padding: 0px;
+    font-size: 20px;
+}
+
+.baseSearch>img {
+    height: 100%;
+    aspect-ratio: 1;
+    padding: 10px;
+}
+
 .fc-button {
     width: 75px !important;
 }
+
 .fc-media-screen {
     height: 100% !important;
 }
@@ -277,6 +312,7 @@ a {
 .fc-dayGridMonth-button, .fc-timeGridWeek-button, .fc-timeGridDay-button, .fc-today-button, .fc-daygrid-week-number {
     display: none !important;
 }
+
 .fc-toolbar-title {
     font-size: 20px !important;
 }
