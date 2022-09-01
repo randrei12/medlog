@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/patient/home.css">
     <script src="../../db/config.js" type="module"></script>
     <script src="../../js/main.js" type="module" defer></script>
-    <script src="../../js/patient/home.js" defer></script>
-    <script src="../../db/patientHome-db.js" type="module" defer></script>
+    <script src="../../js/patient/home.js" type="module" defer></script>
     <link rel="stylesheet" href="../../css/patient/home.css">
     <title>Document</title>
 </head>
@@ -19,25 +19,26 @@
         <div class="account">
             <img src="../../assets/account.png" class="accountImg">
             <div class="nameBox">
-                <p class="name2">Hello, Name!</p>
+                <p class="name2">Hello, <span class="nameLabel"></span>!</p>
                 <p class="help">How can we help you today?</p>
             </div>
         </div>
-        <div class="searchBarDiv">
-            <input type="text" placeholder="Find the right doctor for you" class="searchBar">
+        <div class="nav">
+            <input type="text" placeholder="Find the perfect doctor for you">
+            <button type="submit" class="submitButton"><img class="searcIcon" src="../../assets/search.png"></button>
         </div>
         <div class="calendar">
 
         </div>
         <div class="buttonContainer">
-            <a href="../../html/doctor/addTreatmentScreen.html">
+            <a href="../../html/patient/treatmentScreen.html">
                 <button class="button">
                     <img src="../../assets/medicine.png" class="buttonIcon">
                     <p class="buttonText">Treatment</p>
                 </button>
             </a>
 
-            <a href="../../html/doctor/addPrescriptionScreen.html">
+            <a href="../../html/patient/prescriptionScreen.html">
                 <button class="button">
                     <img src="../../assets/prescription.png" class="buttonIcon">
                     <p class="buttonText">Prescription</p>
@@ -53,28 +54,17 @@
 
         </div>
         <p class="text">Are you looking for a specialist?</p>
-        <div id="cards-container" class="scroll">
+        <div id="cardsContainer" class="scroll">
 
         </div>
     </div>
     <div class="bottomNav">
-        <a href="../patient/home.html">
-            <button class="home active"></button>
-        </a>
-        <a href="../patient/chat.html">
-            <button class="chat"></button>
-        </a>
-        <a href="../patient/doctorList.html">
-            <button class="search"></button>
-        </a>
-        <a href="../patient/appoiment.html">
-            <button class="calendarul"></button>
-        </a>
-        <a href="../patient/profile.html">
-            <button class="profile"></button>
-        </a>
+        <button onclick="location = '../patient/home.html'" class="home active"></button>
+        <button onclick="location = '../patient/chat.html'" class="chat"></button>
+        <button onclick="location = '../patient/doctorList.html'" class="search"></button>
+        <button onclick="location = '../patient/appointment.html'" class="calendarul"></button>
+        <button onclick="location = '../patient/account.html'" class="profile"></button>
     </div>
-    <button onclick="firebase.auth().signOut()">Random Log Out Button</button>
 </body>
 
 </html>

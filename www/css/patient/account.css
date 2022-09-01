@@ -1,6 +1,6 @@
 .accountCard {
     width: 80%;
-    height: 70%;
+    height: 65%;
     background: #FDFDFD;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
@@ -9,6 +9,19 @@
     bottom: 10%;
     right: 10%;
     left: 10%;
+    padding: 10px;
+    overflow-y: scroll;
+}
+
+.accountDocCard form {
+    margin-top: 50px;
+    overflow-y: scroll;
+    max-height: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
 }
 
 .profileCircle {
@@ -19,6 +32,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     position: absolute;
     left: 50%;
+    top: 15%;
     transform: translate(-50%, -50%);
 }
 
@@ -69,8 +83,8 @@
     width: 173%;
     height: 3rem;
     position: fixed;
-    top: 89%;
-    bottom: 10%;
+    /* top: 89%; */
+    bottom: 11%;
     left: 28%;
     right: 28%;
 }
@@ -80,7 +94,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 20px;
 }
 
 .dualDiv .nameDiv {
@@ -117,7 +130,9 @@
     width: 70%;
     padding: 0.5rem 15px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    font-size: 1.3rem;
+    font-size: 15px;
+    color: #000000;
+    opacity: 60%;
 }
 
 .date {

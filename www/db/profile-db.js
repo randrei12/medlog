@@ -7,7 +7,7 @@ const updateForm = document.getElementById("update-profile");
 loading.show();
 firebase.auth().onAuthStateChanged((user) => {
   if (user) LoadProfile(user.uid);
-  else location = "../html/patient/signUp.html";
+  else location = "../../index.html";
 });
 
 function LoadProfile(uid) {
@@ -18,61 +18,7 @@ function LoadProfile(uid) {
     .then((doc) => {
       if (doc.exists) {
         console.log("Document data:", doc.data());
-
         const userData = doc.data();
-        /*
-            var accountContent = `
-                <div class="profileCircle">
-                    <div class="profileImgDiv">
-                        <img src="assets/account.png" class="profileImg">
-                    </div>
-                </div>
-
-                <form id='update-profile' class="personalData">
-                    <div class="nameDiv">
-                        <span class="inputLabel">Name</span>
-                        <input value=${userData["username"]} class="nameInput"></input>
-                    </div>
-                    <div class="dualDiv">
-                        <div class="nameDiv">
-                            <span class="inputLabel">Gender</span>
-                            <select name="gender" class="baseSelect">
-                                <option>Male</option>
-                                <option>Female</option>
-                            </select>
-                        </div>
-                        <div class="nameDiv">
-                            <span class="inputLabel">Birthday</span>
-                            <input name="birthdays" type="date" class="date">
-                        </div>
-                    </div>
-                    <div class="dualDiv">
-                        <div class="nameDiv">
-                            <span class="inputLabel">City</span>
-                            <select name="city" class="baseSelect">
-                                <option value="">Cluj Napoca</option>
-                                <option value="">Dej</option>
-                                <option value="">Cuca Macaii</option>
-                            </select>
-                        </div>
-                        <div class="nameDiv">
-                            <span class="inputLabel">County</span>
-                            <select name="county" class="baseSelect">
-                                <option value="">Cluj</option>
-                                <option value="">Brasov</option>
-                                <option value="">Bucuresti</option>
-                            </select>                    
-                        </div>
-                    </div>
-                    <div class="nameDiv">
-                        <span class="inputLabel">Family Doctor</span>
-                        <input id="family-doctor" class="familyInput" />
-                    </div>
-                    <button type="submit" form="update-profile" class="baseButton">Update Profile</button>
-
-                </form>
-            `
-            */
         console.log(document.getElementById("update-profile"));
         loading.hide();
 

@@ -5,46 +5,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/doctor/home.css">
+    
     <!--Calendar-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/locales-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/locales-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.js"></script>
     <!--End Calendar-->
+
     <title>Home Doctor</title>
+    <script src="../../db/config.js" type="module" defer></script>
     <script src='../../js/main.js' type='module' defer></script>
+    <script src="../../js/doctor/home.js" type="module" defer></script>
 </head>
 
 <body>
 
-    <img src="../../assets/account.png" class="profileImg">
-    <div class="helloText">
-        <p class="helloDr">Hello, Dr.</p>
-        <p class="howCanWeHelp">How can we help you today? </p>
-    </div>
+    <div class="main">
+        <div class="account">
+            <img src="../../assets/account.png" class="profileImg">
+            <div class="helloText">
+                <p class="helloDr">Hello, Dr. <span class="nameLabel"></span></p>
+                <p class="howCanWeHelp">How can we help you today? </p>
+            </div>
+        </div>
+    
+        <div class="apptCard">
+            <div class="todayPlan">
+                <p class="today">Today</p>
+                <div class="scroll">
+                    <button class="appt"></button>
+                    <div class="space"></div>
+                    <button class="appt"></button>
+                    <div class="space"></div>
+                    <button class="appt"></button>
+                    <div class="space"></div>
+                    <button class="appt"></button>
+                    <div class="space"></div>
+                    <button class="appt"></button>
+                </div>
+            </div>
+            
+        </div>
 
-    <div class="apptCard">
-        <div class="calendar"></div>
-        <p class="today">Today</p>
-        <div class="scroll">
-            <button class="appt"></button>
-            <div class="space"></div>
-            <button class="appt"></button>
-            <div class="space"></div>
-            <button class="appt"></button>
-            <div class="space"></div>
-            <button class="appt"></button>
-            <div class="space"></div>
-            <button class="appt"></button>
+        <div class="patientsButtonDiv">
+            <button onclick="location = '../doctor/patientsScreen.html'" class="patientsButton">Patients</button>
         </div>
     </div>
-    <div class="Button">
-        <button class="baseButton">Patients</button>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/locales-all.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/locales-all.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.js"></script>
+    
+
+    <div class="bottomNav">
+        <button onclick="location = '../doctor/home.html'" class="home active"></button>
+        <button onclick="location = '../doctor/chat.html'" class="chat"></button>
+        <button onclick="location = '../doctor/patientsScreen.html'" class="search"></button>
+        <button onclick="location = '../patient/appointment.html'" class="calendarul"></button>
+        <button onclick="location = '../doctor/account.html'" class="profile"></button>
+    </div>
 </body>
 
 </html>

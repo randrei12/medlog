@@ -20,28 +20,17 @@
             <img type="image" class="leftArrow" src="/www/assets/left-arrow-gri.png" />
         </a>
         <span class="Title">Add medical file</span>
-        <img type="image" class="homeButton" src="/www/assets/home-gri.png" />
     </div>
     <div class="file-container">
         <input type="file" name="file" id="file" style="display: none;" class="inputfile" />
         <label for="file" class="add-file-button">Add a photo</label>
     </div>
     <div class="bottomNav">
-        <a href="../patient/home.html">
-            <button class="home"></button>
-        </a>
-        <a href="../patient/chat.html">
-            <button class="chat"></button>
-        </a>
-        <a href="../patient/doctorList.html">
-            <button class="search"></button>
-        </a>
-        <a href="../patient/appoiment.html">
-            <button class="calendarul"></button>
-        </a>
-        <a href="../patient/profile.html">
-            <button class="profile active"></button>
-        </a>
+        <button onclick="location = '../doctor/home.html'" class="home"></button>
+        <button onclick="location = '../doctor/chat.html'" class="chat"></button>
+        <button onclick="location = '../doctor/patientsScreen.html'" class="search active"></button>
+        <button onclick="location = '../patient/appointment.html'" class="calendarul"></button>
+        <button onclick="location = '../doctor/account.html'" class="profile"></button>
     </div>
 </body>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

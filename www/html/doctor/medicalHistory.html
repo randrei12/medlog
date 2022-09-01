@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable = no">
     <!-- <link rel="stylesheet" href="css/main.css"> -->
-    <link rel="stylesheet" href="/www/css/doctor/addMedicalFile.css">
+    <link rel="stylesheet" href="/www/css/prescriptionScreen.css">
     <link rel="stylesheet" href="/www/css/main.css">
     <title>Medical History</title>
     <script src='../../js/main.js' type='module' defer></script>
@@ -18,25 +18,22 @@
             <a onclick="history.back()">
                 <img class="leftArrow" type="image" src="../../assets/left-arrow-gri.png">
             </a>
-            
             <span class="title" style="margin-left: 10px;">Medical History</span>
-            <img type="image" class="homeButton" src="../../assets/home-gri.png" style="right: 10px;" />
         </div>
-
         <div class="searchBarDiv">
             <input type="image" src="../../assets/search-icon.png">
             <input type="text" placeholder="" class="searchBar">
         </div>
     </div>
     <div class="file-container">
-        <button class="pbutton" style="background-color: white;">
+        <button class="pScreenButton" style="background-color: white;">
             <img class="folder-image" src="../../assets/folder-icon.png" alt="" style="margin-left: 20px;">
             <div>
                 <h2 class="medic" style="font-size:20px; margin-left: 15px;">Medical File</h2>
                 <h2 class="data" style="font-size: 15px;">Data</h2>
             </div>
         </button>
-        <button class="pbutton">
+        <button class="pScreenButton">
             <img class="folder-image" src="../../assets/prescription-icon.png" alt="" style="margin-left: 20px;">
             <div>
                 <h2 class="medic" style="font-size:20px; margin-left: 15px;">Prescription</h2>
@@ -45,21 +42,11 @@
         </button>
     </div>
     <div class="bottomNav">
-        <a href="../patient/home.html">
-            <button class="home"></button>
-        </a>
-        <a href="../patient/chat.html">
-            <button class="chat"></button>
-        </a>
-        <a href="../patient/doctorList.html">
-            <button class="search"></button>
-        </a>
-        <a href="../patient/appoiment.html">
-            <button class="calendarul"></button>
-        </a>
-        <a href="../patient/profile.html">
-            <button class="profile active"></button>
-        </a>
+        <button onclick="location = '../doctor/home.html'" class="home"></button>
+        <button onclick="location = '../doctor/chat.html'" class="chat"></button>
+        <button onclick="location = '../doctor/patientsScreen.html'" class="search active"></button>
+        <button onclick="location = '../patient/appointment.html'" class="calendarul"></button>
+        <button onclick="location = '../doctor/account.html'" class="profile"></button>
     </div>
 </body>
 

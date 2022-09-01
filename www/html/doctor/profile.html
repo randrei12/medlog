@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/doctor/profile.css">
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/patient/reviewComponent.css">
     <title>Doctor profile screen</title>
     <script src='../../js/main.js' type='module' defer></script>
+    <script src="../../js/doctor/profile.js" type='module' defer></script>
+    <script src="../../js/patient/reviewComponent.js" type='module' defer></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -15,8 +21,8 @@
         <div class="navbar">
             <ul>
                 <li>
-                    <a>
-                        <img src="../../assets/home1.png" />
+                    <a href="../../html/patient/home.html">
+                        <img class="leftArrow" src="../../assets/left-arrow.png" />
                     </a>
                 </li>
             </ul>
@@ -27,38 +33,70 @@
                     <img src="../../assets/doc-img.png" />
                 </div>
                 <div class="info-container">
-                    <div class="doctorName">
-                        <p class="name">Dr. Nume Prenume</p>
+                    <div class="name">
+                        <p class="doctorName"></p>
                     </div>
                     <div class="rating" style="display:flex;">
                         <div class="starBox">
                             <img src="../../assets/star.png" class="rating" />
                         </div>
-                        <span class="text">4.5 rating</span>
+                        <span class="text average"></span>
                     </div>
                 </div>
             </div>
         </div>
         <div class="infoContainer">
             <div class="contact">
-                <a class="callButton" href="#0040742251123">
+                <a class="callButton" href="tel:`0040742251123">
                     <img src="../../assets/call-symbol.png" class="callAsset" />
                     <span class="text">Auto Call</span>
                 </a>
-                <a class="callButton" href="mailto:cristi@yahoo.com">
+                <a class="emailButton" href="mailto:cristi@yahoo.com">
                     <img src="../../assets/message-symbol.png" class="callAsset" />
-                    <span class="text">Message</span>
+                    <span class="text">E-mail</span>
                 </a>
             </div>
             <div class="docInfo">
                 <div class="doc">
-                    <div class="specialisation">Cardiolog</div>
+                    <div class="specialization"></div>
                     <div class="location">Regina Maria, Cluj-Napoca</div>
+                    <div>
+                        <!-- <a href="../../html/patient/reviewComponent.html" id="doctor"> -->
+                            <span class="reviewStars">
+                                <img src="../../assets/star-grey.png" />
+                                <img src="../../assets/star-grey.png" />
+                                <img src="../../assets/star-grey.png" />
+                                <img src="../../assets/star-grey.png" />
+                                <img src="../../assets/star-grey.png" />
+                            </span>
+                        <!-- </a> -->
+                    </div>
+                    <div class="about">
+                        <div class="text1">About</div>
+                        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et quam erat.
+                            Pellentesque elementum ligula sed justo consequat, sit amet finibus magna lacinia. Proin
+                            dignissim, mauris sed ultricies aliquet.</div>
+                    </div>
+                    <div class="calendar">
+                        <div class="text1">Schedule</div>
+                        <a href="../patient/appointment.html">
+                            <button class="baseButton">Book an Appointment</button>
+                        </a>
+                        
+                    </div>
                 </div>
+
             </div>
         </div>
 
     </div>
-
+    <div class="bottomNav">
+        <button onclick="location = '../doctor/home.html'" class="home active"></button>
+        <button onclick="location = '../doctor/chat.html'" class="chat"></button>
+        <button onclick="location = '../doctor/doctorList.html'" class="search"></button>
+        <button onclick="location = '../patient/appointment.html'" class="calendarul"></button>
+        <button onclick="location = '../doctor/account.html'" class="profile"></button>
+    </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </body>
