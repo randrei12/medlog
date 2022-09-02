@@ -8,25 +8,31 @@
     <!-- <link rel="stylesheet" href="css/main.css"> -->
     <link rel="stylesheet" href="../../css/prescriptionScreen.css">
     <link rel="stylesheet" href="/www/css/main.css">
+    <link rel="stylesheet" href="../../css/searchList.css">
     <title>Prescription screen</title>
     <script src='../../js/main.js' type='module' defer></script>
 </head>
 
 <body>
-    <div class="hide-board">
-        <div class="container">
-            <a onclick="history.back()">
-                <img class="leftArrow" type="image" src="../../assets/left-arrow-gri.png">
-            </a>
-            <span class="title">Prescriptions</span>
-        </div>
-
-        <div class="nav">
-            <input type="text" placeholder="Search a prescription">
-            <button type="submit" class="submitButton"><img class="searcIcon" src="../../assets/search.png"></button>
-        </div>
+    <div class="topContainer">
+        <img onclick="history.back()" class="leftArrow" type="image" src="../../assets/left-arrow-gri.png">
+        <span class="title">Search</span>
+        <a style='user-select: none'>⠀</a>
     </div>
-    <div class="file-container">
+
+    <div class="baseSearch">
+        <img src="../../assets/search-icon.png">
+        <input type="text" placeholder="Search a patient...">
+    </div>
+
+    <div class="patientsList">
+        <button class="patient-button" style="height: 100px; max-height: 100px">
+            <img class="account-image" src="../../assets/folder-icon.png" alt="Acount Image">
+            <p class="name"><span style="font-size:20px; margin-left: 15px;">Medic</span><br><span style="font-size: 15px;">Data</span></p>
+        </button>
+    </div>
+
+    <!-- <div class="file-container">
         <a>
             <button class="pScreenButton">
                 <img class="folder-image" src="../../assets/folder-icon.png" alt="" style="margin-left: 20px;">
@@ -35,7 +41,7 @@
                     <h2 class="data" style="font-size: 15px;">Data</h2>
                 </div>
             </button>
-        </a>
+        </a> -->
         
 
     </div>

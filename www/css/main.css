@@ -321,3 +321,25 @@ a {
 input[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: none;
 }
+
+.topContainer {
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.leftArrow {
+    aspect-ratio: 1;
+    width: 30px;
+    height: 30px;
+}
+
+.title {
+    font-size: 30px;;
+}
