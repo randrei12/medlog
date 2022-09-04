@@ -1,0 +1,58 @@
+.users {
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    margin-top: 10px;
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    width: 100%;
+}
+
+.user:active {
+    background: rgb(189, 189, 189);
+}
+
+.user .imgContainer {
+    height: 90px;
+    width: 90px;
+    padding: 15px;
+}
+
+.user img {
+    height: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.user .contentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 10px 15px 0; 
+    flex-grow: 1;
+}
+
+.user .topInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.user .message {
+    width: 100%;
+}
+
+.topInfo .username {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.topInfo .time {
+}

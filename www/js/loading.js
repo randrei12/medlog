@@ -11,10 +11,16 @@ class Loading {
 
   show() {
     this.loadingContainer.style = "";
+    try {
+        Capacitor.Plugins.NavigationBar.setColor({color: '#7F7F7F'})
+    } catch {}
   }
 
   hide() {
     this.loadingContainer.style = "opacity: 0; pointer-events: none";
+    try {
+        Capacitor.Plugins.NavigationBar.setColor({color: '#FFFFFF'})
+    } catch {}
   }
 }
 

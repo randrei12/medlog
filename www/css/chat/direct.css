@@ -1,0 +1,150 @@
+body {
+    height: calc(100vh - 7px);
+}
+
+.topInfo {
+    width: 100%;
+    height: 90px;
+    background: linear-gradient(110.43deg, #5D78F7 0%, rgba(93, 120, 247, 0.45) 100%);
+    /* position: relative; */
+    padding: 10px;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 0 0 25px 25px;
+}
+
+.userData {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    height: 50px;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.userData img {
+    height: 100%;
+}
+
+.userData span {
+    font-size: 30px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.topInfo .leftArrow {
+    filter: brightness(100);
+}
+
+.sendContainer {
+    width: 100%;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    gap: 5px;
+}
+
+.sendContainer input {
+    flex-grow: 1;
+    height: 100%;
+    max-width: unset;
+}
+
+.sendContainer button {
+    height: 100%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sendContainer img {
+    height: 50%;
+    aspect-ratio: 1;
+}
+
+.messagesContainer {
+    flex-grow: 1;
+    padding: 0 10px;
+    position: relative;
+}
+
+.messagesContainer .message {
+    margin-top: 10px;
+    min-width: 150px;
+    max-width: 80%;
+    min-height: 40px;
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.messagesContainer .message::before {
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    z-index: -1;
+    top: 0;
+}
+
+.messagesContainer .message span {
+    /* font-size: 20px; */
+}
+
+.messagesContainer .message div {
+    width: calc(100% - 40px);
+}
+
+.messagesContainer .message .time {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 40px;
+    height: 100%;
+    font-size: 15px;
+    position: absolute;
+    right: 7px;
+    bottom: 7px;
+}
+
+.messagesContainer .container {
+    width: 100%;
+    height: 50px;
+}
+
+.message.left {
+    float: left;
+    background-color: #b3c1ff;
+    margin-right: 100%;
+}
+
+.message.left::before {
+    border-bottom: 40px solid transparent;
+    border-right: 30px solid #b3c1ff;
+    left: -7px;
+}
+
+.message.right {
+    float: right;
+    background-color: #617cff;
+    margin-left: 100%;
+}
+
+.message.right::before {
+    border-bottom: 40px solid transparent;
+    border-left: 30px solid #617cff;
+    right: -7px;
+}
