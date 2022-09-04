@@ -12,7 +12,7 @@ const doctorReviewURL = document.querySelector('#doctor')
 const loading = new Loading();
 loading.show()
 const uid = params.doctor
-firebase.firestore().collection("users").doc(uid).get().then(async (doc) => {
+firebase.firestore().collection("users").doc(uid).get().then(async doc => {
     if (doc.exists) {
         const ratings = await getDoctorReview(uid);
         console.log(ratings);
@@ -21,7 +21,26 @@ firebase.firestore().collection("users").doc(uid).get().then(async (doc) => {
         nameLabel.innerText = `Dr. ${userData.firstName} ${userData.lastName}`;
         averageLabel.innerText = `${roundTo(ratings.average)} rating`;
         phoneLabel.href = `tel:${userData.phone}`;
-        emailLabel.href = `mailto:${userData.email}`;
+        emailLabel.onclick = async () => {
+            let myID = firebase.auth().currentUser.uid;
+            let channelAlreadyExists = await new Promise(resolve => {
+                firebase.database().ref(`headers/${myID}/${uid}`).once('value').then(snap => resolve(snap.exists()));
+            });
+            if (!channelAlreadyExists) {
+                let id = uuidv4();
+                await firebase.database().ref(`headers/${uid}/${myID}`).set({
+                    channel: id,
+                    lastTime: '',
+                    lastMessage: ''
+                });
+                await firebase.database().ref(`headers/${myID}/${uid}`).set({
+                    channel: id,
+                    lastTime: '',
+                    lastMessage: ''
+                });
+            }
+            location ='../chat/direct.html?target=' + uid;
+        }
         descriptionLabel.innerText = `${userData.description}`;
 
         specializationLabel.innerText = userData.specialization;
@@ -37,3 +56,10 @@ firebase.firestore().collection("users").doc(uid).get().then(async (doc) => {
     console.log("Error getting document:", error);
     loading.hide();
 });
+
+function uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    });
+}
