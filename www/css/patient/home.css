@@ -35,7 +35,7 @@
 
 .nav {
     position: fixed;
-    top: 15%;
+    top: 12%;
     width: 90%;
     height: 5%;
     margin: 20px;
@@ -115,7 +115,7 @@
 }
 
 .calendar {
-    margin-top: 20%;
+    margin-top: 7%;
     margin-left: 7%;
     outline: none;
     width: 85%;
