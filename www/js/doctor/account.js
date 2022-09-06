@@ -3,8 +3,8 @@ let data = JSON.parse(sessionStorage.getItem('user'));
 
 const [ backButton, signOutButton ] = document.querySelectorAll('.topNavContainer img')
 
-topNavChilds[0].onclick = () => history.back();
-topNavChilds[1].onclick = () => {
+backButton.onclick = () => history.back();
+signOutButton.onclick = () => {
     firebase.auth().signOut();
     sessionStorage.clear();
 }
