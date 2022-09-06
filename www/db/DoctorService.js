@@ -11,6 +11,8 @@ export const getDoctorReview = async (id) => {
 }
 
 export const addStarReview = async (star, average, noOfReviews, id) => {
+    let childs = document.querySelectorAll('.fa.fa-star');
+    for (let i = 0; i < childs.length; ++i) i < star ? childs[i].classList.add('checked') : childs[i].classList.remove('checked');
     const newAverage = ((average * noOfReviews) + star) / (noOfReviews + 1);
     window.selectedReviewStar = star;
     await firebase.firestore().collection('ratings').doc(id).update({

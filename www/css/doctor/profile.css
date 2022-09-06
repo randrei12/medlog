@@ -169,6 +169,11 @@ body {
     background: none;
 }
 
+.reviewStars img {
+    width: 25px;
+    height: 25px;
+}
+
 .text1 {
     font-family: 'Roboto';
     font-style: normal;

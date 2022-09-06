@@ -8,14 +8,22 @@ const specializationLabel = document.querySelector('.specialization');
 const phoneLabel = document.querySelector('.callButton');
 const emailLabel = document.querySelector('.emailButton');
 const descriptionLabel = document.querySelector('.description');
-const doctorReviewURL = document.querySelector('#doctor')
+const doctorReviewURL = document.querySelector('#doctor');
+const reviewStars = document.querySelector('.reviewStars').children;
 const loading = new Loading();
 loading.show()
 const uid = params.doctor
 firebase.firestore().collection("users").doc(uid).get().then(async doc => {
     if (doc.exists) {
         const ratings = await getDoctorReview(uid);
-        console.log(ratings);
+        // reviewStars
+        console.log(ratings.average);
+        ratings.average = 3.5;
+        let length = Math.floor(ratings.average);
+        for (let i = 0; i < length; ++i) {
+            reviewStars[i].src = "../../assets/star-filled.png";
+        }
+        if (ratings.average - length) reviewStars[length].src = "../../assets/star-half.png";
         const userData = doc.data();
         console.log(doc.data());
         nameLabel.innerText = `Dr. ${userData.firstName} ${userData.lastName}`;
@@ -58,7 +66,7 @@ firebase.firestore().collection("users").doc(uid).get().then(async doc => {
 });
 
 function uuidv4() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
         var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
         return v.toString(16);
     });
