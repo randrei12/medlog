@@ -6,22 +6,22 @@ import {
 } from "../../db/DoctorService.js";
 
 const button = document.querySelector(".reviewStars");
+console.log(button.children);
 
 window.addStarReview = addStarReview;
 window.selectedReviewStar = null;
 const generateHtmlReview = (average, noOfReviews, doctorId) => {
-  let html = '<div class="rating">';
-  for (let i = 1; i < 6; i++) {
-    html += `<span class="fa fa-star ${
-      average >= i ? "checked" : ""
-    }" onClick="addStarReview(${i},${average},${noOfReviews},'${doctorId}')"></span>`;
-  }
-  html += "</div>";
-
-  return html;
+    let html = document.createElement('div');
+    html.setAttribute('class', 'rating');
+    for (let i = 1; i < 6; i++) {
+        let span = document.createElement('span');
+        span.setAttribute('class', 'fa fa-star');
+        span.setAttribute('onclick', `addStarReview(${i}, ${average}, ${noOfReviews}, '${doctorId}')`);
+        html.appendChild(span);
+    }
+    return html.outerHTML;
 }
 
-//fara initializare baza de date => await getDoctorReview o sa crape
 button.onclick = async () => {
   try {
     const rating = document.querySelector(".rating");
@@ -30,8 +30,8 @@ button.onclick = async () => {
 
     const html = generateHtmlReview(average, noOfReviews, doctorId);
     const { value: text } = await Swal.fire({
-      title: `${html}
-                <strong>Write a review</strong>`,
+      title: `${html}<br><strong>Write a review</strong>`,
+    //   html,
       input: "textarea",
       inputLabel: "Message",
       inputPlaceholder: "Type your message here...",
