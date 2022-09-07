@@ -17,13 +17,11 @@ firebase.firestore().collection("users").doc(uid).get().then(async doc => {
     if (doc.exists) {
         const ratings = await getDoctorReview(uid);
         // reviewStars
-        console.log(ratings.average);
-        ratings.average = 3.5;
         let length = Math.floor(ratings.average);
         for (let i = 0; i < length; ++i) {
             reviewStars[i].src = "../../assets/star-filled.png";
         }
-        if (ratings.average - length) reviewStars[length].src = "../../assets/star-half.png";
+        if (ratings.average - length >= 0.5) reviewStars[length].src = "../../assets/star-half.png";
         const userData = doc.data();
         console.log(doc.data());
         nameLabel.innerText = `Dr. ${userData.firstName} ${userData.lastName}`;

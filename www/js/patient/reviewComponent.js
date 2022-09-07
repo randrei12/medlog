@@ -31,7 +31,6 @@ button.onclick = async () => {
     const html = generateHtmlReview(average, noOfReviews, doctorId);
     const { value: text } = await Swal.fire({
       title: `${html}<br><strong>Write a review</strong>`,
-    //   html,
       input: "textarea",
       inputLabel: "Message",
       inputPlaceholder: "Type your message here...",
@@ -48,7 +47,7 @@ button.onclick = async () => {
     });
     if (text) {
       Swal.fire({
-        title: text,
+        title: 'Review added!',
         buttonsStyling: false,
       });
       await addCommentReview(window.selectedReviewStar, text, doctorId);
