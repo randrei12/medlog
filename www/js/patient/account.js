@@ -1,4 +1,9 @@
 import Loading from "../loading.js";
+import { localities } from '../Utils.js';
+let locals = JSON.parse(localities);
+const [ genderSelect, countySelect, citySelect ] = document.querySelectorAll('select');
+citySelect.innerHTML = locals['CJ'];
+countySelect.onchange = () => citySelect.innerHTML = locals[countySelect.value];
 
 const topNavChilds = document.querySelector('.topNavContainer').children;
 
