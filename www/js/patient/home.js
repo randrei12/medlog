@@ -1,4 +1,5 @@
 import Loading from "../loading.js";
+import { getLoggedUser } from '../Utils.js';
 
 const nameLabel = document.querySelector('.nameLabel');
 const cardsContainter = document.querySelector("#cardsContainer");
@@ -10,14 +11,11 @@ else {
     nameLabel.innerText = data.firstName + ' ' + data.lastName;
 }
 
-firebase.auth().onAuthStateChanged(async user => {
-    if (user) {
-        let data = (await firebase.firestore().collection('users').doc(user.uid).get()).data();
-        sessionStorage.setItem('user', JSON.stringify(data));
-        nameLabel.innerText = data.firstName + ' ' + data.lastName;
-        loading.hide();
-    } else location = "../../index.html";
-}); 
+getLoggedUser().then(user => {
+    if (!user) return location = "../../index.html";
+    nameLabel.innerText = user.firstName + ' ' + user.lastName;
+    loading.hide();
+});
 
 cardsContainter.innerText = 'Loading...'
 firebase.firestore().collection("users").get().then((snapshot) => {
