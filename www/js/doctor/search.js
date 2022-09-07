@@ -16,7 +16,7 @@ searchInput.onkeyup = async e => {
         if (patients.length === 0) patientsList.innerHTML = 'No Results'
         else patients.forEach(e => {
             patientsList.innerHTML += `
-            <button class="patient-button">
+            <button class="patient-button" onclick="location = '../patient/profile.html?patient=${e.uid}'">
                 <img class="account-image" src="../../assets/account.png" alt="Acount Image">
                 <p class="name"><span>${e.firstName}</span> <span>${e.lastName}</span></p>
             </button>
