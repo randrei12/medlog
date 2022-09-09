@@ -17,8 +17,9 @@ async function login(event) {
       .auth()
       .signInWithEmailAndPassword(email, password);
     // Signed in
-    await selectRoleScreen(userCredential.user);
+    let user = await getLoggedUser();
     loading.hide();
+    location = user.type == USER_TYPES.PATIENT ? "html/patient/home.html" : "html/doctor/home.html";
   } catch (error) {
     loading.hide();
     alert(error.message);
@@ -27,15 +28,15 @@ async function login(event) {
 
 (async () => {
     let user = await getLoggedUser();
-    if (!user) try { Capacitor.Plugins.SplashScreen.hide() } catch {}
-    else location = user.type == USER_TYPES.PATIENT ? "html/patient/home.html" : "html/doctor/home.html";
+    Capacitor.Plugins.SplashScreen.hide()
+    if (user) location = user.type == USER_TYPES.PATIENT ? "html/patient/home.html" : "html/doctor/home.html";
 })();
 
-firebase.auth().onAuthStateChanged((user) => {
-  if (!user) try {
-    Capacitor.Plugins.SplashScreen.hide()
-  } catch {}
-  else selectRoleScreen(user);
-});
+// firebase.auth().onAuthStateChanged((user) => {
+//   if (!user) try {
+//     Capacitor.Plugins.SplashScreen.hide()
+//   } catch {}
+//   else selectRoleScreen(user);
+// });
 
 loginForm.onsubmit = (event) => login(event);
