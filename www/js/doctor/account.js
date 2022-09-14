@@ -7,6 +7,7 @@ backButton.onclick = () => history.back();
 signOutButton.onclick = () => {
     firebase.auth().signOut();
     sessionStorage.clear();
+    location = '../../index.html'
 }
 
 const [ firstName, lastName] = document.querySelectorAll('.docName input');
