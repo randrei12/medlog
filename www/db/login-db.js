@@ -26,17 +26,16 @@ async function login(event) {
   }
 }
 
-(async () => {
+firebase.auth().onAuthStateChanged(async user => {
+  if (user) {
     let user = await getLoggedUser();
-    Capacitor.Plugins.SplashScreen.hide()
+    try {
+        Capacitor.Plugins.SplashScreen.hide()
+    } catch {}
     if (user) location = user.type == USER_TYPES.PATIENT ? "html/patient/home.html" : "html/doctor/home.html";
-})();
-
-// firebase.auth().onAuthStateChanged((user) => {
-//   if (!user) try {
-//     Capacitor.Plugins.SplashScreen.hide()
-//   } catch {}
-//   else selectRoleScreen(user);
-// });
+  } else try {
+    Capacitor.Plugins.SplashScreen.hide()
+  } catch {}
+});
 
 loginForm.onsubmit = (event) => login(event);

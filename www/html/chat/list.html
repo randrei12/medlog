@@ -16,11 +16,17 @@
     </div>
     <div class="users"></div>
     <div class="bottomNav">
-        <button onclick="location = '../patient/home.html'" class="home"></button>
-        <button onclick="location = '../chat/list.html'" class="chat active"></button>
-        <button onclick="location = '../patient/search.html'" class="search"></button>
-        <button onclick="location = '../patient/appointment.html'" class="calendarul"></button>
-        <button onclick="location = '../patient/account.html'" class="profile"></button>
+        <script>
+            const bottomNav = document.querySelector('.bottomNav');
+            const { type } = JSON.parse(sessionStorage.getItem('user'));
+            bottomNav.innerHTML = `
+            <button onclick="location = '../${type}/home.html'" class="home"></button>
+            <button onclick="location = '../chat/list.html'" class="chat active"></button>
+            <button onclick="location = '../${type}/search.html'" class="search"></button>
+            <button onclick="location = '../${type}/appointment.html'" class="calendarul"></button>
+            <button onclick="location = '../${type}/account.html'" class="profile"></button>
+            `;
+        </script>
     </div>
 </body>
 </html>

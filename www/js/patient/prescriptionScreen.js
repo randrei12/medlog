@@ -21,6 +21,3 @@ const patientsList = document.querySelector('.patientsList');
         </button>`
     });
 })();
-
-
-// firebase.storage().ref()
