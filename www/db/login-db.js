@@ -1,28 +1,9 @@
 import Loading from "../js/loading.js";
 import { USER_TYPES } from "./constants.js";
+import { getLoggedUser } from '../js/Utils.js';
 const loading = new Loading(false);
 
-// document.body.style.height = innerHeight + 'px';
-
-async function selectRoleScreen(user) {
-  // loading.show();
-  try {
-    let result = await firebase.firestore().collection("users").doc(user.uid).get();
-    console.log(result);
-    try {
-      Capacitor.Plugins.SplashScreen.hide()
-    } catch {}
-    location =
-      result.data().type == USER_TYPES.PATIENT
-        ? "html/patient/home.html"
-        : "html/doctor/home.html";
-  } catch (error) {
-    try {
-      Capacitor.Plugins.SplashScreen.hide()
-    } catch {}
-    alert(error.message);
-  }
-}
+const loginForm = document.getElementById("login-form");
 
 async function login(event) {
   event.preventDefault();
@@ -36,20 +17,25 @@ async function login(event) {
       .auth()
       .signInWithEmailAndPassword(email, password);
     // Signed in
-    await selectRoleScreen(userCredential.user);
+    let user = await getLoggedUser();
     loading.hide();
+    location = user.type == USER_TYPES.PATIENT ? "html/patient/home.html" : "html/doctor/home.html";
   } catch (error) {
     loading.hide();
     alert(error.message);
   }
 }
 
-firebase.auth().onAuthStateChanged((user) => {
-  if (!user) try {
+firebase.auth().onAuthStateChanged(async user => {
+  if (user) {
+    let user = await getLoggedUser();
+    try {
+        Capacitor.Plugins.SplashScreen.hide()
+    } catch {}
+    if (user) location = user.type == USER_TYPES.PATIENT ? "html/patient/home.html" : "html/doctor/home.html";
+  } else try {
     Capacitor.Plugins.SplashScreen.hide()
   } catch {}
-  else selectRoleScreen(user);
 });
 
-const loginForm = document.getElementById("login-form");
 loginForm.onsubmit = (event) => login(event);

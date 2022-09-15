@@ -21,27 +21,28 @@ function LoadProfile(uid) {
 
         document.getElementById("update-profile").onsubmit = (event) => {
           event.preventDefault();
-          loading.show();
+        //   loading.show();
 
-          const name = event.target["username"].value;
+          console.log(event.target);
+          const firstName = event.target["firstName"].value;
+          const lastName = event.target["lastName"].value;
           const gender = event.target["gender"].value;
           const birthday = event.target["birthdate"].value;
           const city = event.target["city"].value;
-          const country = event.target["county"].value;
+          const county = event.target["county"].value;
           const familyDoctors = event.target["family-doctor"].value;
-
-          console.log(name, gender, birthday, city, country, familyDoctors);
 
           firebase
             .firestore()
             .collection("users")
             .doc(uid)
             .update({
-              username: name,
+              firstName,
+              lastName,
               gender,
-              birthday: birthday,
+              birthday,
               city,
-              county: country,
+              county,
               familyDoctor: familyDoctors,
             })
             .then(() => {
@@ -60,38 +61,6 @@ function LoadProfile(uid) {
     })
     .catch((error) => {
       console.log("Error getting document:", error);
-      loading.hide();
-    });
-}
-
-function UpdateProfile(event, uid) {
-  event.preventDefault();
-  loading.show();
-
-  const name = event.target["name"].value;
-  const gender = event.target["gender"].value;
-  const birthday = event.target["birthdate"].value;
-  const city = event.target["city"].value;
-  const country = event.target["county"].value;
-  const familyDoctors = event.target["family-doctor"].value;
-
-  firebase
-    .firestore()
-    .collection("users")
-    .doc(uid)
-    .update({
-      username: name,
-      gender,
-      birthday: birthday,
-      city,
-      county: country,
-      familyDoctor: familyDoctors,
-    })
-    .then(() => {
-      loading.hide();
-    })
-    .catch((error) => {
-      alert("Error");
       loading.hide();
     });
 }
