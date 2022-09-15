@@ -1,27 +1,4 @@
-let appointments = [
-    {
-        title: "Shortsync",
-        start: '2022-08-10',
-    },
-    {
-        title: "Woofdiet",
-        start: '2022-08-11',
-    },
-    {
-        title: "Linklyft",
-        start: '2022-08-12',
-    },
-    {
-        title: "Shortsync",
-        start: '2022-07-10',
-    }
-]
-
-
-document.addEventListener('DOMContentLoaded', function () {
-            
-
-
+window.onload = () => {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
         headerToolbar: {
@@ -60,8 +37,13 @@ document.addEventListener('DOMContentLoaded', function () {
         editable: false,
         selectable: true,
         nowIndicator: true,
-        events: appointments
+        events: [
+            {
+                "title": "Hello",
+                "start": "2022-09-01",
+                "end": "2022-09-01"
+            }
+        ]
     });
     calendar.render();
-
-});
+}

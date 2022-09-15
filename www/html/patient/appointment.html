@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/patient/appointment.css">
-    <script src="../../db/config.js"></script>
+    <script type="module" src="../../db/config.js"></script>
+    <script type="module" src="../../js/Utils.js"></script>
+    <script type="module" src="../../db/appointment-db.js"></script>
     <!--Calendar-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.css">
@@ -25,28 +27,20 @@
             <br>
             <p class="spec" style="color: white;"></p>
         </div>
-        <div class="accountCard">
-            <h1 style="margin-top: 10px;">Book an appointment</h1>
-            <div class="calendar"></div>
+        <form id="appointment-form" class="accountCard">
+            <div style="height: 12%;"></div>
+            <br><br>
+            <h1 style="margin-top: 10px;">Pick A Date for for Appointment</h1>
+            <br>
+            <input type="date" name="date-input">
+            <br><br>
             <h1>Pick the perfect time</h1>
-
-            <div class="pick">
-                <div>
-                    <input type="checkbox" class="checkbox" , value="1" name="1">
-                    <label>
-                </div>
-                <div>
-                    <input type="checkbox" class="checkbox" , value="1" name="1">
-                    <label>
-                </div>
-                <div>
-                    <input type="checkbox" class="checkbox" , value="1" name="1">
-                    <label>
-                </div>
-            </div>
-            <button class="button" style="width: 300px; white-space:nowrap; margin-bottom: 10%;">Book your
+            <br>
+            <input type="time" name="time-input">
+            <br><br>
+            <button class="button" type="submit" style="width: 300px; white-space:nowrap; margin-bottom: 10%;">Book your
                 Appointment</button>
-        </div>
+        </form>
     </div>
 
     <div class="bottomNav">
