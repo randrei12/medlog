@@ -1,9 +1,11 @@
 import Loading from "../loading.js";
 import { getLoggedUser } from '../Utils.js';
+import {tips} from '../../db/constants.js';
 
 const nameLabel = document.querySelector('.nameLabel');
 const cardsContainter = document.querySelector("#cardsContainer");
-
+const cal = document.querySelector(".calendar");
+cal.innerHTML = tips[0];
 const loading = new Loading();
 if (!sessionStorage.getItem('user')) loading.show();
 else {

@@ -8,8 +8,6 @@ const GENDER = {
     MALE: 'Male'
 }
 
-export { USER_TYPES, GENDER };
-
 const tips = [
     'Adoptați o dietă sănătoasă',
     'Consumati mai putina sare si zahar',
@@ -32,3 +30,6 @@ const tips = [
     'Faceți controale regulate',
     'Odihniți-vă opt ore pe zi'
 ]
+
+export { USER_TYPES, GENDER, tips};
+
