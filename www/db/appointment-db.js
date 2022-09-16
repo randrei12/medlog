@@ -4,12 +4,19 @@ import { params } from "../js/Utils.js";
 const user_uid = params.doctor;
 
 const appointmentForm = document.getElementById("appointment-form");
-
+const drName = document.querySelector(".drName");
+const drSpec = document.querySelector(".spec");
 firebase.auth().onAuthStateChanged((user) => {
     if (user)  { console.log(user_uid);  appointmentForm.onsubmit = (event) => { SetAppointment(event, user_uid, user.uid); } }
     else location = "../../index.html";
 });
-
+(async () => {
+    console.log(user_uid);
+    let res = await firebase.firestore().collection('users').doc(user_uid).get();
+    let data = res.data();
+    drName.innerText = "Dr. " + data.firstName + " " + data.lastName;
+    drSpec.innerText = data.specialization;
+})();
 function SetAppointment(event, uid, patient_uid) {
     event.preventDefault();
 
