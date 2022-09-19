@@ -19,7 +19,7 @@ class Loading {
   hide() {
     this.loadingContainer.style = "opacity: 0; pointer-events: none";
     try {
-        Capacitor.Plugins.NavigationBar.setColor({color: '#FFFFFF'})
+        Capacitor.Plugins.NavigationBar.setColor({color: '#FFFFFF'});
     } catch {}
   }
 }

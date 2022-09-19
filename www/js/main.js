@@ -1,5 +1,3 @@
-import "./capacitor.js";
-
 const { StatusBar, NavigationBar, App, SplashScreen } = Capacitor.Plugins;
 
 StatusBar.setStyle({ style: "Light" });
