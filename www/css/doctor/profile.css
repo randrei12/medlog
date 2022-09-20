@@ -76,11 +76,11 @@ body {
 .info-container {
     width: 100%;
     position: absolute;
+    height: calc(67% - 57px);
     top: 33%;
     background-color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     border-radius: 50px 50px 0 0;
     overflow: hidden;
 }
@@ -190,6 +190,8 @@ body {
     margin-top: 6px;
     padding-left: 10px;
     color: rgba(0, 0, 0, 0.7);
+    overflow-y: auto;
+    max-height: 150px;
 }
 
 .baseButton {
@@ -222,6 +224,9 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     overflow-y: auto;
+    position: relative;
+    height: 100%;
+    margin: 5%;
 }
 
 .doctor {
@@ -244,10 +249,6 @@ body {
     text-decoration: none;
 }
 
-.doc {
-    margin: 5%;
-}
-
 .callAsset {
     width: 20px;
     height: 20px;
@@ -267,4 +268,11 @@ h1 {
 p,
 a {
     font-weight: bold;
+}
+
+.calendar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: white;
 }
