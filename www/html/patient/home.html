@@ -14,48 +14,45 @@
 </head>
 
 <body>
-    <div class="main">
-        <div class="account">
-            <img src="../../assets/account.png" class="accountImg">
-            <div class="nameBox">
-                <p class="name2">Hello, <span class="nameLabel"></span>!</p>
-                <p class="help">How can we help you today?</p>
-            </div>
+    <div class="account">
+        <img src="../../assets/account.png" class="accountImg">
+        <div class="nameBox">
+            <p class="name2">Hello, <span class="nameLabel"></span>!</p>
+            <p class="help">How can we help you today?</p>
         </div>
-        <div class="baseSearch">
-            <img src="../../assets/search-icon.png">
-            <input type="text" placeholder="Find the perfect doctor for you">
-        </div>
-        <div class="calendar">
+        
+    </div>
+    <div class="buttonContainer">
+        <a href="../../html/patient/treatmentScreen.html">
+            <button class="button">
+                <img src="../../assets/medicine.png" class="buttonIcon">
+                <p class="buttonText">Treatment</p>
+            </button>
+        </a>
 
-        </div>
-        <div class="buttonContainer">
-            <a href="../../html/patient/treatmentScreen.html">
-                <button class="button">
-                    <img src="../../assets/medicine.png" class="buttonIcon">
-                    <p class="buttonText">Treatment</p>
-                </button>
-            </a>
+        <a href="../../html/patient/prescriptionScreens.html">
+            <button class="button">
+                <img src="../../assets/prescription.png" class="buttonIcon">
+                <p class="buttonText">Prescription</p>
+            </button>
+        </a>
 
-            <a href="../../html/patient/prescriptionScreens.html">
-                <button class="button">
-                    <img src="../../assets/prescription.png" class="buttonIcon">
-                    <p class="buttonText">Prescription</p>
-                </button>
-            </a>
+        <a href="../../html/patient/medicalHistory.html">
+            <button class="button">
+                <img src="../../assets/health-check.png" class="buttonIcon">
+                <p class="buttonText">Medical History</p>
+            </button>
+        </a>
 
-            <a href="../../html/patient/medicalHistory.html">
-                <button class="button">
-                    <img src="../../assets/health-check.png" class="buttonIcon">
-                    <p class="buttonText">Medical History</p>
-                </button>
-            </a>
+    </div>
 
-        </div>
-        <p class="text">Are you looking for a specialist?</p>
-        <div id="cardsContainer" class="scroll">
+    <div class="calendar">
 
-        </div>
+    </div>
+    <p class="text">Are you looking for a specialist?</p>
+    <div id="cardsContainer" class="scroll">
+
+    </div>
     </div>
     <div class="bottomNav">
         <button onclick="location = '../patient/home.html'" class="home active"></button>
