@@ -9,11 +9,28 @@
     margin-top: 5%;
 }
 
+.topContainer {
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.Title {
+    color: grey;
+    font-size: 30px;
+}
+
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .add-file-button {
     width: 100px;
     height: 100px;
