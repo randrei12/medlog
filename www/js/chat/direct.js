@@ -7,8 +7,14 @@ const targetLabel = document.querySelector('.userData > span');
 const messagesContainer = document.querySelector('.messagesContainer');
 const [ messageInput, sendButton ] = document.querySelector('.sendContainer').children;
 
-Capacitor.Plugins.StatusBar.setBackgroundColor({color: "#657ef2"});
-Capacitor.Plugins.StatusBar.setOverlaysWebView({overlay: false});
+try {
+    Capacitor.Plugins.StatusBar.setBackgroundColor({color: "#657ef2"});
+    Capacitor.Plugins.StatusBar.setOverlaysWebView({overlay: false});
+} 
+catch {
+
+}
+
 const loading = new Loading();
 loading.show();
 

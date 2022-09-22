@@ -55,16 +55,6 @@ body {
     background: white;
 }
 
-.file-container {
-    position: absolute;
-    top: 15%;
-    display: grid;
-    gap: 2%;
-    width: 90%;
-    height: 70%;
-    margin-left: 5%;
-    margin-top: 5%;
-}
 
 .add-pill-button {
     width: 100px;

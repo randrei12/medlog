@@ -34,14 +34,8 @@ firebase.firestore().collection("users").get().then((snapshot) => {
             userElement.innerHTML = `
                 <img style="width: 50%;" src="https://cdn.discordapp.com/attachments/708033159538802819/1009409429210419290/unknown.png" alt=""> 
                 <div style="width: 50%;">
-                    <h3>${userData["firstName"]} ${userData["lastName"]}</h3>
-                    <p>${userData["specialization"]}</p>
-                    <br>   
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
+                    <h3 style="font-size: 25px; margin-bottom: 0;">${userData["firstName"]} ${userData["lastName"]}</h3>
+                    <span style="font-size: 23px;">${userData["specialization"]}</span>
                 </div>`;
 
             cardsContainter.append(userElement);
