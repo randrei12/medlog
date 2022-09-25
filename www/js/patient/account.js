@@ -2,7 +2,7 @@ import Loading from "../loading.js";
 import { localities, getLoggedUser } from '../Utils.js';
 let locals = JSON.parse(localities);
 const [ genderSelect, countySelect, citySelect ] = document.querySelectorAll('select');
-const [ firstName, lastName, bday, familyDoctor ] = document.querySelectorAll(".personalData input");
+const [ firstName, lastName, bday ] = document.querySelectorAll(".personalData input");
 citySelect.innerHTML = locals['CJ'];
 countySelect.onchange = () => citySelect.innerHTML = locals[countySelect.value];
 
@@ -34,7 +34,6 @@ getLoggedUser().then(user => {
     countySelect.value = user.county;
     citySelect.innerHTML = locals[user.county];
     citySelect.value = user.city;
-    familyDoctor.value = user.familyDoctor;
 
     loading.hide();
 })
@@ -49,7 +48,6 @@ getLoggedUser().then(user => {
 //         inputs[3].value = data.bday;
 //         inputs[4].value = data.county;
 //         inputs[5].value = data.city;
-//         inputs[6].value = data.familyDoctor;
 //     }).catch(() => {
 //         location = "../../index.html"
 //     });

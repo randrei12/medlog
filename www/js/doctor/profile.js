@@ -7,6 +7,7 @@ const averageLabel = document.querySelector('.average');
 const specializationLabel = document.querySelector('.specialization');
 const phoneLabel = document.querySelector('.callButton');
 const emailLabel = document.querySelector('.emailButton');
+const hospitalLabel = document.querySelector('.location');
 const descriptionLabel = document.querySelector('.description');
 const doctorReviewURL = document.querySelector('#doctor');
 const reviewStars = document.querySelector('.reviewStars').children;
@@ -47,6 +48,7 @@ firebase.firestore().collection("users").doc(uid).get().then(async doc => {
             }
             location ='../chat/direct.html?target=' + uid;
         }
+        hospitalLabel.innerText = `${userData.hospital}`;
         descriptionLabel.innerText = `${userData.description}`;
 
         specializationLabel.innerText = userData.specialization;
