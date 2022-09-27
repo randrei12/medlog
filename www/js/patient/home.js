@@ -42,5 +42,5 @@ firebase.firestore().collection("users").get().then((snapshot) => {
             cardsContainter.append(userElement);
         }
     });
-    if (cardsContainter.innerText === '') cardsContainter.innerText = 'Where did all doctors go?'
+    if (cardsContainter.innerText === '') cardsContainter.innerText = 'Where did all the doctors go?'
 });
