@@ -1,7 +1,3 @@
-import Loading from "../js/loading.js";
-const loading = new Loading();
-
-loading.show();
 firebase.auth().onAuthStateChanged((user) => {
   if (user) LoadProfile(user.uid);
   else location = "../../index.html";
@@ -17,20 +13,16 @@ function LoadProfile(uid) {
         console.log("Document data:", doc.data());
         const userData = doc.data();
         console.log(document.getElementById("update-profile"));
-        loading.hide();
 
         document.getElementById("update-profile").onsubmit = (event) => {
           event.preventDefault();
-        //   loading.show();
 
-          console.log(event.target);
           const firstName = event.target["firstName"].value;
           const lastName = event.target["lastName"].value;
           const gender = event.target["gender"].value;
           const birthday = event.target["birthdate"].value;
           const city = event.target["city"].value;
           const county = event.target["county"].value;
-          const familyDoctors = event.target["family-doctor"].value;
 
           firebase
             .firestore()
@@ -43,11 +35,11 @@ function LoadProfile(uid) {
               birthday,
               city,
               county,
-              familyDoctor: familyDoctors,
             })
             .then(() => {
-              loading.hide();
-              alert("account updated");
+                sessionStorage.removeItem('user');
+                alert("account updated");
+                location = 'home.html'
             });
           return false;
         };

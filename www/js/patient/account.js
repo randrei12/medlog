@@ -1,4 +1,3 @@
-import Loading from "../loading.js";
 import { localities, getLoggedUser } from '../Utils.js';
 let locals = JSON.parse(localities);
 const [ genderSelect, countySelect, citySelect ] = document.querySelectorAll('select');
@@ -14,19 +13,12 @@ topNavChilds[1].onclick = () => {
     sessionStorage.clear();
 }
 
-
-
 const inputs = [
   ...document.querySelectorAll(".personalData input"),
 ];
 
-const loading = new Loading();
-loading.show();
-
 getLoggedUser().then(user => {
-    console.log(user);
     if (!user) location = '../../index.html';
-    console.log(inputs);
     firstName.value = user.firstName;
     lastName.value = user.lastName;
     genderSelect.value = user.gender;
@@ -34,8 +26,6 @@ getLoggedUser().then(user => {
     countySelect.value = user.county;
     citySelect.innerHTML = locals[user.county];
     citySelect.value = user.city;
-
-    loading.hide();
 })
 // firebase.auth().onAuthStateChanged(user => {
 //   if (user) {
