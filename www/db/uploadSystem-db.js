@@ -1,5 +1,5 @@
 import Loading from "../js/loading.js";
-import { params } from "../js/Utils.js";
+import { getLoggedUser, params } from "../js/Utils.js";
 import firebase from "./config.js";
 
 const loading = new Loading()
@@ -21,16 +21,30 @@ const screens = {
             }).then(async res => {
                 if(!res.isConfirmed) return;
                 loading.show();
-                await firebase.firestore().collection('patMed').doc('treatments').collection(params.uid).add(res.value);
-                loading.hide();
+                const user = await getLoggedUser();
+                if (!user) location = '../../index.html'; 
+                const pat = params.uid;
+                try {
+                    const date = new Date();
+                    const obj = (await firebase.firestore().collection('treatments').doc(pat).get()).data() || {};
+                    const arr = obj[user.uid] || [];
+                    arr.push({ ...res.value, docName: `${user.firstName} ${user.lastName}`, time: `${('0' + date.getDate()).substr(-2)}/${('0' + (date.getMonth() + 1)).substr(-2)}/${date.getFullYear()}`});
+                    obj[user.uid] = arr;
+                    await firebase.firestore().collection('treatments').doc(pat).set(obj);
+                    loading.hide(); 
+                    Swal.fire('Success', 'The treatment was added successfully.', 'success');
+                } catch (e) {
+                    console.log(e);
+                    Swal.fire('Error', 'The treatment couldn\'t be added.', 'error');
+                    loading.hide();
+                }
             });
         });
     },
     addMedicalFile: () => {
         fileButton.addEventListener("change", e => {
             const file = e.target.files[0];
-            const fileType = location.href.includes("Medical") ? "medicalFiles" : "prescriptionFiles";
-            const storageRef = firebase.storage().ref(`${fileType}/${params.uid}/` + file.name);
+            const storageRef = firebase.storage().ref(`medicalFiles/${params.uid}/` + file.name);
             storageRef.put(file).then(() => {
                 Swal.fire(
                     'Good job!',
