@@ -337,6 +337,10 @@ input[type="search"]::-webkit-search-cancel-button {
     position: relative;
 }
 
+.topContainer .title {
+    font-size: 30px
+}
+
 .leftArrow {
     aspect-ratio: 1;
     width: 30px;
