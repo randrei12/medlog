@@ -13,13 +13,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.css">
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/locales-all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.js"></script>
-    <script src="../../db/docCalendar-db.js"></script>
+    
     <!--End Calendar-->
 
     <title>Home Doctor</title>
     <script src="../../db/config.js" type="module" defer></script>
     <script src='../../js/main.js' type='module' defer></script>
     <script src="../../js/doctor/home.js" type="module" defer></script>
+    
 </head>
 
 <body>
@@ -54,6 +55,14 @@
         <button onclick="location = '../patient/appointment.html'" class="calendarul"></button>
         <button onclick="location = '../doctor/account.html'" class="profile"></button>
     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+    <script src="../../db/docCalendar-db.js"></script>
 </body>
 
 </html>
