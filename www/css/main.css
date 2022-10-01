@@ -399,3 +399,12 @@ input[type="search"]::-webkit-search-cancel-button {
 .swal2-popup {
     border-radius: 20px !important;
 }
+
+.fc .fc-button-group>.fc-button {
+    position: relative;
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #5D78F7;
+}
