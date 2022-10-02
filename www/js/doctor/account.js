@@ -32,7 +32,7 @@ backButton.onclick = () => history.back();
 signOutButton.onclick = () => {
     firebase.auth().signOut();
     sessionStorage.clear();
-    location = '../../index.html'
+    setTimeout(() => location = '../../index.html', 1000);
 }
 
 editButton.onclick = () => {
