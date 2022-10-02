@@ -26,20 +26,4 @@ getLoggedUser().then(user => {
     countySelect.value = user.county;
     citySelect.innerHTML = locals[user.county];
     citySelect.value = user.city;
-})
-// firebase.auth().onAuthStateChanged(user => {
-//   if (user) {
-//     firebase.firestore().collection("users").doc(user.uid).get().then(doc => {
-//         loading.hide();
-//         let data = doc.data();
-//         inputs[0].value = data.firstName;
-//         inputs[1].value = data.lastName;
-//         inputs[2].value = data.gender;
-//         inputs[3].value = data.bday;
-//         inputs[4].value = data.county;
-//         inputs[5].value = data.city;
-//     }).catch(() => {
-//         location = "../../index.html"
-//     });
-//   } else location = "../../index.html";
-// });
+});

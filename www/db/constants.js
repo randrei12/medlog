@@ -16,7 +16,7 @@ const tips = [
     'Nu fumați',
     'Adoptați un stil de viață activ',
     'Verificați regulat tensiunea arterială',
-    'Vaccinați-vă',
+    'Vaccinul salvează vieți',
     'Testați-vă împotriva bolilor dăunătoare',
     'Acoperiți-vă gura când tușiți sau strănutați',
     'Preveniți mușcăturile de țânțari',
@@ -32,4 +32,3 @@ const tips = [
 ]
 
 export { USER_TYPES, GENDER, tips};
-
