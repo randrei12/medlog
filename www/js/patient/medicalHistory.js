@@ -2,13 +2,13 @@ import firebase from "../../db/config.js";
 import Loading from "../loading.js";
 import { getLoggedUser, params } from "../Utils.js";
 
-const patientsList = document.querySelector('.historyList');
+const patientsList = document.querySelector('.patientsList');
 
 (async () => {
     const types = ['image', 'video', 'audio']; 
     let user = await getLoggedUser();
     if (!user) location = '../../index.html';
-    let fs = await firebase.storage().ref(`prescriptionFiles/${params.uid || user.uid}`).listAll();
+    let fs = await firebase.storage().ref(`medicalFiles/${params.uid || user.uid}`).listAll();
     fs.items.forEach(async e => {
         let url = await e.getDownloadURL();
         let { contentType, name, timeCreated } = await e.getMetadata();

@@ -82,6 +82,7 @@ body {
 }
 
 .title {
+    white-space: nowrap;
     font-size: 30px;
     position: absolute;
     left: 50%;

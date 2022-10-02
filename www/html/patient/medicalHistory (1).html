@@ -6,18 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable = no">
     <!-- <link rel="stylesheet" href="css/main.css"> -->
-    <script src="../../js/patient/treatmentScreen.js" type="module" defer></script>
     <link rel="stylesheet" href="../../css/doctor/medicalHistory.css">
     <link rel="stylesheet" href="../../css/main.css">
-    <script src="../../js/main.js" type="module" defer></script>
-    <title>Treatment screen</title>
+    <title>Medical History</title>
+    <script src='../../js/main.js' type='module' defer></script>
 </head>
 
 <body>
     <div class="topContainer">
         <img onclick="history.back()" class="leftArrow" type="image"
             src="../../assets/left-arrow-gri.png">
-        <span class="title">Treatments</span>
+        <span class="title">Medical History</span>
         <a></a>
     </div>
 
@@ -27,16 +26,18 @@
     </div>
 
     <div class="historyList">
-        <!-- <a href="../treatmentData.html">
-            <button class="history-button">
-                <img class="folder-image" src="../../assets/folder-icon.png" alt="" style="margin-left: 20px;">
-                <div >
-                    <h2 class="medic">Medic<br></h2>
-                    <h2 class="data" style="font-size: 15px">Data</h2>
-                </div>
-            </button>
-        </a> -->
+        <a style="text-decoration: none" href="../patient/medicalData.html">
+          <button class="history-button">
+            <img class="folder-image" src="../../assets/folder-icon.png" alt="" style="margin-left: 20px;">
+            <div >
+                <h2 class="medic">Cauza vizitei/medicul <br></h2>
+                <h2 class="data" style="font-size: 15px;">Data</h2>
+            </div>
+        </button>  
+        </a>
+        
     </div>
+
     <div class="bottomNav">
         <button onclick="location = '../patient/home.html'" class="home active"></button>
         <button onclick="location = '../chat/list.html'" class="chat"></button>
