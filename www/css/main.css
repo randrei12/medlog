@@ -309,7 +309,7 @@ a {
 }
 
 .fc-media-screen {
-    height: 100% !important;
+    height: 100%;
 }
 
 .fc-dayGridMonth-button, .fc-timeGridWeek-button, .fc-timeGridDay-button, .fc-today-button, .fc-daygrid-week-number {

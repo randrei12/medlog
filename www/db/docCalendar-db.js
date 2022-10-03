@@ -49,8 +49,9 @@ import { getLoggedUser } from '../js/Utils.js';
                 }
             },
             initialDate: new Date(),
-            weekNumbers: true,
-            navLinks: true, // can click day/week names to navigate views
+            initialView: 'timeGridDay',
+            weekNumbers: false,
+            navLinks: false, // can click day/week names to navigate views
             editable: false,
             selectable: true,
             nowIndicator: true,
