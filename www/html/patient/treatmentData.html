@@ -10,6 +10,19 @@
     <link rel="stylesheet" href="../../css/main.css">
     <title>Treatment Data</title>
     <script src='../../js/main.js' type='module' defer></script>
+    <script src="../../js/patient/treatmentData.js" type='module' defer></script>
+    <style>
+        h1 {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: black;
+            font-size: 25px;
+        }
+        
+        span {
+            font-weight: 300;
+        }
+    </style>
 </head>
 
 <body>
@@ -18,10 +31,11 @@
         <span class="title" style="margin-left: 10px;">Data</span>
     </div>
     <div style="margin-top: 30%; margin-left: 5%;">
-        <h1 style="margin-bottom:10px; color: black; font-size: 25px; font-weight: 300">Data de inceput:<input style="color: grey;" name = "startDate" type = "date"></h1>
-        <h1 style="margin-bottom:10px; color: black; font-size: 25px; font-weight: 300">Data de incheiere:<input style="color: grey;" name = "endDate" type = "date"></h1>
-        <h1 style="margin-bottom:10px; color: black; font-size: 25px; font-weight: 300">Distribuitor: <br> <span style="color: grey;" name = "distribuitor"></span></h1>    
-        <h1 style="margin-bottom:10px; color: black; font-size: 25px; font-weight: 300">Infrormatii medicament: <br> <span style="color: grey;" name = "prescriptor"></span></h1>    
+        <h1>Name: <span data-type="Name"></span></h1>    
+        <h1>Starting Date: <span data-type="StartDate"></span></h1>
+        <h1>End Date: <span data-type="EndDate"></span></h1>
+        <h1>Frequency: <span data-type="Frequency"></span></span></h1>  
+        <h1>Hour: <span data-type="Hour"></span></span></h1>    
     </div>
     <div class="bottomNav">
         <button onclick="location = 'home.html'" class="home active"></button>
