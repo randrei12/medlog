@@ -6,42 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/main.css">
-    <link rel="stylesheet" href="../../css/patient/appointment.css">
     <script type="module" src="../../db/config.js"></script>
     <script type="module" src="../../js/Utils.js"></script>
-    <script type="module" src="../../db/appointment-db.js"></script>
+    <script type="module" src="../../db/patCalendar-db.js"></script>
     <!--Calendar-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.css">
     <!--End Calendar-->
-    <title>Patient appointment screen</title>
+    <title>Patient Calendar screen</title>
     <script src='../../js/main.js' type='module' defer></script>
+    <link rel="stylesheet" href="../../css/calendar.css">
 </head>
 
 <body>
-    <div class="container">
-        <img src="../../assets/left-arrow.png" class="leftArrow" onclick="history.back()">
-        <img src="../../assets/account.png" class="profileImg">
-        <div class="helloText">
-            <p class="drName" style="color: white;">Dr. </p>
-            <br>
-            <p class="spec" style="color: white;"></p>
-        </div>
-        <form id="appointment-form" class="accountCard">
-            <div style="height: 12%;"></div>
-            <br><br>
-            <h1 style="margin-top: 10px;">Pick A Date for for Appointment</h1>
-            <br>
-            <input type="date" name="date-input">
-            <br><br>
-            <h1>Pick the perfect time</h1>
-            <br>
-            <input type="time" name="time-input">
-            <br><br>
-            <button class="button" type="submit" style="width: 300px; white-space:nowrap; margin-bottom: 10%;">Book your
-                Appointment</button>
-        </form>
+    <div class="topContainer">
+        <img onclick="history.back()" class="leftArrow" type="image" src="../../assets/left-arrow-gri.png">
+        <span class="title">Calendar</span>
+        <a style='user-select: none'>⠀</a>
     </div>
+
+    <div style="height: calc(100% - 125px) !important;"><div class="patientsList" id="calendar"></div></div>
 
     <div class="bottomNav">
         <script>

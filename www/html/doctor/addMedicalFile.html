@@ -6,30 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/doctor/addMedicalFile.css">
-    <link rel="stylesheet" href="/www/css/main.css">
+    <link rel="stylesheet" href="../../css/main.css">
     <script src="../../db/config.js" type="module"></script>
     <script src="../../db/uploadSystem-db.js" type="module" defer></script>
-
-    <title>Add medical file</title>
     <script src='../../js/main.js' type='module' defer></script>
 </head>
 
 <body>
-    <div class="Container">
-        <a onclick="history.back()">
-            <img type="image" class="leftArrow" src="/www/assets/left-arrow-gri.png" />
-        </a>
-        <span class="Title">Add medical file</span>
+    <div class="topContainer">
+        <img onclick="history.back()" class="leftArrow" type="image" src="../../assets/left-arrow-gri.png">
+        <span class="title">Add Medical File</span>
+        <a style='user-select: none'>⠀</a>
     </div>
     <div class="file-container">
         <input type="file" name="file" id="file" style="display: none;" class="inputfile" />
-        <label for="file" class="add-file-button">Add a photo</label>
+        <label for="file" class="addButton upload"></label>
     </div>
     <div class="bottomNav">
         <button onclick="location = '../doctor/home.html'" class="home"></button>
         <button onclick="location = '../chat/list.html'" class="chat"></button>
-        <button onclick="location = '../doctor/search.html'" class="search active"></button>
-        <button onclick="location = '../patient/appointment.html'" class="calendarul"></button>
+        <button onclick="location = '../doctor/search.html'" class="search"></button>
+        <button onclick="location = '../patient/calendar.html'" class="calendarul"></button>
         <button onclick="location = '../doctor/account.html'" class="profile"></button>
     </div>
 </body>

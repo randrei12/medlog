@@ -1,7 +1,22 @@
-document.addEventListener('DOMContentLoaded', function () {
-            
+import '../db/config.js';
+import { getLoggedUser } from '../js/Utils.js';
 
+(async () => {
+    const user = await getLoggedUser();
+    if (!user) location = "../../index.html";
 
+    const reformatEvents = [];
+    const result = await firebase.firestore().collection("appointments").doc(user.uid).get();
+    const data = result.data() || {};
+    const appointments = data["appointments"] || [];
+    appointments.forEach(appointment => {
+        reformatEvents.push({
+            start: `${appointment["date"]}T${appointment["time"]}:00`,
+            end: `${appointment["date"]}T${appointment["time"] + 1}:00`,
+            time: appointment["time"],
+            title: "ben"
+        })
+    });
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
         headerToolbar: {
@@ -34,20 +49,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 arg.draggedEl.parentNode.removeChild(arg.draggedEl);
             }
         },
-        initialDate: '2022-08-01',
-        weekNumbers: true,
-        navLinks: true, // can click day/week names to navigate views
+        initialDate: new Date(),
+        weekNumbers: false,
+        navLinks: false, // can click day/week names to navigate views
         editable: false,
         selectable: true,
         nowIndicator: true,
-        events: [
-        
-            {
-                "title": "hello",
-                "start": "2022-08-11",
-            }
-        ]
+        events: reformatEvents
     });
     calendar.render();
-
-});
+})();
