@@ -26,29 +26,30 @@ const editButton = document.querySelector('.editButtonDocDiv > button');
     email.value = user.email;
     hospital.value = user.hospital;
     aboutDoc.value = user.description;
+    sessionStorage.removeItem('user');
+    
+    backButton.onclick = () => history.back();
+    signOutButton.onclick = () => {
+        firebase.auth().signOut();
+        sessionStorage.clear();
+        setTimeout(() => location = '../../index.html', 1000);
+    }
+    
+    editButton.onclick = () => {
+        firebase.firestore().collection('users').doc(user.uid).update({
+            firstName: firstName.value,
+            lastName: lastName.value,
+            specialization: specialization.value,
+            county: CountySelect.value,
+            city: CitySelect.value,
+            phoneNumber: phoneNumber.value,
+            email: email.value,
+            hospital: hospital.value,
+            description: aboutDoc.value
+        }).then(() => {
+            location = 'home.html'
+        }).catch(e => {
+            alert('An error occured')
+        })
+    }
 })();
-
-backButton.onclick = () => history.back();
-signOutButton.onclick = () => {
-    firebase.auth().signOut();
-    sessionStorage.clear();
-    setTimeout(() => location = '../../index.html', 1000);
-}
-
-editButton.onclick = () => {
-    firebase.firestore().collection('users').doc(data.uid).update({
-        firstName: firstName.value,
-        lastName: lastName.value,
-        specialization: specialization.value,
-        county: CountySelect.value,
-        city: CitySelect.value,
-        phoneNumber: phoneNumber.value,
-        email: email.value,
-        hospital: hospital.value,
-        description: aboutDoc.value
-    }).then(() => {
-        location = 'home.html'
-    }).catch(e => {
-        alert('An error occured')
-    })
-}
