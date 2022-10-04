@@ -7,15 +7,17 @@ import { getLoggedUser } from '../js/Utils.js';
 
     const reformatEvents = [];
     const result = firebase.firestore().collection("appointments").doc(user.uid).get();
-    result.then((data) => {
-        data.data()["appointments"].forEach(appointment => {
-            reformatEvents.push({
-                start: `${appointment["date"]}T${appointment["time"]}:00`,
-                end: `${appointment["date"]}T${appointment["time"] + 1}:00`,
-                time: appointment["time"],
-                title: "ben"
-            })
-        });
+    result.then(data => {
+        try {
+            data.data()["appointments"].forEach(appointment => {
+                reformatEvents.push({
+                    start: `${appointment["date"]}T${appointment["time"]}:00`,
+                    end: `${appointment["date"]}T${appointment["time"] + 1}:00`,
+                    time: appointment["time"],
+                    title: "ben"
+                })
+            });
+        } catch {}
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
             headerToolbar: {
