@@ -17,14 +17,15 @@
     </div>
     <div class="users"></div>
     <div class="bottomNav">
-        <script>
+        <script type="module">
+            import { getLoggedUser } from '../../js/Utils.js'
             const bottomNav = document.querySelector('.bottomNav');
-            const { type } = JSON.parse(sessionStorage.getItem('user'));
+            const { type } = await getLoggedUser()
             bottomNav.innerHTML = `
             <button onclick="location = '../${type}/home.html'" class="home"></button>
             <button onclick="location = '../chat/list.html'" class="chat active"></button>
             <button onclick="location = '../${type}/search.html'" class="search"></button>
-            <button onclick="location = '../${type}/calendar.html'" class="calendarul"></button>
+            <button onclick="location = '../patient/calendar.html'" class="calendarul"></button>
             <button onclick="location = '../${type}/account.html'" class="profile"></button>
             `;
         </script>
