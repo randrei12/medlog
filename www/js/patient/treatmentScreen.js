@@ -16,17 +16,19 @@ async function getDoctors(uid) {
     if (res.size === 0) return historyList.innerText = 'There are no treatments'; 
     res.forEach(e => {
         const data = e.data();
-        const docId = Object.getOwnPropertyNames(data)[0];
-        historyList.innerHTML += `
-            <a href="treatmentScreen.html?doc=${docId}">
-                <button class="history-button">
-                    <img class="folder-image" src="../../assets/account.png" alt="" style="margin-left: 20px; height: 70%;">
-                    <div>
-                        <h2 class="medic">${data[docId][0].docName}<br></h2>
-                        <h2 class="data" style="font-size: 15px"></h2>
-                    </div>
-                </button>
-            </a>`;    
+        const docsId = Object.getOwnPropertyNames(data);
+        docsId.forEach(docId => {
+            historyList.innerHTML += `
+                <a href="treatmentScreen.html?doc=${docId}">
+                    <button class="history-button">
+                        <img class="folder-image" src="../../assets/account.png" alt="" style="margin-left: 20px; height: 70%;">
+                        <div>
+                            <h2 class="medic">${data[docId][0].docName}<br></h2>
+                            <h2 class="data" style="font-size: 15px"></h2>
+                        </div>
+                    </button>
+                </a>`;    
+        })
     });
 }
 
