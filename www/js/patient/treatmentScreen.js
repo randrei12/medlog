@@ -1,5 +1,4 @@
 import firebase from "../../db/config.js";
-import Loading from "../loading.js";
 import { getLoggedUser, params } from "../Utils.js";
 
 const historyList = document.querySelector('.historyList');
@@ -11,24 +10,22 @@ const historyList = document.querySelector('.historyList');
 })();
 
 async function getDoctors(uid) {
-    const res = await firebase.firestore().collection('treatments').get();
+    const res = await firebase.firestore().collection('treatments').doc(uid).get();
     historyList.innerText = ''; 
-    if (res.size === 0) return historyList.innerText = 'There are no treatments'; 
-    res.forEach(e => {
-        const data = e.data();
-        const docsId = Object.getOwnPropertyNames(data);
-        docsId.forEach(docId => {
-            historyList.innerHTML += `
-                <a href="treatmentScreen.html?doc=${docId}">
-                    <button class="history-button">
-                        <img class="folder-image" src="../../assets/account.png" alt="" style="margin-left: 20px; height: 70%;">
-                        <div>
-                            <h2 class="medic">${data[docId][0].docName}<br></h2>
-                            <h2 class="data" style="font-size: 15px"></h2>
-                        </div>
-                    </button>
-                </a>`;    
-        })
+    if (!res.exists) return historyList.innerText = 'There are no treatments'; 
+    const data = res.data();
+    const docsId = Object.getOwnPropertyNames(data);
+    docsId.forEach(docId => {
+        historyList.innerHTML += `
+            <a href="treatmentScreen.html?doc=${docId}">
+                <button class="history-button">
+                    <img class="folder-image" src="../../assets/account.png" alt="" style="margin-left: 20px; height: 70%;">
+                    <div>
+                        <h2 class="medic">${data[docId][0].docName}<br></h2>
+                        <h2 class="data" style="font-size: 15px"></h2>
+                    </div>
+                </button>
+            </a>`;    
     });
 }
 
@@ -49,5 +46,3 @@ async function getTreatments(uid, docId) {
         console.log(treatment);
     })
 }
-
-// firebase.storage().ref()
